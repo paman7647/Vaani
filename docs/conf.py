@@ -4,7 +4,16 @@
 import os
 import sys
 
+# Add parent directory to path so we can import Vaani package
 sys.path.insert(0, os.path.abspath('..'))
+
+# Verify the path was added correctly (for debugging)
+import pathlib
+vaani_path = pathlib.Path(__file__).parent.parent / 'Vaani'
+if not vaani_path.exists():
+    print(f"WARNING: Vaani package not found at {vaani_path}")
+else:
+    print(f"✓ Vaani package found at {vaani_path}")
 
 project = 'Vaani'
 copyright = '2026, Aman Kumar Pandey'
@@ -46,30 +55,38 @@ autodoc_default_options = {
 }
 
 # Mock heavy or platform-specific imports during autodoc to avoid build failures
+# This prevents import errors when dependencies aren't installed in the docs build environment
 autodoc_mock_imports = [
+    # Speech and audio
     'pyttsx3',
     'speech_recognition',
     'pyaudio',
     'vosk',
     'pocketsphinx',
+    # AI and NLP
     'rapidfuzz',
     'google',
     'google.genai',
+    'spacy',
+    'textblob',
+    # Media and web
     'yt_dlp',
     'vlc',
     'pygame',
     'duckduckgo_search',
     'wikipedia',
+    'googlesearch',
+    # Utilities
     'bs4',
     'lxml',
     'deep_translator',
     'dotenv',
     'psutil',
     'numpy',
-    'spacy',
-    'textblob',
-    'googlesearch',
 ]
+
+# Suppress warnings about missing imports during autosummary
+suppress_warnings = ['autosummary']
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
