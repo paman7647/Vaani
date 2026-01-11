@@ -1,6 +1,6 @@
 """
 Intelligence Module - AI & NLP Processing
-========================================
+==========================================
 
 AI-powered understanding and response generation.
 
@@ -24,3 +24,4 @@ All Rights Reserved.
 This file is part of the Vaani Voice Assistant core and is proprietary.
 """
 
+__all__ = []
