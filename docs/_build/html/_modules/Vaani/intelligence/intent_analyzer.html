@@ -1,0 +1,1249 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaani.intelligence.intent_analyzer &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Vaani/intelligence/intent_analyzer';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vaani.intelligence.intent_analyzer</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for Vaani.intelligence.intent_analyzer</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Intent Analyzer - Fast Command Classification</span>
+<span class="sd">================================================</span>
+
+<span class="sd">Features:</span>
+<span class="sd">- RapidFuzz-based pattern matching (sub-second classification)</span>
+<span class="sd">- Multiple intent types (music, time, information, conversation, etc.)</span>
+<span class="sd">- Entity extraction (song names, times, topics)</span>
+<span class="sd">- Confidence scoring</span>
+<span class="sd">- AI-powered fallback for complex queries</span>
+<span class="sd">- Keyword-based classification with fuzzy matching</span>
+<span class="sd">- Support for natural language variations</span>
+<span class="sd">- Minimal logging (professional output)</span>
+
+<span class="sd">Quickly figures out what you want using fast pattern matching.</span>
+<span class="sd">Uses AI only when needed for complex or ambiguous requests.</span>
+
+<span class="sd">Vaani Voice Assistant</span>
+<span class="sd">Copyright (c) 2026 Aman Kumar Pandey.</span>
+<span class="sd">All Rights Reserved.</span>
+
+<span class="sd">This file is part of the Vaani Voice Assistant core and is proprietary.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">enum</span><span class="w"> </span><span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">rapidfuzz</span><span class="w"> </span><span class="kn">import</span> <span class="n">fuzz</span><span class="p">,</span> <span class="n">process</span>
+    <span class="n">RAPIDFUZZ_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">RAPIDFUZZ_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    
+<span class="c1"># Spacy is incompatible with Python 3.14+ (pydantic v1 issue)</span>
+<span class="c1"># Disable it and use fallback intent classification</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">SPACY_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">nlp</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">version_info</span> <span class="o">&lt;</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">14</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">spacy</span>
+        <span class="c1"># Try to load small English model</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">nlp</span> <span class="o">=</span> <span class="n">spacy</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s2">&quot;en_core_web_sm&quot;</span><span class="p">)</span>
+            <span class="n">SPACY_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+        <span class="k">except</span><span class="p">:</span>
+            <span class="k">pass</span>
+    <span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">VaaniLogger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.error_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">error_handler</span><span class="p">,</span> <span class="n">RecoveryAction</span><span class="p">,</span> <span class="n">ErrorSeverity</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">VaaniLogger</span><span class="o">.</span><span class="n">get_logger</span><span class="p">(</span><span class="s2">&quot;Intent Analyzer&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="IntentType">
+<a class="viewcode-back" href="../../../modules/intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentType">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntentType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Refined intent categories&quot;&quot;&quot;</span>
+    <span class="c1"># Music intent_analyzer</span>
+    <span class="n">MUSIC_PLAY</span> <span class="o">=</span> <span class="s2">&quot;music_play&quot;</span>
+    <span class="n">MUSIC_PAUSE</span> <span class="o">=</span> <span class="s2">&quot;music_pause&quot;</span>
+    <span class="n">MUSIC_STOP</span> <span class="o">=</span> <span class="s2">&quot;music_stop&quot;</span>
+    <span class="n">MUSIC_RESUME</span> <span class="o">=</span> <span class="s2">&quot;music_resume&quot;</span>
+    <span class="n">MUSIC_NEXT</span> <span class="o">=</span> <span class="s2">&quot;music_next&quot;</span>
+    <span class="n">MUSIC_PREVIOUS</span> <span class="o">=</span> <span class="s2">&quot;music_previous&quot;</span>
+    <span class="n">MUSIC_VOLUME_UP</span> <span class="o">=</span> <span class="s2">&quot;music_volume_up&quot;</span>
+    <span class="n">MUSIC_VOLUME_DOWN</span> <span class="o">=</span> <span class="s2">&quot;music_volume_down&quot;</span>
+    <span class="n">MUSIC_VOLUME_SET</span> <span class="o">=</span> <span class="s2">&quot;music_volume_set&quot;</span>
+    <span class="n">MUSIC_QUEUE_ADD</span> <span class="o">=</span> <span class="s2">&quot;music_queue_add&quot;</span>
+    <span class="n">MUSIC_QUEUE_SHOW</span> <span class="o">=</span> <span class="s2">&quot;music_queue_show&quot;</span>
+    <span class="n">MUSIC_QUEUE_CLEAR</span> <span class="o">=</span> <span class="s2">&quot;music_queue_clear&quot;</span>
+    <span class="n">MUSIC_CURRENT</span> <span class="o">=</span> <span class="s2">&quot;music_current&quot;</span>
+    
+    <span class="c1"># System intent_analyzer</span>
+    <span class="n">SYSTEM_TIME</span> <span class="o">=</span> <span class="s2">&quot;system_time&quot;</span>
+    <span class="n">SYSTEM_DATE</span> <span class="o">=</span> <span class="s2">&quot;system_date&quot;</span>
+    <span class="n">SYSTEM_WEATHER</span> <span class="o">=</span> <span class="s2">&quot;system_weather&quot;</span>
+    <span class="n">SYSTEM_EXIT</span> <span class="o">=</span> <span class="s2">&quot;system_exit&quot;</span>
+    
+    <span class="c1"># Information intent_analyzer</span>
+    <span class="n">INFO_WHAT</span> <span class="o">=</span> <span class="s2">&quot;info_what&quot;</span>
+    <span class="n">INFO_WHO</span> <span class="o">=</span> <span class="s2">&quot;info_who&quot;</span>
+    <span class="n">INFO_WHERE</span> <span class="o">=</span> <span class="s2">&quot;info_where&quot;</span>
+    <span class="n">INFO_WHEN</span> <span class="o">=</span> <span class="s2">&quot;info_when&quot;</span>
+    <span class="n">INFO_WHY</span> <span class="o">=</span> <span class="s2">&quot;info_why&quot;</span>
+    <span class="n">INFO_HOW</span> <span class="o">=</span> <span class="s2">&quot;info_how&quot;</span>
+    
+    <span class="c1"># Conversation</span>
+    <span class="n">CONVERSATION</span> <span class="o">=</span> <span class="s2">&quot;conversation&quot;</span>
+    
+    <span class="c1"># Unknown</span>
+    <span class="n">UNKNOWN</span> <span class="o">=</span> <span class="s2">&quot;unknown&quot;</span></div>
+
+
+
+<div class="viewcode-block" id="IntentResult">
+<a class="viewcode-back" href="../../../modules/intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentResult">[docs]</a>
+<span class="nd">@dataclass</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntentResult</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Result of intent classification&quot;&quot;&quot;</span>
+    <span class="n">intent</span><span class="p">:</span> <span class="n">IntentType</span>
+    <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span>  <span class="c1"># 0.0 to 1.0</span>
+    <span class="n">entities</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span>  <span class="c1"># Extracted entities (song_name, volume, etc.)</span>
+    <span class="n">requires_ai</span><span class="p">:</span> <span class="nb">bool</span>  <span class="c1"># Should this go to AI engine?</span></div>
+
+
+
+<div class="viewcode-block" id="IntentMatcher">
+<a class="viewcode-back" href="../../../modules/intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentMatcher">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">IntentMatcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Intent matching using free NLP tools</span>
+<span class="sd">    </span>
+<span class="sd">    Features:</span>
+<span class="sd">    - Fuzzy matching for typos and variations</span>
+<span class="sd">    - Entity extraction (numbers, names, etc.)</span>
+<span class="sd">    - Synonym handling</span>
+<span class="sd">    - Multi-language support (English + Hindi)</span>
+<span class="sd">    - Pattern-based extraction</span>
+<span class="sd">    - Context awareness</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fuzzy_threshold</span> <span class="o">=</span> <span class="mi">80</span>  <span class="c1"># Minimum similarity score (0-100)</span>
+        
+        <span class="c1"># Intent patterns with examples for fuzzy matching</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">intent_patterns</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_PLAY</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="s2">&quot;play song&quot;</span><span class="p">,</span> <span class="s2">&quot;play music&quot;</span><span class="p">,</span> <span class="s2">&quot;start playing&quot;</span><span class="p">,</span> <span class="s2">&quot;put on&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;play the song&quot;</span><span class="p">,</span> <span class="s2">&quot;can you play&quot;</span><span class="p">,</span> <span class="s2">&quot;i want to hear&quot;</span><span class="p">,</span> <span class="s2">&quot;start music&quot;</span><span class="p">,</span>
+                <span class="c1"># Hindi/Romanized patterns</span>
+                <span class="s2">&quot;bajao&quot;</span><span class="p">,</span> <span class="s2">&quot;gana bajao&quot;</span><span class="p">,</span> <span class="s2">&quot;music chalao&quot;</span><span class="p">,</span> <span class="s2">&quot;gaana sunao&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;sing me a song&quot;</span><span class="p">,</span> <span class="s2">&quot;sing a song&quot;</span><span class="p">,</span> <span class="s2">&quot;play karo&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_PAUSE</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;pause&quot;</span><span class="p">,</span> <span class="s2">&quot;pause music&quot;</span><span class="p">,</span> <span class="s2">&quot;pause song&quot;</span><span class="p">,</span> <span class="s2">&quot;hold on&quot;</span><span class="p">,</span> <span class="s2">&quot;wait&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;stop for now&quot;</span><span class="p">,</span> <span class="s2">&quot;pause it&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_STOP</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;stop&quot;</span><span class="p">,</span> <span class="s2">&quot;stop music&quot;</span><span class="p">,</span> <span class="s2">&quot;stop playing&quot;</span><span class="p">,</span> <span class="s2">&quot;stop song&quot;</span><span class="p">,</span> <span class="s2">&quot;end music&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;turn off music&quot;</span><span class="p">,</span> <span class="s2">&quot;close music&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_RESUME</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;resume&quot;</span><span class="p">,</span> <span class="s2">&quot;continue&quot;</span><span class="p">,</span> <span class="s2">&quot;keep playing&quot;</span><span class="p">,</span> <span class="s2">&quot;unpause&quot;</span><span class="p">,</span> <span class="s2">&quot;play again&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;resume music&quot;</span><span class="p">,</span> <span class="s2">&quot;continue music&quot;</span><span class="p">,</span> <span class="s2">&quot;carry on&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_NEXT</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;next&quot;</span><span class="p">,</span> <span class="s2">&quot;skip&quot;</span><span class="p">,</span> <span class="s2">&quot;next song&quot;</span><span class="p">,</span> <span class="s2">&quot;skip song&quot;</span><span class="p">,</span> <span class="s2">&quot;play next&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;next track&quot;</span><span class="p">,</span> <span class="s2">&quot;forward&quot;</span><span class="p">,</span> <span class="s2">&quot;skip this&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_PREVIOUS</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;previous&quot;</span><span class="p">,</span> <span class="s2">&quot;back&quot;</span><span class="p">,</span> <span class="s2">&quot;go back&quot;</span><span class="p">,</span> <span class="s2">&quot;previous song&quot;</span><span class="p">,</span> <span class="s2">&quot;last song&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;play previous&quot;</span><span class="p">,</span> <span class="s2">&quot;rewind&quot;</span><span class="p">,</span> <span class="s2">&quot;back track&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_UP</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;volume up&quot;</span><span class="p">,</span> <span class="s2">&quot;louder&quot;</span><span class="p">,</span> <span class="s2">&quot;increase volume&quot;</span><span class="p">,</span> <span class="s2">&quot;turn up&quot;</span><span class="p">,</span> <span class="s2">&quot;raise volume&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;make it louder&quot;</span><span class="p">,</span> <span class="s2">&quot;boost volume&quot;</span><span class="p">,</span> <span class="s2">&quot;up volume&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_DOWN</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;volume down&quot;</span><span class="p">,</span> <span class="s2">&quot;quieter&quot;</span><span class="p">,</span> <span class="s2">&quot;decrease volume&quot;</span><span class="p">,</span> <span class="s2">&quot;turn down&quot;</span><span class="p">,</span> <span class="s2">&quot;lower volume&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;make it quieter&quot;</span><span class="p">,</span> <span class="s2">&quot;reduce volume&quot;</span><span class="p">,</span> <span class="s2">&quot;down volume&quot;</span><span class="p">,</span> <span class="s2">&quot;softer&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_SET</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;volume&quot;</span><span class="p">,</span> <span class="s2">&quot;set volume&quot;</span><span class="p">,</span> <span class="s2">&quot;volume to&quot;</span><span class="p">,</span> <span class="s2">&quot;set volume to&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_QUEUE_ADD</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;add to queue&quot;</span><span class="p">,</span> <span class="s2">&quot;queue&quot;</span><span class="p">,</span> <span class="s2">&quot;add song&quot;</span><span class="p">,</span> <span class="s2">&quot;add this&quot;</span><span class="p">,</span> <span class="s2">&quot;queue song&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;add to playlist&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_QUEUE_SHOW</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;show queue&quot;</span><span class="p">,</span> <span class="s2">&quot;what&#39;s in queue&quot;</span><span class="p">,</span> <span class="s2">&quot;queue list&quot;</span><span class="p">,</span> <span class="s2">&quot;show playlist&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;what&#39;s queued&quot;</span><span class="p">,</span> <span class="s2">&quot;list queue&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_QUEUE_CLEAR</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;clear queue&quot;</span><span class="p">,</span> <span class="s2">&quot;empty queue&quot;</span><span class="p">,</span> <span class="s2">&quot;remove queue&quot;</span><span class="p">,</span> <span class="s2">&quot;delete queue&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_CURRENT</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;what&#39;s playing&quot;</span><span class="p">,</span> <span class="s2">&quot;current song&quot;</span><span class="p">,</span> <span class="s2">&quot;what song&quot;</span><span class="p">,</span> <span class="s2">&quot;what is this&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;song name&quot;</span><span class="p">,</span> <span class="s2">&quot;what&#39;s this song&quot;</span><span class="p">,</span> <span class="s2">&quot;playing now&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_TIME</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;what time&quot;</span><span class="p">,</span> <span class="s2">&quot;tell time&quot;</span><span class="p">,</span> <span class="s2">&quot;current time&quot;</span><span class="p">,</span> <span class="s2">&quot;time is&quot;</span><span class="p">,</span> <span class="s2">&quot;what&#39;s the time&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_DATE</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;what date&quot;</span><span class="p">,</span> <span class="s2">&quot;today&#39;s date&quot;</span><span class="p">,</span> <span class="s2">&quot;current date&quot;</span><span class="p">,</span> <span class="s2">&quot;what day&quot;</span><span class="p">,</span> <span class="s2">&quot;date today&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_WEATHER</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;weather&quot;</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;how&#39;s weather&quot;</span><span class="p">,</span> <span class="s2">&quot;weather today&quot;</span><span class="p">,</span> <span class="s2">&quot;forecast&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_EXIT</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;exit&quot;</span><span class="p">,</span> <span class="s2">&quot;quit&quot;</span><span class="p">,</span> <span class="s2">&quot;goodbye&quot;</span><span class="p">,</span> <span class="s2">&quot;bye&quot;</span><span class="p">,</span> <span class="s2">&quot;shut down&quot;</span><span class="p">,</span> <span class="s2">&quot;close&quot;</span><span class="p">,</span> <span class="s2">&quot;stop assistant&quot;</span>
+            <span class="p">],</span>
+            <span class="c1"># Information/Question intent_analyzer</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHAT</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;what is&quot;</span><span class="p">,</span> <span class="s2">&quot;what are&quot;</span><span class="p">,</span> <span class="s2">&quot;what&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;whats&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me about&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;explain what&quot;</span><span class="p">,</span> <span class="s2">&quot;define&quot;</span><span class="p">,</span> <span class="s2">&quot;meaning of&quot;</span><span class="p">,</span> <span class="s2">&quot;definition of&quot;</span><span class="p">,</span> <span class="s2">&quot;what was&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHO</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;who is&quot;</span><span class="p">,</span> <span class="s2">&quot;who are&quot;</span><span class="p">,</span> <span class="s2">&quot;who&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;whos&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me who&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;who was&quot;</span><span class="p">,</span> <span class="s2">&quot;who were&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHERE</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;where is&quot;</span><span class="p">,</span> <span class="s2">&quot;where are&quot;</span><span class="p">,</span> <span class="s2">&quot;where&#39;s&quot;</span><span class="p">,</span> <span class="s2">&quot;wheres&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me where&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;where can i find&quot;</span><span class="p">,</span> <span class="s2">&quot;location of&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHEN</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;when is&quot;</span><span class="p">,</span> <span class="s2">&quot;when was&quot;</span><span class="p">,</span> <span class="s2">&quot;when did&quot;</span><span class="p">,</span> <span class="s2">&quot;when will&quot;</span><span class="p">,</span> <span class="s2">&quot;whens&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;what time&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me when&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHY</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;why is&quot;</span><span class="p">,</span> <span class="s2">&quot;why are&quot;</span><span class="p">,</span> <span class="s2">&quot;why did&quot;</span><span class="p">,</span> <span class="s2">&quot;why does&quot;</span><span class="p">,</span> <span class="s2">&quot;whys&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;reason for&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me why&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_HOW</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;how is&quot;</span><span class="p">,</span> <span class="s2">&quot;how are&quot;</span><span class="p">,</span> <span class="s2">&quot;how do&quot;</span><span class="p">,</span> <span class="s2">&quot;how does&quot;</span><span class="p">,</span> <span class="s2">&quot;how to&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;hows&quot;</span><span class="p">,</span> <span class="s2">&quot;tell me how&quot;</span><span class="p">,</span> <span class="s2">&quot;explain how&quot;</span>
+            <span class="p">],</span>
+            <span class="n">IntentType</span><span class="o">.</span><span class="n">CONVERSATION</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;hello&quot;</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">,</span> <span class="s2">&quot;hey&quot;</span><span class="p">,</span> <span class="s2">&quot;how are you&quot;</span><span class="p">,</span> <span class="s2">&quot;thanks&quot;</span><span class="p">,</span> <span class="s2">&quot;thank you&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;good morning&quot;</span><span class="p">,</span> <span class="s2">&quot;good evening&quot;</span><span class="p">,</span> <span class="s2">&quot;nice to meet you&quot;</span>
+            <span class="p">]</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Regex patterns for entity extraction</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">entity_patterns</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;volume_number&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(\d+)\s*(?:percent|%)?&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;song_name_after_play&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;play\s+(?:the\s+)?(?:song\s+)?(.+)&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">),</span>
+            <span class="s1">&#39;song_name_general&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?:song|music|track)\s+(.+)&#39;</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">),</span>
+            <span class="s1">&#39;number&#39;</span><span class="p">:</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d+&#39;</span><span class="p">),</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Synonyms for common words</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">synonyms</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;increase&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;raise&#39;</span><span class="p">,</span> <span class="s1">&#39;boost&#39;</span><span class="p">,</span> <span class="s1">&#39;up&#39;</span><span class="p">,</span> <span class="s1">&#39;higher&#39;</span><span class="p">,</span> <span class="s1">&#39;more&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;decrease&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lower&#39;</span><span class="p">,</span> <span class="s1">&#39;reduce&#39;</span><span class="p">,</span> <span class="s1">&#39;down&#39;</span><span class="p">,</span> <span class="s1">&#39;less&#39;</span><span class="p">,</span> <span class="s1">&#39;softer&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;play&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;start&#39;</span><span class="p">,</span> <span class="s1">&#39;begin&#39;</span><span class="p">,</span> <span class="s1">&#39;put on&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;pause&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hold&#39;</span><span class="p">,</span> <span class="s1">&#39;wait&#39;</span><span class="p">,</span> <span class="s1">&#39;stop temporarily&#39;</span><span class="p">],</span>
+            <span class="s1">&#39;stop&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;end&#39;</span><span class="p">,</span> <span class="s1">&#39;quit&#39;</span><span class="p">,</span> <span class="s1">&#39;close&#39;</span><span class="p">,</span> <span class="s1">&#39;terminate&#39;</span><span class="p">],</span>
+        <span class="p">}</span>
+        
+<div class="viewcode-block" id="IntentMatcher.classify">
+<a class="viewcode-back" href="../../../modules/intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentMatcher.classify">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="n">IntentResult</span><span class="p">(</span><span class="n">IntentType</span><span class="o">.</span><span class="n">UNKNOWN</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="p">{},</span> <span class="kc">True</span><span class="p">))</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">classify</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">context</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">IntentResult</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Classify user command into intent + extract entities</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            command: User command text</span>
+<span class="sd">            context: Optional context (music_playing, last_intent, etc.)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            IntentResult with intent, confidence, and entities</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">command</span> <span class="o">=</span> <span class="n">command</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        
+        <span class="c1"># 1. Try exact/fuzzy pattern matching first (fast)</span>
+        <span class="n">intent</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_fuzzy_match_intent</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="c1"># 2. If low confidence, try regex patterns</span>
+        <span class="k">if</span> <span class="n">confidence</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="p">:</span>
+            <span class="n">regex_intent</span><span class="p">,</span> <span class="n">regex_entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_regex_extract</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">regex_intent</span><span class="p">:</span>
+                <span class="n">intent</span> <span class="o">=</span> <span class="n">regex_intent</span>
+                <span class="n">confidence</span> <span class="o">=</span> <span class="mf">0.8</span>
+                <span class="n">entities</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">regex_entities</span><span class="p">)</span>
+        
+        <span class="c1"># 3. If still low confidence, check question patterns</span>
+        <span class="k">if</span> <span class="n">confidence</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="p">:</span>
+            <span class="n">question_intent</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_detect_question_type</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">question_intent</span><span class="p">:</span>
+                <span class="n">intent</span> <span class="o">=</span> <span class="n">question_intent</span>
+                <span class="n">confidence</span> <span class="o">=</span> <span class="mf">0.7</span>
+        
+        <span class="c1"># 4. Use spaCy for advanced entity extraction (if available)</span>
+        <span class="k">if</span> <span class="n">SPACY_AVAILABLE</span> <span class="ow">and</span> <span class="n">entities</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;needs_extraction&#39;</span><span class="p">,</span> <span class="kc">False</span><span class="p">):</span>
+            <span class="n">spacy_entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_with_spacy</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="n">entities</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">spacy_entities</span><span class="p">)</span>
+        
+        <span class="c1"># 5. Determine if AI is needed</span>
+        <span class="n">requires_ai</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_requires_ai</span><span class="p">(</span><span class="n">intent</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">command</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">IntentResult</span><span class="p">(</span>
+            <span class="n">intent</span><span class="o">=</span><span class="n">intent</span><span class="p">,</span>
+            <span class="n">confidence</span><span class="o">=</span><span class="n">confidence</span><span class="p">,</span>
+            <span class="n">entities</span><span class="o">=</span><span class="n">entities</span><span class="p">,</span>
+            <span class="n">requires_ai</span><span class="o">=</span><span class="n">requires_ai</span>
+        <span class="p">)</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_fuzzy_match_intent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">IntentType</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Use fuzzy matching to find best intent&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">RAPIDFUZZ_AVAILABLE</span><span class="p">:</span>
+            <span class="c1"># Fallback to simple substring matching</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_simple_match</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="n">best_intent</span> <span class="o">=</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">UNKNOWN</span>
+        <span class="n">best_score</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Try fuzzy match against all patterns</span>
+        <span class="k">for</span> <span class="n">intent_type</span><span class="p">,</span> <span class="n">patterns</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">intent_patterns</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">:</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">ratio</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
+                
+                <span class="c1"># Also check if command contains pattern (partial match)</span>
+                <span class="k">if</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">command</span><span class="p">:</span>
+                    <span class="n">score</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="mi">85</span><span class="p">)</span>  <span class="c1"># Boost for substring match</span>
+                
+                <span class="c1"># Check token similarity</span>
+                <span class="n">token_score</span> <span class="o">=</span> <span class="n">fuzz</span><span class="o">.</span><span class="n">token_set_ratio</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">pattern</span><span class="p">)</span>
+                <span class="n">score</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">token_score</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
+                    <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
+                    <span class="n">best_intent</span> <span class="o">=</span> <span class="n">intent_type</span>
+        
+        <span class="c1"># Normalize score to 0-1 range</span>
+        <span class="n">confidence</span> <span class="o">=</span> <span class="n">best_score</span> <span class="o">/</span> <span class="mf">100.0</span>
+        
+        <span class="c1"># Extract entities based on intent</span>
+        <span class="k">if</span> <span class="n">confidence</span> <span class="o">&gt;=</span> <span class="mf">0.5</span><span class="p">:</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_entities_for_intent</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">best_intent</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">best_intent</span><span class="p">,</span> <span class="n">confidence</span><span class="p">,</span> <span class="n">entities</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_simple_match</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">IntentType</span><span class="p">,</span> <span class="nb">float</span><span class="p">,</span> <span class="n">Dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Simple substring matching (fallback when rapidfuzz unavailable)&quot;&quot;&quot;</span>
+        <span class="n">best_intent</span> <span class="o">=</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">UNKNOWN</span>
+        <span class="n">best_score</span> <span class="o">=</span> <span class="mf">0.0</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="k">for</span> <span class="n">intent_type</span><span class="p">,</span> <span class="n">patterns</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">intent_patterns</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">for</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">patterns</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">pattern</span> <span class="ow">in</span> <span class="n">command</span><span class="p">:</span>
+                    <span class="c1"># Calculate rough similarity</span>
+                    <span class="n">score</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">pattern</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="mi">0</span>
+                    <span class="n">score</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)</span>
+                    
+                    <span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">best_score</span><span class="p">:</span>
+                        <span class="n">best_score</span> <span class="o">=</span> <span class="n">score</span>
+                        <span class="n">best_intent</span> <span class="o">=</span> <span class="n">intent_type</span>
+        
+        <span class="k">if</span> <span class="n">best_score</span> <span class="o">&gt;=</span> <span class="mf">0.3</span><span class="p">:</span>
+            <span class="n">entities</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_entities_for_intent</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">best_intent</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">best_intent</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">best_score</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">),</span> <span class="n">entities</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_regex_extract</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Optional</span><span class="p">[</span><span class="n">IntentType</span><span class="p">],</span> <span class="n">Dict</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract intent and entities using regex patterns&quot;&quot;&quot;</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Volume number</span>
+        <span class="k">if</span> <span class="s1">&#39;volume&#39;</span> <span class="ow">in</span> <span class="n">command</span><span class="p">:</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_patterns</span><span class="p">[</span><span class="s1">&#39;volume_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_SET</span><span class="p">,</span> <span class="n">entities</span>
+        
+        <span class="c1"># Play song command</span>
+        <span class="k">if</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;play&#39;</span><span class="p">):</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_patterns</span><span class="p">[</span><span class="s1">&#39;song_name_after_play&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+                <span class="n">song_name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">song_name</span> <span class="ow">and</span> <span class="n">song_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;song&#39;</span><span class="p">,</span> <span class="s1">&#39;it&#39;</span><span class="p">]:</span>
+                    <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;song_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">song_name</span>
+                    <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_PLAY</span><span class="p">,</span> <span class="n">entities</span>
+        
+        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="n">entities</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_detect_question_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IntentType</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Detect question type for information queries&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;what&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">command</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;time&#39;</span><span class="p">,</span> <span class="s1">&#39;clock&#39;</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_TIME</span>
+            <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">command</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="s1">&#39;day&#39;</span><span class="p">,</span> <span class="s1">&#39;today&#39;</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_DATE</span>
+            <span class="k">elif</span> <span class="nb">any</span><span class="p">(</span><span class="n">word</span> <span class="ow">in</span> <span class="n">command</span> <span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;playing&#39;</span><span class="p">,</span> <span class="s1">&#39;song&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;this&#39;</span><span class="p">]):</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_CURRENT</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHAT</span>
+        
+        <span class="k">elif</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;who&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHO</span>
+        <span class="k">elif</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;where&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHERE</span>
+        <span class="k">elif</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;when&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHEN</span>
+        <span class="k">elif</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;why&#39;</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHY</span>
+        <span class="k">elif</span> <span class="n">command</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;how&#39;</span><span class="p">):</span>
+            <span class="k">if</span> <span class="s1">&#39;weather&#39;</span> <span class="ow">in</span> <span class="n">command</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">SYSTEM_WEATHER</span>
+            <span class="k">return</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_HOW</span>
+        
+        <span class="k">return</span> <span class="kc">None</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extract_entities_for_intent</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">intent</span><span class="p">:</span> <span class="n">IntentType</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract relevant entities based on detected intent&quot;&quot;&quot;</span>
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">{}</span>
+        
+        <span class="c1"># Extract song name for play commands</span>
+        <span class="k">if</span> <span class="n">intent</span> <span class="o">==</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_PLAY</span><span class="p">:</span>
+            <span class="n">song_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_extract_song_name</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">song_name</span><span class="p">:</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;song_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">song_name</span>
+        
+        <span class="c1"># Extract volume for volume commands</span>
+        <span class="k">elif</span> <span class="n">intent</span> <span class="ow">in</span> <span class="p">[</span><span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_SET</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_UP</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">MUSIC_VOLUME_DOWN</span><span class="p">]:</span>
+            <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_patterns</span><span class="p">[</span><span class="s1">&#39;volume_number&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;volume&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+        
+        <span class="k">return</span> <span class="n">entities</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extract_song_name</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Extract song name from play command&quot;&quot;&quot;</span>
+        <span class="c1"># Try direct extraction after &#39;play&#39;</span>
+        <span class="n">match</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">entity_patterns</span><span class="p">[</span><span class="s1">&#39;song_name_after_play&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
+            <span class="n">song_name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            <span class="c1"># Remove common filler words</span>
+            <span class="k">for</span> <span class="n">filler</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;the song&#39;</span><span class="p">,</span> <span class="s1">&#39;song&#39;</span><span class="p">,</span> <span class="s1">&#39;music&#39;</span><span class="p">,</span> <span class="s1">&#39;please&#39;</span><span class="p">,</span> <span class="s1">&#39;for me&#39;</span><span class="p">]:</span>
+                <span class="n">song_name</span> <span class="o">=</span> <span class="n">song_name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">filler</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+            
+            <span class="k">if</span> <span class="n">song_name</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">song_name</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">song_name</span>
+        
+        <span class="k">return</span> <span class="kc">None</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_extract_with_spacy</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Use spaCy for advanced entity extraction&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">SPACY_AVAILABLE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">{}</span>
+        
+        <span class="n">entities</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="n">doc</span> <span class="o">=</span> <span class="n">nlp</span><span class="p">(</span><span class="n">command</span><span class="p">)</span>
+        
+        <span class="c1"># Extract named entities</span>
+        <span class="k">for</span> <span class="n">ent</span> <span class="ow">in</span> <span class="n">doc</span><span class="o">.</span><span class="n">ents</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;PERSON&#39;</span><span class="p">,</span> <span class="s1">&#39;ORG&#39;</span><span class="p">,</span> <span class="s1">&#39;WORK_OF_ART&#39;</span><span class="p">]:</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;potential_song&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span>
+            <span class="k">elif</span> <span class="n">ent</span><span class="o">.</span><span class="n">label_</span> <span class="o">==</span> <span class="s1">&#39;CARDINAL&#39;</span><span class="p">:</span>
+                <span class="n">entities</span><span class="p">[</span><span class="s1">&#39;number&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="p">)</span> <span class="k">if</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">isdigit</span><span class="p">()</span> <span class="k">else</span> <span class="n">ent</span><span class="o">.</span><span class="n">text</span>
+        
+        <span class="k">return</span> <span class="n">entities</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_requires_ai</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">intent</span><span class="p">:</span> <span class="n">IntentType</span><span class="p">,</span> <span class="n">confidence</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">command</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Determine if command needs AI processing&quot;&quot;&quot;</span>
+        <span class="c1"># Low confidence = needs AI</span>
+        <span class="k">if</span> <span class="n">confidence</span> <span class="o">&lt;</span> <span class="mf">0.6</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="c1"># Information queries need AI</span>
+        <span class="k">if</span> <span class="n">intent</span> <span class="ow">in</span> <span class="p">[</span><span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHAT</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHO</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHERE</span><span class="p">,</span>
+                      <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHEN</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_WHY</span><span class="p">,</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">INFO_HOW</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="c1"># Conversation intent needs AI</span>
+        <span class="k">if</span> <span class="n">intent</span> <span class="o">==</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">CONVERSATION</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="c1"># Unknown intent needs AI</span>
+        <span class="k">if</span> <span class="n">intent</span> <span class="o">==</span> <span class="n">IntentType</span><span class="o">.</span><span class="n">UNKNOWN</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="c1"># Everything else can be handled directly</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+
+<span class="c1"># Global instance</span>
+<span class="n">_intent_matcher</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">IntentMatcher</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="get_intent_matcher">
+<a class="viewcode-back" href="../../../modules/intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.get_intent_matcher">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_intent_matcher</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">IntentMatcher</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get or create global intent matcher instance&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_intent_matcher</span>
+    <span class="k">if</span> <span class="n">_intent_matcher</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_intent_matcher</span> <span class="o">=</span> <span class="n">IntentMatcher</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">_intent_matcher</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

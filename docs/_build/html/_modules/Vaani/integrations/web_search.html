@@ -1,0 +1,1604 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaani.integrations.web_search &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Vaani/integrations/web_search';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vaani.integrations.web_search</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for Vaani.integrations.web_search</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Web Search Integration - Real-Time Information</span>
+<span class="sd">=================================================</span>
+
+<span class="sd">Features:</span>
+<span class="sd">- DuckDuckGo search integration (privacy-focused)</span>
+<span class="sd">- Wikipedia integration for encyclopedic information</span>
+<span class="sd">- Google Search scraping fallback</span>
+<span class="sd">- Result parsing and summarization</span>
+<span class="sd">- Source attribution</span>
+<span class="sd">- Caching for repeated queries</span>
+<span class="sd">- Rate limiting and error handling</span>
+<span class="sd">- Multi-source aggregation</span>
+
+<span class="sd">Searches the web to answer your questions with current, accurate</span>
+<span class="sd">information. Prioritizes privacy-friendly sources like DuckDuckGo</span>
+<span class="sd">and Wikipedia.</span>
+
+<span class="sd">Vaani Voice Assistant</span>
+<span class="sd">Copyright (c) 2026 Aman Kumar Pandey.</span>
+<span class="sd">All Rights Reserved.</span>
+
+<span class="sd">This file is part of the Vaani Voice Assistant core and is proprietary.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.logger</span><span class="w"> </span><span class="kn">import</span> <span class="n">VaaniLogger</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..utils.error_handler</span><span class="w"> </span><span class="kn">import</span> <span class="n">error_handler</span><span class="p">,</span> <span class="n">RecoveryAction</span><span class="p">,</span> <span class="n">ErrorSeverity</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">VaaniLogger</span><span class="o">.</span><span class="n">get_logger</span><span class="p">(</span><span class="s2">&quot;Web Search&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">duckduckgo_search</span><span class="w"> </span><span class="kn">import</span> <span class="n">DDGS</span>
+    <span class="n">DDGS_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">DDGS_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;duckduckgo-search not installed (using Google Search grounding instead)&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">bs4</span><span class="w"> </span><span class="kn">import</span> <span class="n">BeautifulSoup</span>
+    <span class="n">WEB_SCRAPING_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">WEB_SCRAPING_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;requests/beautifulsoup4 not available&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">googlesearch</span><span class="w"> </span><span class="kn">import</span> <span class="n">search</span> <span class="k">as</span> <span class="n">google_search</span>
+    <span class="n">GOOGLE_SEARCH_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">GOOGLE_SEARCH_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;googlesearch-python not installed (optional)&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">wikipedia</span>
+    <span class="n">WIKIPEDIA_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">wikipedia</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>  <span class="c1"># Default to English, can be changed dynamically</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Wikipedia integration enabled&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">WIKIPEDIA_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;wikipedia library not installed (optional - pip install wikipedia)&quot;</span><span class="p">)</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">wikipedia</span>
+    <span class="n">WIKIPEDIA_AVAILABLE</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="n">wikipedia</span><span class="o">.</span><span class="n">set_lang</span><span class="p">(</span><span class="s1">&#39;en&#39;</span><span class="p">)</span>  <span class="c1"># Default to English</span>
+<span class="k">except</span> <span class="ne">ImportError</span><span class="p">:</span>
+    <span class="n">WIKIPEDIA_AVAILABLE</span> <span class="o">=</span> <span class="kc">False</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;wikipedia library not installed (optional)&quot;</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="SearchHelper">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">SearchHelper</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Intelligent web search with summarization&quot;&quot;&quot;</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">Session</span><span class="p">()</span> <span class="k">if</span> <span class="n">WEB_SCRAPING_AVAILABLE</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">headers</span><span class="o">.</span><span class="n">update</span><span class="p">({</span>
+            <span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36&#39;</span>
+        <span class="p">})</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s2">&quot;Web search engine initialized&quot;</span><span class="p">)</span>
+    
+<div class="viewcode-block" id="SearchHelper.validate_query">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.validate_query">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">validate_query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Validate if query is suitable for search (not just stop words)</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: The raw search query</span>
+<span class="sd">            </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            True if query is valid for search</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">query</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Normalize</span>
+        <span class="n">clean</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        
+        <span class="c1"># known trigger phrases that might be passed as the whole query</span>
+        <span class="n">triggers</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;search for&#39;</span><span class="p">,</span> <span class="s1">&#39;tell me about&#39;</span><span class="p">,</span> <span class="s1">&#39;what is&#39;</span><span class="p">,</span> <span class="s1">&#39;who is&#39;</span><span class="p">,</span> 
+            <span class="s1">&#39;find out&#39;</span><span class="p">,</span> <span class="s1">&#39;look up&#39;</span><span class="p">,</span> <span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="s1">&#39;find&#39;</span><span class="p">,</span> <span class="s1">&#39;tell me&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;give me info&#39;</span><span class="p">,</span> <span class="s1">&#39;can you search&#39;</span><span class="p">,</span> <span class="s1">&#39;google&#39;</span>
+        <span class="p">]</span>
+        
+        <span class="c1"># If query EXACTLY matches a trigger, it&#39;s invalid (user just said &quot;search&quot;)</span>
+        <span class="k">if</span> <span class="n">clean</span> <span class="ow">in</span> <span class="n">triggers</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Check against stop words if it&#39;s very short</span>
+        <span class="n">stop_words</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;the&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;an&#39;</span><span class="p">,</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span> <span class="s1">&#39;on&#39;</span><span class="p">,</span> <span class="s1">&#39;at&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span> <span class="s1">&#39;for&#39;</span><span class="p">,</span> <span class="s1">&#39;of&#39;</span><span class="p">,</span> <span class="s1">&#39;with&#39;</span><span class="p">,</span> <span class="s1">&#39;by&#39;</span><span class="p">}</span>
+        <span class="k">if</span> <span class="n">clean</span> <span class="ow">in</span> <span class="n">stop_words</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
+            
+        <span class="c1"># Must be at least 2 characters</span>
+        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">clean</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="SearchHelper.search">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.search">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="p">[])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search the web and return results with multi-engine fallback</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: Search query</span>
+<span class="sd">            max_results: Maximum number of results to return</span>
+<span class="sd">            language: Language code (en, hi, es, fr, de, ja, ko, zh, ru, ar, pt)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            List of dicts with &#39;title&#39;, &#39;link&#39;, &#39;snippet&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Searching web for: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2"> (language: </span><span class="si">{</span><span class="n">language</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Try DuckDuckGo first (best for privacy and multilingual)</span>
+        <span class="k">if</span> <span class="n">DDGS_AVAILABLE</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="c1"># Map language codes to DuckDuckGo regions</span>
+                <span class="n">region_map</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="s1">&#39;wt-wt&#39;</span><span class="p">,</span>  <span class="c1"># Worldwide</span>
+                    <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="s1">&#39;in-en&#39;</span><span class="p">,</span>  <span class="c1"># India</span>
+                    <span class="s1">&#39;es&#39;</span><span class="p">:</span> <span class="s1">&#39;es-es&#39;</span><span class="p">,</span>  <span class="c1"># Spain</span>
+                    <span class="s1">&#39;fr&#39;</span><span class="p">:</span> <span class="s1">&#39;fr-fr&#39;</span><span class="p">,</span>  <span class="c1"># France</span>
+                    <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="s1">&#39;de-de&#39;</span><span class="p">,</span>  <span class="c1"># Germany</span>
+                    <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="s1">&#39;jp-jp&#39;</span><span class="p">,</span>  <span class="c1"># Japan</span>
+                    <span class="s1">&#39;ko&#39;</span><span class="p">:</span> <span class="s1">&#39;kr-kr&#39;</span><span class="p">,</span>  <span class="c1"># Korea</span>
+                    <span class="s1">&#39;zh&#39;</span><span class="p">:</span> <span class="s1">&#39;cn-zh&#39;</span><span class="p">,</span>  <span class="c1"># China</span>
+                    <span class="s1">&#39;ru&#39;</span><span class="p">:</span> <span class="s1">&#39;ru-ru&#39;</span><span class="p">,</span>  <span class="c1"># Russia</span>
+                    <span class="s1">&#39;ar&#39;</span><span class="p">:</span> <span class="s1">&#39;xa-ar&#39;</span><span class="p">,</span>  <span class="c1"># Arabia</span>
+                    <span class="s1">&#39;pt&#39;</span><span class="p">:</span> <span class="s1">&#39;br-pt&#39;</span><span class="p">,</span>  <span class="c1"># Brazil</span>
+                <span class="p">}</span>
+                <span class="n">region</span> <span class="o">=</span> <span class="n">region_map</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="s1">&#39;wt-wt&#39;</span><span class="p">)</span>
+                
+                <span class="k">with</span> <span class="n">DDGS</span><span class="p">()</span> <span class="k">as</span> <span class="n">ddgs</span><span class="p">:</span>
+                    <span class="n">search_results</span> <span class="o">=</span> <span class="n">ddgs</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="n">region</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">)</span>
+                    
+                    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">search_results</span><span class="p">:</span>
+                        <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                            <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                            <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                            <span class="s1">&#39;snippet&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                        <span class="p">})</span>
+                
+                <span class="k">if</span> <span class="n">results</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> results via DuckDuckGo&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">results</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;DuckDuckGo search failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Fallback to Google Search scraping</span>
+        <span class="k">if</span> <span class="n">GOOGLE_SEARCH_AVAILABLE</span><span class="p">:</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+                <span class="c1"># Use googlesearch-python library</span>
+                <span class="n">search_results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">google_search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">num_results</span><span class="o">=</span><span class="n">max_results</span><span class="p">,</span> <span class="n">lang</span><span class="o">=</span><span class="n">language</span><span class="p">))</span>
+                
+                <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">search_results</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">idx</span> <span class="o">&gt;=</span> <span class="n">max_results</span><span class="p">:</span>
+                        <span class="k">break</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Result </span><span class="si">{</span><span class="n">idx</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                        <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+                        <span class="s1">&#39;snippet&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+                    <span class="p">})</span>
+                
+                <span class="k">if</span> <span class="n">results</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> results via Google&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="n">results</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Google search failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;All web search methods failed - no search engines available&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">[]</span></div>
+
+    
+<div class="viewcode-block" id="SearchHelper.search_and_summarize">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.search_and_summarize">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="s2">&quot;I couldn&#39;t complete the search.&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_and_summarize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_results</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search web and return a natural conversational summary</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: Search query</span>
+<span class="sd">            max_results: Maximum results to consider (increased from 3 to 5 for better coverage)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Natural language summary optimized for speech</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate query first</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_query</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;I need a specific topic to search for. What would you like to know?&quot;</span>
+
+        <span class="n">results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">max_results</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">results</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;I couldn&#39;t find any information about that online right now. Could you try rephrasing your question?&quot;</span>
+        
+        <span class="c1"># Extract meaningful content from results</span>
+        <span class="n">content_pieces</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">results</span><span class="p">):</span>
+            <span class="n">title</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">snippet</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;snippet&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            <span class="n">link</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># Clean snippet</span>
+            <span class="k">if</span> <span class="n">snippet</span><span class="p">:</span>
+                <span class="n">cleaned</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">snippet</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">cleaned</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="p">:</span>  <span class="c1"># Minimum content length</span>
+                    <span class="n">content_pieces</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">cleaned</span><span class="p">,</span>
+                        <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span>
+                        <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="n">idx</span><span class="p">,</span>
+                        <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">link</span>
+                    <span class="p">})</span>
+        
+        <span class="c1"># If no snippets, try fetching page content from top result</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">content_pieces</span> <span class="ow">and</span> <span class="n">results</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;No snippets available, fetching page content...&quot;</span><span class="p">)</span>
+            <span class="n">top_result</span> <span class="o">=</span> <span class="n">results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">page_content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_page_content</span><span class="p">(</span><span class="n">top_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span> <span class="n">max_length</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">page_content</span><span class="p">:</span>
+                <span class="n">content_pieces</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                    <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">page_content</span><span class="p">,</span>
+                    <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">top_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;a website&#39;</span><span class="p">),</span>
+                    <span class="s1">&#39;rank&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s1">&#39;link&#39;</span><span class="p">:</span> <span class="n">top_result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="p">})</span>
+        
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">content_pieces</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;I found </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2"> sources about that, but couldn&#39;t extract clear information. Try asking in a different way?&quot;</span>
+        
+        <span class="c1"># Build natural conversational summary</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_build_conversational_summary</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">content_pieces</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">))</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📝 Generated summary (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">content_pieces</span><span class="p">)</span><span class="si">}</span><span class="s2"> sources)&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">summary</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clean_text_for_speech</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Enhanced text cleaning optimized for speech synthesis&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        
+        <span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+        
+        <span class="c1"># Remove URLs</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;http\S+|www\.\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Remove email addresses</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\S+@\S+&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Remove content in brackets and parentheses that&#39;s typically metadata</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\[.*?\]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\(\d+\)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Remove citation numbers like (1), (2)</span>
+        
+        <span class="c1"># Remove dates in various formats</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d{1,2}/\d{1,2}/\d{2,4}&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\d</span><span class="si">{4}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">-\d</span><span class="si">{2}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Remove &quot;Read more&quot;, &quot;Click here&quot; type suffixes</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(read more|click here|learn more|see more|continue reading).*$&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+        
+        <span class="c1"># Remove multiple spaces and newlines</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Remove special characters except basic punctuation</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s.,!?;:</span><span class="se">\&#39;</span><span class="s1">\-()]&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Clean up multiple punctuation</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[.,!?;:]{2,}&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Trim and capitalize properly</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        
+        <span class="c1"># Ensure ends with punctuation</span>
+        <span class="k">if</span> <span class="n">text</span> <span class="ow">and</span> <span class="n">text</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;.!?&#39;</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+        
+        <span class="k">return</span> <span class="n">text</span>
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_build_conversational_summary</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content_pieces</span><span class="p">:</span> <span class="nb">list</span><span class="p">,</span> <span class="n">total_results</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Build natural conversational summary from content pieces&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">content_pieces</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;I couldn&#39;t find specific information.&quot;</span>
+        
+        <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+        
+        <span class="n">summary_parts</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Natural opening based on query type</span>
+        <span class="n">query_lower</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="n">openings</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s1">&#39;what&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s what I found:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me tell you:&quot;</span><span class="p">,</span> <span class="s2">&quot;Based on my search:&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;who&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s who that is:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me tell you about them:&quot;</span><span class="p">,</span> <span class="s2">&quot;From what I found:&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;when&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s when that happened:&quot;</span><span class="p">,</span> <span class="s2">&quot;According to my search:&quot;</span><span class="p">,</span> <span class="s2">&quot;From what I found:&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;where&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s where that is:&quot;</span><span class="p">,</span> <span class="s2">&quot;Based on my search:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me tell you:&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;how&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s how it works:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me explain:&quot;</span><span class="p">,</span> <span class="s2">&quot;Here&#39;s what I learned:&quot;</span><span class="p">],</span>
+            <span class="s1">&#39;why&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s why:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me explain:&quot;</span><span class="p">,</span> <span class="s2">&quot;According to my research:&quot;</span><span class="p">]</span>
+        <span class="p">}</span>
+        
+        <span class="c1"># Select appropriate opening</span>
+        <span class="n">opening</span> <span class="o">=</span> <span class="s2">&quot;Here&#39;s what I found:&quot;</span>
+        <span class="k">for</span> <span class="n">question_word</span><span class="p">,</span> <span class="n">phrases</span> <span class="ow">in</span> <span class="n">openings</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+            <span class="k">if</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">question_word</span><span class="p">):</span>
+                <span class="n">opening</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">phrases</span><span class="p">)</span>
+                <span class="k">break</span>
+        
+        <span class="n">summary_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">opening</span><span class="p">)</span>
+        
+        <span class="c1"># Add primary content (from top result)</span>
+        <span class="n">primary</span> <span class="o">=</span> <span class="n">content_pieces</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">primary_text</span> <span class="o">=</span> <span class="n">primary</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+        
+        <span class="c1"># Limit primary content length for speech</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">primary_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+            <span class="n">primary_text</span> <span class="o">=</span> <span class="n">primary_text</span><span class="p">[:</span><span class="mi">250</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">primary_text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+                <span class="n">primary_text</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+        
+        <span class="n">summary_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">primary_text</span><span class="p">)</span>
+        
+        <span class="c1"># Add supporting information from second result if available</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">content_pieces</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">secondary</span> <span class="o">=</span> <span class="n">content_pieces</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">secondary_text</span> <span class="o">=</span> <span class="n">secondary</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+            
+            <span class="c1"># Vary connection phrases</span>
+            <span class="n">connectors</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;Additionally,&quot;</span><span class="p">,</span> <span class="s2">&quot;Also,&quot;</span><span class="p">,</span> <span class="s2">&quot;Furthermore,&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;Moreover,&quot;</span><span class="p">,</span> <span class="s2">&quot;In addition,&quot;</span><span class="p">,</span> <span class="s2">&quot;Another source mentions:&quot;</span>
+            <span class="p">]</span>
+            
+            <span class="c1"># Limit secondary content</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">secondary_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+                <span class="n">secondary_text</span> <span class="o">=</span> <span class="n">secondary_text</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+            
+            <span class="n">summary_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">connectors</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">secondary_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Add source attribution for credibility</span>
+        <span class="k">if</span> <span class="n">total_results</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">summary_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;I found </span><span class="si">{</span><span class="n">total_results</span><span class="si">}</span><span class="s2"> sources with more information if you need it.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">primary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">):</span>
+            <span class="n">summary_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This information is from </span><span class="si">{</span><span class="n">primary</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">.&quot;</span><span class="p">)</span>
+        
+        <span class="n">summary</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">summary_parts</span><span class="p">)</span>
+        
+        <span class="c1"># Final cleanup</span>
+        <span class="n">summary</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">summary</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">summary</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+    
+<div class="viewcode-block" id="SearchHelper.fetch_page_content">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.fetch_page_content">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fetch_page_content</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">url</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_length</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch and extract main content from a web page with improved cleaning</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            url: URL to fetch</span>
+<span class="sd">            max_length: Maximum content length</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Cleaned text content optimized for speech, or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">WEB_SCRAPING_AVAILABLE</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="s2">&quot;Web scraping not available (requests/bs4 missing)&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Fetching page: </span><span class="si">{</span><span class="n">url</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+            <span class="n">response</span><span class="o">.</span><span class="n">raise_for_status</span><span class="p">()</span>
+            
+            <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+            
+            <span class="c1"># Remove unwanted elements</span>
+            <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">soup</span><span class="p">([</span><span class="s1">&#39;script&#39;</span><span class="p">,</span> <span class="s1">&#39;style&#39;</span><span class="p">,</span> <span class="s1">&#39;nav&#39;</span><span class="p">,</span> <span class="s1">&#39;footer&#39;</span><span class="p">,</span> <span class="s1">&#39;header&#39;</span><span class="p">,</span> <span class="s1">&#39;aside&#39;</span><span class="p">,</span> <span class="s1">&#39;iframe&#39;</span><span class="p">,</span> <span class="s1">&#39;noscript&#39;</span><span class="p">]):</span>
+                <span class="n">element</span><span class="o">.</span><span class="n">decompose</span><span class="p">()</span>
+            
+            <span class="c1"># Try to find main content area</span>
+            <span class="n">main_content</span> <span class="o">=</span> <span class="kc">None</span>
+            
+            <span class="c1"># Look for common content containers</span>
+            <span class="n">content_selectors</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="p">(</span><span class="s1">&#39;article&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+                <span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="p">{}),</span>
+                <span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;main-content&#39;</span><span class="p">,</span> <span class="s1">&#39;post-content&#39;</span><span class="p">,</span> <span class="s1">&#39;article-content&#39;</span><span class="p">]}),</span>
+                <span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">,</span> <span class="s1">&#39;main-content&#39;</span><span class="p">,</span> <span class="s1">&#39;article-body&#39;</span><span class="p">]})</span>
+            <span class="p">]</span>
+            
+            <span class="k">for</span> <span class="n">tag</span><span class="p">,</span> <span class="n">attrs</span> <span class="ow">in</span> <span class="n">content_selectors</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">attrs</span><span class="p">:</span>
+                    <span class="n">main_content</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">tag</span><span class="p">,</span> <span class="n">attrs</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">main_content</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="n">tag</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">main_content</span><span class="p">:</span>
+                    <span class="k">break</span>
+            
+            <span class="c1"># Fallback to body if no main content found</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">main_content</span><span class="p">:</span>
+                <span class="n">main_content</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;body&#39;</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">main_content</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;No content container found&quot;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            
+            <span class="c1"># Get text from paragraphs for better quality</span>
+            <span class="n">paragraphs</span> <span class="o">=</span> <span class="n">main_content</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">paragraphs</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">p</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">paragraphs</span><span class="p">[:</span><span class="mi">5</span><span class="p">]])</span>  <span class="c1"># First 5 paragraphs</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">main_content</span><span class="o">.</span><span class="n">get_text</span><span class="p">()</span>
+            
+            <span class="c1"># Clean text for speech</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            
+            <span class="c1"># Limit length</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
+                <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="p">[:</span><span class="n">max_length</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+                    <span class="n">text</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+            
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Fetched </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">text</span> <span class="k">if</span> <span class="n">text</span> <span class="k">else</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Error fetching page: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_clean_text</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Clean and normalize text (legacy method, use _clean_text_for_speech instead)&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;&quot;</span>
+        
+        <span class="c1"># Remove extra whitespace</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Remove special characters that don&#39;t sound good</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;[^\w\s.,!?;:\-()]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+        
+        <span class="c1"># Trim</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        
+        <span class="k">return</span> <span class="n">text</span>
+    
+<div class="viewcode-block" id="SearchHelper.get_instant_answer">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.get_instant_answer">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_instant_answer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Get instant answer from DuckDuckGo (for factual queries like &#39;weather&#39;, &#39;time in X&#39;)&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">DDGS_AVAILABLE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚡ Trying instant answer for: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="k">with</span> <span class="n">DDGS</span><span class="p">()</span> <span class="k">as</span> <span class="n">ddgs</span><span class="p">:</span>
+                <span class="c1"># Get instant answer</span>
+                <span class="n">answer_results</span> <span class="o">=</span> <span class="n">ddgs</span><span class="o">.</span><span class="n">answers</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+                
+                <span class="k">if</span> <span class="n">answer_results</span><span class="p">:</span>
+                    <span class="k">for</span> <span class="n">answer</span> <span class="ow">in</span> <span class="n">answer_results</span><span class="p">:</span>
+                        <span class="n">text</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;text&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">text</span><span class="p">:</span>
+                            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Got instant answer (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars)&quot;</span><span class="p">)</span>
+                            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Instant answer failed: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="SearchHelper.search_wikipedia">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.search_wikipedia">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_wikipedia</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sentences</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Search Wikipedia and get summary</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: Search query</span>
+<span class="sd">            sentences: Number of sentences to return</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Dict with &#39;summary&#39;, &#39;title&#39;, &#39;url&#39; or None</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">WIKIPEDIA_AVAILABLE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">None</span>
+        
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📚 Searching Wikipedia for: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Search for pages</span>
+            <span class="n">search_results</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">results</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+            
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">search_results</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">None</span>
+            
+            <span class="c1"># Get summary of top result</span>
+            <span class="n">page_title</span> <span class="o">=</span> <span class="n">search_results</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">summary</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">page_title</span><span class="p">,</span> <span class="n">sentences</span><span class="o">=</span><span class="n">sentences</span><span class="p">,</span> <span class="n">auto_suggest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            <span class="n">page</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">page_title</span><span class="p">,</span> <span class="n">auto_suggest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+            
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Wikipedia: Found &#39;</span><span class="si">{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">&#39; (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">summary</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars)&quot;</span><span class="p">)</span>
+            
+            <span class="k">return</span> <span class="p">{</span>
+                <span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="n">summary</span><span class="p">,</span>
+                <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">page_title</span><span class="p">,</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="s1">&#39;Wikipedia&#39;</span>
+            <span class="p">}</span>
+            
+        <span class="k">except</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">DisambiguationError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="c1"># Multiple meanings - pick first option</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">options</span><span class="p">:</span>
+                    <span class="n">page_title</span> <span class="o">=</span> <span class="n">e</span><span class="o">.</span><span class="n">options</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="n">summary</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">summary</span><span class="p">(</span><span class="n">page_title</span><span class="p">,</span> <span class="n">sentences</span><span class="o">=</span><span class="n">sentences</span><span class="p">,</span> <span class="n">auto_suggest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    <span class="n">page</span> <span class="o">=</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">page</span><span class="p">(</span><span class="n">page_title</span><span class="p">,</span> <span class="n">auto_suggest</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                    
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Wikipedia (disambiguated): &#39;</span><span class="si">{</span><span class="n">page_title</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+                    <span class="k">return</span> <span class="p">{</span>
+                        <span class="s1">&#39;summary&#39;</span><span class="p">:</span> <span class="n">summary</span><span class="p">,</span>
+                        <span class="s1">&#39;title&#39;</span><span class="p">:</span> <span class="n">page_title</span><span class="p">,</span>
+                        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">page</span><span class="o">.</span><span class="n">url</span><span class="p">,</span>
+                        <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="s1">&#39;Wikipedia&#39;</span>
+                    <span class="p">}</span>
+            <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+                <span class="k">pass</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="n">wikipedia</span><span class="o">.</span><span class="n">exceptions</span><span class="o">.</span><span class="n">PageError</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wikipedia: Page not found for &#39;</span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&#39;&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span>
+            
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Wikipedia search error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">None</span></div>
+
+    
+<div class="viewcode-block" id="SearchHelper.fetch_multiple_pages">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.fetch_multiple_pages">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="p">[])</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">fetch_multiple_pages</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">urls</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">],</span> <span class="n">max_per_page</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">300</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Fetch content from multiple URLs in parallel-like fashion</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            urls: List of URLs to fetch</span>
+<span class="sd">            max_per_page: Max characters per page</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            List of dicts with &#39;url&#39;, &#39;content&#39;</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">WEB_SCRAPING_AVAILABLE</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;📥 Fetching content from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2"> URLs...&quot;</span><span class="p">)</span>
+        
+        <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="k">for</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="p">[:</span><span class="mi">3</span><span class="p">]:</span>  <span class="c1"># Limit to first 3 URLs</span>
+            <span class="k">try</span><span class="p">:</span>
+                <span class="n">content</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_page_content</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">max_length</span><span class="o">=</span><span class="n">max_per_page</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">content</span><span class="p">:</span>
+                    <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">url</span><span class="p">,</span>
+                        <span class="s1">&#39;content&#39;</span><span class="p">:</span> <span class="n">content</span>
+                    <span class="p">})</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Fetched: </span><span class="si">{</span><span class="n">url</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2">... (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">content</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars)&quot;</span><span class="p">)</span>
+            <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Failed to fetch </span><span class="si">{</span><span class="n">url</span><span class="p">[:</span><span class="mi">50</span><span class="p">]</span><span class="si">}</span><span class="s2">...: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="k">continue</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Successfully fetched </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">results</span><span class="p">)</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)</span><span class="si">}</span><span class="s2"> pages&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">results</span></div>
+
+    
+<div class="viewcode-block" id="SearchHelper.advanced_search_and_synthesize">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.advanced_search_and_synthesize">[docs]</a>
+    <span class="nd">@error_handler</span><span class="p">(</span><span class="n">default_return</span><span class="o">=</span><span class="s2">&quot;I couldn&#39;t complete the comprehensive search.&quot;</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">advanced_search_and_synthesize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">max_sources</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Advanced multi-source search combining:</span>
+<span class="sd">        - DuckDuckGo/Google search</span>
+<span class="sd">        - Wikipedia knowledge</span>
+<span class="sd">        - Direct page content fetching</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: Search query</span>
+<span class="sd">            max_sources: Maximum sources to use</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Comprehensive natural language summary</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Validate query first</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">validate_query</span><span class="p">(</span><span class="n">query</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;Please provide a specific topic for me to research.&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;🔍 Advanced multi-source search for: </span><span class="si">{</span><span class="n">query</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="n">all_content</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Source 1: Wikipedia (authoritative, structured)</span>
+        <span class="n">wiki_result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_wikipedia</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">sentences</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">wiki_result</span><span class="p">:</span>
+            <span class="n">all_content</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">wiki_result</span><span class="p">[</span><span class="s1">&#39;summary&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;Wikipedia - </span><span class="si">{</span><span class="n">wiki_result</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+                <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">wiki_result</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">],</span>
+                <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>  <span class="c1"># High priority</span>
+                <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;encyclopedia&#39;</span>
+            <span class="p">})</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;✅ Added Wikipedia content&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Source 2: Web search (current, diverse)</span>
+        <span class="n">search_results</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">max_results</span><span class="o">=</span><span class="n">max_sources</span><span class="p">)</span>
+        
+        <span class="k">if</span> <span class="n">search_results</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Got </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">search_results</span><span class="p">)</span><span class="si">}</span><span class="s2"> search results&quot;</span><span class="p">)</span>
+            
+            <span class="c1"># Add search snippets</span>
+            <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">result</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">search_results</span><span class="p">[:</span><span class="mi">3</span><span class="p">]):</span>
+                <span class="n">snippet</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;snippet&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">snippet</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">snippet</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">30</span><span class="p">:</span>
+                    <span class="n">all_content</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">snippet</span><span class="p">,</span>
+                        <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="s1">&#39;Web Source&#39;</span><span class="p">),</span>
+                        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">result</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">),</span>
+                        <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;search_snippet&#39;</span>
+                    <span class="p">})</span>
+            
+            <span class="c1"># Source 3: Fetch actual page content from top results</span>
+            <span class="n">urls_to_fetch</span> <span class="o">=</span> <span class="p">[</span><span class="n">r</span><span class="p">[</span><span class="s1">&#39;link&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">search_results</span><span class="p">[:</span><span class="mi">2</span><span class="p">]</span> <span class="k">if</span> <span class="n">r</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;link&#39;</span><span class="p">)]</span>
+            
+            <span class="k">if</span> <span class="n">urls_to_fetch</span><span class="p">:</span>
+                <span class="n">fetched_pages</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">fetch_multiple_pages</span><span class="p">(</span><span class="n">urls_to_fetch</span><span class="p">,</span> <span class="n">max_per_page</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
+                
+                <span class="k">for</span> <span class="n">page_data</span> <span class="ow">in</span> <span class="n">fetched_pages</span><span class="p">:</span>
+                    <span class="n">all_content</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+                        <span class="s1">&#39;text&#39;</span><span class="p">:</span> <span class="n">page_data</span><span class="p">[</span><span class="s1">&#39;content&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;source&#39;</span><span class="p">:</span> <span class="s1">&#39;Direct Page Content&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;url&#39;</span><span class="p">:</span> <span class="n">page_data</span><span class="p">[</span><span class="s1">&#39;url&#39;</span><span class="p">],</span>
+                        <span class="s1">&#39;priority&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                        <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;full_page&#39;</span>
+                    <span class="p">})</span>
+                
+                <span class="k">if</span> <span class="n">fetched_pages</span><span class="p">:</span>
+                    <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Added </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">fetched_pages</span><span class="p">)</span><span class="si">}</span><span class="s2"> full page contents&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Synthesize comprehensive response</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">all_content</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">&quot;I searched multiple sources but couldn&#39;t find reliable information about that. Could you rephrase your question?&quot;</span>
+        
+        <span class="n">comprehensive_answer</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_synthesize_multi_source_answer</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">all_content</span><span class="p">)</span>
+        
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Synthesized answer from </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_content</span><span class="p">)</span><span class="si">}</span><span class="s2"> sources (</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">comprehensive_answer</span><span class="p">)</span><span class="si">}</span><span class="s2"> chars)&quot;</span><span class="p">)</span>
+        
+        <span class="k">return</span> <span class="n">comprehensive_answer</span></div>
+
+    
+    <span class="k">def</span><span class="w"> </span><span class="nf">_synthesize_multi_source_answer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">content_pieces</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Synthesize natural answer from multiple diverse sources</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: Original query</span>
+<span class="sd">            content_pieces: List of dicts with &#39;text&#39;, &#39;source&#39;, &#39;priority&#39;, &#39;type&#39;</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            Natural conversational answer</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+        
+        <span class="c1"># Sort by priority (lower number = higher priority)</span>
+        <span class="n">sorted_content</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">content_pieces</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span> <span class="mi">99</span><span class="p">))</span>
+        
+        <span class="n">answer_parts</span> <span class="o">=</span> <span class="p">[]</span>
+        
+        <span class="c1"># Opening based on query type</span>
+        <span class="n">query_lower</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;what&#39;</span><span class="p">):</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s what I found:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me explain:&quot;</span><span class="p">,</span> <span class="s2">&quot;Based on multiple sources:&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;who&#39;</span><span class="p">):</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s who that is:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me tell you about them:&quot;</span><span class="p">,</span> <span class="s2">&quot;From my research:&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;how&#39;</span><span class="p">):</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s how it works:&quot;</span><span class="p">,</span> <span class="s2">&quot;Let me break it down:&quot;</span><span class="p">,</span> <span class="s2">&quot;From what I found:&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;when&#39;</span><span class="p">):</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s when that happened:&quot;</span><span class="p">,</span> <span class="s2">&quot;According to my sources:&quot;</span><span class="p">,</span> <span class="s2">&quot;From the information available:&quot;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">query_lower</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;where&#39;</span><span class="p">):</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s where that is:&quot;</span><span class="p">,</span> <span class="s2">&quot;Based on my search:&quot;</span><span class="p">,</span> <span class="s2">&quot;From multiple sources:&quot;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">openings</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Here&#39;s what I discovered:&quot;</span><span class="p">,</span> <span class="s2">&quot;Based on my research:&quot;</span><span class="p">,</span> <span class="s2">&quot;From various sources:&quot;</span><span class="p">]</span>
+        
+        <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">openings</span><span class="p">))</span>
+        
+        <span class="c1"># Primary content (highest priority source)</span>
+        <span class="k">if</span> <span class="n">sorted_content</span><span class="p">:</span>
+            <span class="n">primary</span> <span class="o">=</span> <span class="n">sorted_content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">primary_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">primary</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+            
+            <span class="c1"># Limit primary content</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">primary_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">250</span><span class="p">:</span>
+                <span class="n">primary_text</span> <span class="o">=</span> <span class="n">primary_text</span><span class="p">[:</span><span class="mi">250</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">primary_text</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
+                    <span class="n">primary_text</span> <span class="o">+=</span> <span class="s1">&#39;.&#39;</span>
+            
+            <span class="c1"># Add source attribution for Wikipedia</span>
+            <span class="k">if</span> <span class="n">primary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;encyclopedia&#39;</span><span class="p">:</span>
+                <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;According to Wikipedia, </span><span class="si">{</span><span class="n">primary_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">primary_text</span><span class="p">)</span>
+        
+        <span class="c1"># Secondary content (supporting information)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="n">secondary</span> <span class="o">=</span> <span class="n">sorted_content</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">secondary_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">secondary</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+            
+            <span class="c1"># Limit secondary</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">secondary_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">150</span><span class="p">:</span>
+                <span class="n">secondary_text</span> <span class="o">=</span> <span class="n">secondary_text</span><span class="p">[:</span><span class="mi">150</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+            
+            <span class="c1"># Vary connectors</span>
+            <span class="n">connectors</span> <span class="o">=</span> <span class="p">[</span>
+                <span class="s2">&quot;Additionally,&quot;</span><span class="p">,</span> <span class="s2">&quot;Furthermore,&quot;</span><span class="p">,</span> <span class="s2">&quot;Moreover,&quot;</span><span class="p">,</span> 
+                <span class="s2">&quot;From another source,&quot;</span><span class="p">,</span> <span class="s2">&quot;Also,&quot;</span><span class="p">,</span> <span class="s2">&quot;Another source mentions:&quot;</span>
+            <span class="p">]</span>
+            
+            <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">random</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">connectors</span><span class="p">)</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">secondary_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Tertiary content (if available and different type)</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sorted_content</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">tertiary</span> <span class="o">=</span> <span class="n">sorted_content</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">tertiary</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">)</span> <span class="o">!=</span> <span class="n">sorted_content</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;type&#39;</span><span class="p">):</span>
+                <span class="n">tertiary_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_clean_text_for_speech</span><span class="p">(</span><span class="n">tertiary</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">])</span>
+                
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">tertiary_text</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+                    <span class="n">tertiary_text</span> <span class="o">=</span> <span class="n">tertiary_text</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+                
+                <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Additional details: </span><span class="si">{</span><span class="n">tertiary_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        
+        <span class="c1"># Source count attribution</span>
+        <span class="n">unique_sources</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;source&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">content_pieces</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">unique_sources</span> <span class="o">&gt;</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;This information comes from </span><span class="si">{</span><span class="n">unique_sources</span><span class="si">}</span><span class="s2"> different sources including Wikipedia and verified websites.&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">unique_sources</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+            <span class="n">answer_parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;I verified this information across multiple sources.&quot;</span><span class="p">)</span>
+        
+        <span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">answer_parts</span><span class="p">)</span>
+        
+        <span class="c1"># Final cleanup</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\s+&#39;</span><span class="p">,</span> <span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="n">answer</span><span class="p">)</span>
+        <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        
+        <span class="c1"># Ensure reasonable length for speech</span>
+        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">answer</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="n">answer</span><span class="p">[:</span><span class="mi">500</span><span class="p">]</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="s1">&#39;.&#39;</span>
+        
+        <span class="k">return</span> <span class="n">answer</span>
+    
+<div class="viewcode-block" id="SearchHelper.should_search_web">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.SearchHelper.should_search_web">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">should_search_web</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">ai_confidence</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Determine if query should trigger web search</span>
+<span class="sd">        </span>
+<span class="sd">        Args:</span>
+<span class="sd">            query: User query</span>
+<span class="sd">            ai_confidence: AI&#39;s confidence in its answer (0-1)</span>
+<span class="sd">        </span>
+<span class="sd">        Returns:</span>
+<span class="sd">            True if web search recommended</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="c1"># Explicit search keywords</span>
+        <span class="n">search_keywords</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;search&#39;</span><span class="p">,</span> <span class="s1">&#39;look up&#39;</span><span class="p">,</span> <span class="s1">&#39;find out&#39;</span><span class="p">,</span> <span class="s1">&#39;what is&#39;</span><span class="p">,</span> <span class="s1">&#39;who is&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;when did&#39;</span><span class="p">,</span> <span class="s1">&#39;where is&#39;</span><span class="p">,</span> <span class="s1">&#39;latest&#39;</span><span class="p">,</span> <span class="s1">&#39;current&#39;</span><span class="p">,</span> <span class="s1">&#39;recent&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;news&#39;</span><span class="p">,</span> <span class="s1">&#39;today&#39;</span><span class="p">,</span> <span class="s1">&#39;now&#39;</span><span class="p">,</span> <span class="s1">&#39;update&#39;</span>
+        <span class="p">]</span>
+        
+        <span class="n">query_lower</span> <span class="o">=</span> <span class="n">query</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+        
+        <span class="c1"># Check for search keywords</span>
+        <span class="k">for</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">search_keywords</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">keyword</span> <span class="ow">in</span> <span class="n">query_lower</span><span class="p">:</span>
+                <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="c1"># Check AI confidence</span>
+        <span class="k">if</span> <span class="n">ai_confidence</span> <span class="o">&lt;</span> <span class="mf">0.3</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Low AI confidence - triggering web search&quot;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="kc">True</span>
+        
+        <span class="k">return</span> <span class="kc">False</span></div>
+</div>
+
+
+
+<span class="c1"># Global web search instance</span>
+<span class="n">_search_helper</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">SearchHelper</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="get_search">
+<a class="viewcode-back" href="../../../modules/integrations/Vaani.integrations.web_search.html#Vaani.integrations.web_search.get_search">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_search</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">SearchHelper</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get or create global web search instance&quot;&quot;&quot;</span>
+    <span class="k">global</span> <span class="n">_search_helper</span>
+    <span class="k">if</span> <span class="n">_search_helper</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">_search_helper</span> <span class="o">=</span> <span class="n">SearchHelper</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">_search_helper</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

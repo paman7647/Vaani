@@ -1,0 +1,1027 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaani.config.settings &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Vaani/config/settings';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vaani.config.settings</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for Vaani.config.settings</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Settings Manager - Configuration System</span>
+<span class="sd">==========================================</span>
+
+<span class="sd">Features:</span>
+<span class="sd">- Centralized configuration management</span>
+<span class="sd">- Three-tier priority: Environment → config.json → Defaults</span>
+<span class="sd">- API key management</span>
+<span class="sd">- Speech recognition parameters (thresholds, timeouts)</span>
+<span class="sd">- Voice preferences and language mapping</span>
+<span class="sd">- Wake word configuration with variations</span>
+<span class="sd">- Dynamic energy threshold adjustment</span>
+<span class="sd">- TTS interruption settings</span>
+<span class="sd">- Music ducking configuration</span>
+<span class="sd">- System paths (data, logs, temp, models)</span>
+
+<span class="sd">Loads and manages all configuration from environment variables,</span>
+<span class="sd">config.json, and built-in defaults. Single source of truth for</span>
+<span class="sd">all system settings.</span>
+
+<span class="sd">Vaani Voice Assistant</span>
+<span class="sd">Copyright (c) 2026 Aman Kumar Pandey.</span>
+<span class="sd">All Rights Reserved.</span>
+
+<span class="sd">This file is part of the Vaani Voice Assistant core and is proprietary.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Any</span>
+
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+
+<span class="c1"># Base paths</span>
+<span class="n">BASE_DIR</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">parent</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;data&quot;</span>
+<span class="n">LOGS_DIR</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;logs&quot;</span>
+<span class="n">TEMP_DIR</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;temp&quot;</span>
+
+<span class="c1"># Load external config if exists</span>
+<span class="n">CONFIG_FILE</span> <span class="o">=</span> <span class="n">BASE_DIR</span> <span class="o">/</span> <span class="s2">&quot;config.json&quot;</span>
+<span class="n">EXTERNAL_CONFIG</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">if</span> <span class="n">CONFIG_FILE</span><span class="o">.</span><span class="n">exists</span><span class="p">():</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">CONFIG_FILE</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">EXTERNAL_CONFIG</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;✅ Loaded external config from </span><span class="si">{</span><span class="n">CONFIG_FILE</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;⚠️ Could not load config.json: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="c1"># Helper to get setting with priority: Env &gt; External Config &gt; Default</span>
+<div class="viewcode-block" id="get_setting">
+<a class="viewcode-back" href="../../../modules/config/Vaani.config.settings.html#Vaani.config.settings.get_setting">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_setting</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">EXTERNAL_CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">key</span><span class="p">,</span> <span class="n">default</span><span class="p">))</span></div>
+
+
+<span class="c1"># Create directories if they don&#39;t exist</span>
+<span class="k">for</span> <span class="n">directory</span> <span class="ow">in</span> <span class="p">[</span><span class="n">DATA_DIR</span><span class="p">,</span> <span class="n">LOGS_DIR</span><span class="p">,</span> <span class="n">TEMP_DIR</span><span class="p">]:</span>
+    <span class="n">directory</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># API KEYS - CONFIGURE THESE</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># REQUIRED: Google Gemini API key(s)</span>
+<span class="c1"># Support multiple API keys separated by comma for rotation on quota exhaustion</span>
+<span class="c1"># Example: &quot;key1,key2,key3&quot; - will rotate through keys when quota exceeded</span>
+<span class="c1"># REQUIRED: Google Gemini API key(s)</span>
+<span class="c1"># Support multiple API keys separated by comma for rotation on quota exhaustion</span>
+<span class="c1"># Example: &quot;key1,key2,key3&quot; - will rotate through keys when quota exceeded</span>
+<span class="n">GOOGLE_API_KEY</span> <span class="o">=</span> <span class="n">get_setting</span><span class="p">(</span><span class="s2">&quot;GOOGLE_API_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;your-api-key-here&quot;</span><span class="p">)</span>
+<span class="n">GOOGLE_API_KEYS</span> <span class="o">=</span> <span class="p">[</span><span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">GOOGLE_API_KEY</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">key</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>  <span class="c1"># Parse multiple keys</span>
+
+<span class="c1"># Optional API keys</span>
+<span class="n">WEATHER_API_KEY</span> <span class="o">=</span> <span class="n">get_setting</span><span class="p">(</span><span class="s2">&quot;WEATHER_API_KEY&quot;</span><span class="p">,</span> <span class="s2">&quot;your-weather-api-key-here &quot;</span><span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># SPEECH RECOGNITION SETTINGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># Wake words and variations - Vani (वाणी) means &#39;voice/speech&#39; in Sanskrit</span>
+<span class="c1"># Added &#39;Shivani&#39; as common Indian name variant</span>
+<span class="n">WAKE_WORDS</span> <span class="o">=</span> <span class="n">EXTERNAL_CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;WAKE_WORDS&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;hey vani&#39;</span><span class="p">,</span> <span class="s1">&#39;vani&#39;</span><span class="p">,</span> <span class="s1">&#39;okay vani&#39;</span><span class="p">,</span> <span class="s1">&#39;hi vani&#39;</span><span class="p">,</span> <span class="s1">&#39;hello vani&#39;</span><span class="p">,</span> <span class="s1">&#39;hai vani&#39;</span><span class="p">,</span> <span class="s1">&#39;shivani&#39;</span><span class="p">,</span> <span class="s1">&#39;hey shivani&#39;</span><span class="p">])</span>
+<span class="n">WAKE_WORD_VARIATIONS</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;wani&#39;</span><span class="p">,</span> <span class="s1">&#39;vaani&#39;</span><span class="p">,</span> <span class="s1">&#39;vany&#39;</span><span class="p">,</span> <span class="s1">&#39;bani&#39;</span><span class="p">,</span> <span class="s1">&#39;वाणी&#39;</span><span class="p">,</span> <span class="s1">&#39;वानी&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;shivani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;shivanni&#39;</span><span class="p">,</span> <span class="s1">&#39;shibani&#39;</span><span class="p">,</span> <span class="s1">&#39;shivni&#39;</span><span class="p">,</span> <span class="s1">&#39;शिवानी&#39;</span><span class="p">],</span>  <span class="c1"># Common variations</span>
+    <span class="s1">&#39;hey vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hey vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hey wani&#39;</span><span class="p">,</span> <span class="s1">&#39;hay vani&#39;</span><span class="p">,</span> <span class="s1">&#39;hey vaani&#39;</span><span class="p">,</span> <span class="s1">&#39;hey bani&#39;</span><span class="p">,</span> <span class="s1">&#39;हे वाणी&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hey shivani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hey shivanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hey shibani&#39;</span><span class="p">,</span> <span class="s1">&#39;hay shivani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hai vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hai vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hai bani&#39;</span><span class="p">,</span> <span class="s1">&#39;high vani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hai shivani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hai shivanni&#39;</span><span class="p">,</span> <span class="s1">&#39;high shivani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;okay vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ok vani&#39;</span><span class="p">,</span> <span class="s1">&#39;okay vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;ok vanni&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hi vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hi vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hi wani&#39;</span><span class="p">,</span> <span class="s1">&#39;high vani&#39;</span><span class="p">,</span> <span class="s1">&#39;hi bani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hi shivani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hi shivanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hi shibani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hello vani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hello vanni&#39;</span><span class="p">,</span> <span class="s1">&#39;hello wani&#39;</span><span class="p">,</span> <span class="s1">&#39;hello bani&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;hello shivani&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hello shivanni&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Recognition settings</span>
+<span class="n">RECOGNITION_TIMEOUT</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">PHRASE_TIME_LIMIT</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">ENERGY_THRESHOLD</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;ENERGY_THRESHOLD&#39;</span><span class="p">,</span> <span class="mi">300</span><span class="p">))</span>  <span class="c1"># Base threshold</span>
+<span class="n">DYNAMIC_ENERGY_THRESHOLD</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># Adaptive thresholds for different scenarios</span>
+<span class="c1"># Note: Good values range from 50 to 4000 according to SpeechRecognition docs</span>
+<span class="c1"># Lower values = more sensitive = detects farther/quieter voices</span>
+<span class="c1"># Music is temporarily ducked to 60% during wake word listening for better detection</span>
+<span class="n">ENERGY_THRESHOLD_MUSIC</span> <span class="o">=</span> <span class="mi">60</span>    <span class="c1"># Absolute minimum (whisper detection during music)</span>
+<span class="n">ENERGY_THRESHOLD_TTS</span> <span class="o">=</span> <span class="mi">600</span>     <span class="c1"># Medium threshold during TTS</span>
+<span class="n">ENERGY_THRESHOLD_QUIET</span> <span class="o">=</span> <span class="mi">50</span>    <span class="c1"># Absolute minimum for maximum sensitivity</span>
+
+<span class="c1"># Interruption settings</span>
+<span class="n">ALLOW_TTS_INTERRUPTION</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Allow wake word during TTS</span>
+<span class="n">TTS_INTERRUPTION_DELAY</span> <span class="o">=</span> <span class="mf">2.0</span>   <span class="c1"># Wait 2s after TTS starts before allowing interrupt</span>
+<span class="n">PAUSE_THRESHOLD</span> <span class="o">=</span> <span class="mf">0.8</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># TEXT-TO-SPEECH SETTINGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># Voice preferences</span>
+<span class="c1"># Voice preferences</span>
+<span class="c1"># Voice preferences</span>
+<span class="c1"># Voice preferences</span>
+<span class="n">PREFERRED_VOICES</span> <span class="o">=</span> <span class="n">EXTERNAL_CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PREFERRED_VOICES&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;Samantha&#39;</span><span class="p">,</span> <span class="s1">&#39;Lekha&#39;</span><span class="p">,</span> <span class="s1">&#39;Damayanti&#39;</span><span class="p">,</span> <span class="s1">&#39;Piya&#39;</span><span class="p">,</span> <span class="s1">&#39;Soumya&#39;</span><span class="p">,</span> <span class="s1">&#39;Alex&#39;</span><span class="p">])</span>
+
+<span class="c1"># Language specific voice mapping</span>
+<span class="n">LANGUAGE_VOICE_MAP</span> <span class="o">=</span> <span class="n">EXTERNAL_CONFIG</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;LANGUAGE_VOICE_MAP&#39;</span><span class="p">,</span> <span class="p">{</span>
+    <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="s1">&#39;Lekha&#39;</span><span class="p">,</span>    <span class="c1"># Hindi</span>
+    <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="s1">&#39;Vani&#39;</span><span class="p">,</span>     <span class="c1"># Tamil</span>
+    <span class="s1">&#39;bn&#39;</span><span class="p">:</span> <span class="s1">&#39;Piya&#39;</span><span class="p">,</span>     <span class="c1"># Bengali</span>
+    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="s1">&#39;Lekha&#39;</span>     <span class="c1"># Indian English</span>
+<span class="p">})</span>
+<span class="n">SPEECH_RATE</span> <span class="o">=</span> <span class="mi">160</span>
+<span class="n">SPEECH_VOLUME</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Microphone preference: &#39;internal&#39;, &#39;external&#39;, &#39;system&#39; (default: &#39;internal&#39;)</span>
+<span class="n">MICROPHONE_TYPE</span> <span class="o">=</span> <span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;MICROPHONE_TYPE&#39;</span><span class="p">,</span> <span class="s1">&#39;internal&#39;</span><span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># AUDIO PLAYBACK SETTINGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># Music settings</span>
+<span class="n">DEFAULT_VOLUME</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;DEFAULT_VOLUME&#39;</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">))</span>
+<span class="n">MUSIC_DUCK_VOLUME</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;MUSIC_DUCK_VOLUME&#39;</span><span class="p">,</span> <span class="mf">0.15</span><span class="p">))</span>
+<span class="n">MAX_QUEUE_SIZE</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="n">BUFFER_SIZE</span> <span class="o">=</span> <span class="mi">512</span>
+<span class="n">DOWNLOAD_AUDIO</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Download audio files before playing (more reliable)</span>
+<span class="n">AUDIO_SAMPLE_RATE</span> <span class="o">=</span> <span class="mi">16000</span>
+
+<span class="c1"># VLC settings</span>
+<span class="n">VLC_NETWORK_CACHING</span> <span class="o">=</span> <span class="mi">3000</span>  <span class="c1"># milliseconds</span>
+<span class="n">VLC_QUIET_MODE</span> <span class="o">=</span> <span class="kc">True</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># AI SETTINGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># Gemini model configuration</span>
+<span class="n">AI_MODEL</span> <span class="o">=</span> <span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;AI_MODEL&#39;</span><span class="p">,</span> <span class="s2">&quot;gemini-2.5-flash-lite&quot;</span><span class="p">)</span>
+<span class="n">AI_TEMPERATURE</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;AI_TEMPERATURE&#39;</span><span class="p">,</span> <span class="mf">0.9</span><span class="p">))</span>
+<span class="n">AI_MAX_TOKENS</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;AI_MAX_TOKENS&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">))</span>
+
+<span class="c1"># Google Search grounding for real-time information</span>
+<span class="n">USE_GOOGLE_SEARCH_GROUNDING</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;USE_GOOGLE_SEARCH_GROUNDING&#39;</span><span class="p">,</span> <span class="s2">&quot;True&quot;</span><span class="p">))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">)</span>
+
+<span class="c1"># Response length control</span>
+<span class="c1"># Options: &#39;short&#39; (1-2 sentences), &#39;medium&#39; (2-4 sentences), &#39;long&#39; (detailed)</span>
+<span class="n">RESPONSE_LENGTH</span> <span class="o">=</span> <span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;RESPONSE_LENGTH&#39;</span><span class="p">,</span> <span class="s1">&#39;medium&#39;</span><span class="p">)</span>
+
+<span class="c1"># Conversation context</span>
+<span class="n">MAX_CONVERSATION_HISTORY</span> <span class="o">=</span> <span class="mi">30</span>  <span class="c1"># Increased for better context</span>
+<span class="n">CONTEXT_WINDOW_SIZE</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># SYSTEM BEHAVIOR</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="c1"># Debug and logging</span>
+<span class="c1"># Debug and logging</span>
+<span class="c1"># Check for DEV or DEBUG in environment</span>
+<span class="c1"># Debug and logging</span>
+<span class="c1"># Check for DEV or DEBUG in environment or config</span>
+<span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s2">&quot;DEV&quot;</span><span class="p">,</span> <span class="n">get_setting</span><span class="p">(</span><span class="s2">&quot;DEBUG_MODE&quot;</span><span class="p">,</span> <span class="s2">&quot;False&quot;</span><span class="p">)))</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">&quot;true&quot;</span><span class="p">,</span> <span class="s2">&quot;1&quot;</span><span class="p">,</span> <span class="s2">&quot;yes&quot;</span><span class="p">)</span>
+<span class="n">LOG_LEVEL</span> <span class="o">=</span> <span class="s2">&quot;DEBUG&quot;</span> <span class="k">if</span> <span class="n">DEBUG_MODE</span> <span class="k">else</span> <span class="s2">&quot;WARNING&quot;</span>
+<span class="n">LOG_MAX_BYTES</span> <span class="o">=</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span>  <span class="c1"># 1MB</span>
+<span class="n">LOG_BACKUP_COUNT</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="c1"># Threading</span>
+<span class="n">MAX_WORKER_THREADS</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">WAKE_WORD_CHECK_INTERVAL</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">MUSIC_MONITOR_INTERVAL</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># Timeout and retry settings</span>
+<span class="c1"># Timeout and retry settings</span>
+<span class="n">COMMAND_TIMEOUT</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">get_setting</span><span class="p">(</span><span class="s1">&#39;COMMAND_TIMEOUT&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>  <span class="c1"># Listen for 10 seconds after wake word detected</span>
+<span class="n">MAX_RETRY_ATTEMPTS</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">RETRY_DELAY</span> <span class="o">=</span> <span class="mf">1.0</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># DATABASE PATHS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="n">DB_PATH</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;vaani_database.db&quot;</span><span class="p">)</span>
+<span class="n">NOTES_DB_PATH</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;vaani_notes.db&quot;</span><span class="p">)</span>
+<span class="n">MEMORY_DB_PATH</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">DATA_DIR</span> <span class="o">/</span> <span class="s2">&quot;vaani_context.db&quot;</span><span class="p">)</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># FEATURE FLAGS</span>
+<span class="c1"># =============================================================================</span>
+
+<span class="n">FEATURES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;music_streaming&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;spotify_integration&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;smart_home&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;voice_notes&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;weather&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;news&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;translation&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;camera&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s1">&#39;location&#39;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+
+<span class="c1"># =============================================================================</span>
+<span class="c1"># HELPER FUNCTIONS</span>
+<span class="c1"># =============================================================================</span>
+
+<div class="viewcode-block" id="get_config">
+<a class="viewcode-back" href="../../../modules/config/Vaani.config.settings.html#Vaani.config.settings.get_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get all configuration as a dictionary&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="p">{</span>
+        <span class="s1">&#39;api_keys&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;google&#39;</span><span class="p">:</span> <span class="n">GOOGLE_API_KEY</span><span class="p">,</span>
+            <span class="s1">&#39;weather&#39;</span><span class="p">:</span> <span class="n">WEATHER_API_KEY</span><span class="p">,</span> <span class="c1">#Later used for weather feature</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;paths&#39;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s1">&#39;base&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">),</span>
+            <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">DATA_DIR</span><span class="p">),</span>
+            <span class="s1">&#39;logs&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">LOGS_DIR</span><span class="p">),</span>
+            <span class="s1">&#39;temp&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">TEMP_DIR</span><span class="p">)</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;features&#39;</span><span class="p">:</span> <span class="n">FEATURES</span><span class="p">,</span>
+        <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="n">DEBUG_MODE</span>
+    <span class="p">}</span></div>
+
+
+<div class="viewcode-block" id="validate_config">
+<a class="viewcode-back" href="../../../modules/config/Vaani.config.settings.html#Vaani.config.settings.validate_config">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">validate_config</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Validate required configuration&quot;&quot;&quot;</span>
+    <span class="n">errors</span> <span class="o">=</span> <span class="p">[]</span>
+    
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">GOOGLE_API_KEY</span> <span class="ow">or</span> <span class="n">GOOGLE_API_KEY</span> <span class="o">==</span> <span class="s2">&quot;your-api-key-here&quot;</span><span class="p">:</span>
+        <span class="n">errors</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;Google API key is not configured&quot;</span><span class="p">)</span>
+    
+    <span class="k">if</span> <span class="n">errors</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">error</span> <span class="ow">in</span> <span class="n">errors</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;❌ Config Error: </span><span class="si">{</span><span class="n">error</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="kc">False</span>
+    
+    <span class="k">return</span> <span class="kc">True</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

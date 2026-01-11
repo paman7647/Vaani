@@ -17,6 +17,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
+    'sphinx.ext.autosummary',
 ]
 
 templates_path = ['_templates']
@@ -44,6 +45,32 @@ autodoc_default_options = {
     'undoc-members': True,
 }
 
+# Mock heavy or platform-specific imports during autodoc to avoid build failures
+autodoc_mock_imports = [
+    'pyttsx3',
+    'speech_recognition',
+    'pyaudio',
+    'vosk',
+    'pocketsphinx',
+    'rapidfuzz',
+    'google',
+    'google.genai',
+    'yt_dlp',
+    'vlc',
+    'pygame',
+    'duckduckgo_search',
+    'wikipedia',
+    'bs4',
+    'lxml',
+    'deep_translator',
+    'dotenv',
+    'psutil',
+    'numpy',
+    'spacy',
+    'textblob',
+    'googlesearch',
+]
+
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3', None),
 }
@@ -53,3 +80,6 @@ napoleon_numpy_docstring = True
 napoleon_include_init_with_doc = False
 napoleon_include_private_with_doc = False
 napoleon_attr_annotations = True
+
+# Generate autosummary pages from documented modules/classes
+autosummary_generate = True

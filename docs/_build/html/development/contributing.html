@@ -1,0 +1,1181 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Contributing to Vaani &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'development/contributing';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="core" href="../modules/core.html" />
+    <link rel="prev" title="Coding Style and Standards" href="coding_style.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Contributing to Vaani</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="contributing-to-vaani">
+<h1>Contributing to Vaani<a class="headerlink" href="#contributing-to-vaani" title="Link to this heading">#</a></h1>
+<p>Thank you for your interest in improving Vaani. Contributions of all types are welcome.</p>
+<section id="before-contributing">
+<h2>Before Contributing<a class="headerlink" href="#before-contributing" title="Link to this heading">#</a></h2>
+<p><strong>This project is primarily maintained by its creator.</strong> While contributions are welcome, understand:</p>
+<ul class="simple">
+<li><p>Response times may vary</p></li>
+<li><p>Not all suggestions will be accepted</p></li>
+<li><p>The vision and direction are set by the creator</p></li>
+<li><p>Major features should be discussed in issues first</p></li>
+</ul>
+<p>This doesn’t mean we don’t appreciate you—it means we want to be realistic about capacity.</p>
+</section>
+<section id="ways-to-contribute">
+<h2>Ways to Contribute<a class="headerlink" href="#ways-to-contribute" title="Link to this heading">#</a></h2>
+<p><strong>Report Issues</strong></p>
+<p>Found a bug or have a feature idea? Create an issue:</p>
+<ol class="arabic simple">
+<li><p>Check if the issue already exists</p></li>
+<li><p>Provide clear reproduction steps</p></li>
+<li><p>Include your system info (OS, Python version)</p></li>
+<li><p>Attach relevant log output</p></li>
+</ol>
+<p><strong>Improve Documentation</strong></p>
+<p>Documentation improvements are always welcome:</p>
+<ul class="simple">
+<li><p>Fix typos and unclear sections</p></li>
+<li><p>Add examples to existing docs</p></li>
+<li><p>Document undocumented behaviors</p></li>
+<li><p>Improve installation guides for your platform</p></li>
+</ul>
+<p><strong>Small Bug Fixes</strong></p>
+<p>Small, focused bug fixes are ideal for first contributions:</p>
+<ul class="simple">
+<li><p>One fix per pull request</p></li>
+<li><p>Include test case if possible</p></li>
+<li><p>Update documentation if behavior changes</p></li>
+</ul>
+<p><strong>Code Quality</strong></p>
+<p>Improvements that don’t add features:</p>
+<ul class="simple">
+<li><p>Refactoring for clarity</p></li>
+<li><p>Performance improvements with measurements</p></li>
+<li><p>Test coverage additions</p></li>
+<li><p>Dependency updates</p></li>
+</ul>
+</section>
+<section id="setup-for-contributing">
+<h2>Setup for Contributing<a class="headerlink" href="#setup-for-contributing" title="Link to this heading">#</a></h2>
+<p><strong>Clone and Install</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/paman7647/Vaani.git
+<span class="nb">cd</span><span class="w"> </span>Vaani
+python3<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>venv
+<span class="nb">source</span><span class="w"> </span>venv/bin/activate
+pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements-full.txt
+pip<span class="w"> </span>install<span class="w"> </span>black<span class="w"> </span>flake8
+</pre></div>
+</div>
+<p><strong>Verify Your Setup</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test the installation</span>
+python3<span class="w"> </span>main.py
+
+<span class="c1"># Check code quality tools work</span>
+black<span class="w"> </span>--version
+flake8<span class="w"> </span>--version
+</pre></div>
+</div>
+<p><strong>Create a Feature Branch</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>feature/your-feature-name
+<span class="c1"># or</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/bug-you-fixed
+</pre></div>
+</div>
+<p>Branch naming:
+- <code class="docutils literal notranslate"><span class="pre">feature/</span></code> - New features
+- <code class="docutils literal notranslate"><span class="pre">fix/</span></code> - Bug fixes
+- <code class="docutils literal notranslate"><span class="pre">docs/</span></code> - Documentation only
+- <code class="docutils literal notranslate"><span class="pre">refactor/</span></code> - Code improvements</p>
+</section>
+<section id="making-changes">
+<h2>Making Changes<a class="headerlink" href="#making-changes" title="Link to this heading">#</a></h2>
+<p><strong>Follow the Style Guide</strong></p>
+<p>See <a class="reference internal" href="coding_style.html"><span class="doc">Coding Style and Standards</span></a> for detailed guidelines.</p>
+<p><strong>Keep Changes Focused</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Good - one fix</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix timeout error in speech recognition&quot;</span>
+
+<span class="c1"># Okay - related changes</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Add timeout configuration and improve error handling&quot;</span>
+
+<span class="c1"># Bad - multiple unrelated changes</span>
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix timeout, update docs, refactor audio player&quot;</span>
+</pre></div>
+</div>
+<p><strong>Write Clear Commit Messages</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>[Brief description - 50 chars max]
+
+[Longer explanation if needed]
+
+- Why this change?
+- What problem does it solve?
+- Any side effects or considerations?
+</pre></div>
+</div>
+<p><strong>Example</strong></p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Fix timeout error in speech recognition module
+
+The speech recognition module was not respecting the timeout
+parameter when connecting to the audio device, causing hangs
+on systems with slow audio hardware.
+
+- Add timeout to device initialization
+- Test with different timeout values
+- Update documentation with timeout guidance
+</pre></div>
+</div>
+<p><strong>Test Your Changes</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run the code you changed</span>
+python3<span class="w"> </span>main.py
+
+<span class="c1"># Check code style</span>
+black<span class="w"> </span>vaani_assistant/
+flake8<span class="w"> </span>vaani_assistant/<span class="w"> </span>--max-line-length<span class="o">=</span><span class="m">100</span>
+
+<span class="c1"># If you changed a specific module:</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core.your_module import YourClass</span>
+<span class="s">obj = YourClass()</span>
+<span class="s"># Test it</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p><strong>Update Documentation</strong></p>
+<p>If your change affects behavior or adds features:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Update relevant .rst files in docs/</span>
+<span class="c1"># Run Sphinx to check it builds</span>
+<span class="nb">cd</span><span class="w"> </span>docs
+make<span class="w"> </span>html
+<span class="nb">cd</span><span class="w"> </span>..
+</pre></div>
+</div>
+<p><strong>Add Docstrings</strong></p>
+<p>Every new function should have a docstring:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">new_function</span><span class="p">(</span><span class="n">parameter</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Brief one-line description.</span>
+
+<span class="sd">    Longer description of what it does and why you&#39;d use it.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        parameter: What it represents.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        What gets returned.</span>
+
+<span class="sd">    Raises:</span>
+<span class="sd">        ValueError: When something is invalid.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-pull-request">
+<h2>Creating a Pull Request<a class="headerlink" href="#creating-a-pull-request" title="Link to this heading">#</a></h2>
+<p><strong>Before Submitting</strong></p>
+<p>Checklist:</p>
+<ul class="simple">
+<li><p>[ ] Code follows <a class="reference internal" href="coding_style.html"><span class="doc">Coding Style and Standards</span></a> guidelines</p></li>
+<li><p>[ ] Changes are tested and working</p></li>
+<li><p>[ ] Documentation is updated</p></li>
+<li><p>[ ] Commit messages are clear</p></li>
+<li><p>[ ] No unrelated changes in the branch</p></li>
+<li><p>[ ] Feature branch is rebased to latest main</p></li>
+</ul>
+<p><strong>Creating the PR</strong></p>
+<ol class="arabic simple">
+<li><p>Push your branch: <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span> <span class="pre">origin</span> <span class="pre">feature/your-feature-name</span></code></p></li>
+<li><p>Create a PR on GitHub</p></li>
+<li><p>Fill out the PR template completely</p></li>
+<li><p>Reference any related issues: “Fixes #123”</p></li>
+</ol>
+<p><strong>PR Template</strong></p>
+<div class="highlight-markdown notranslate"><div class="highlight"><pre><span></span><span class="gu">## Description</span>
+
+What does this PR do?
+
+<span class="gu">## Type of Change</span>
+
+<span class="k">- [ ]</span> Bug fix
+<span class="k">- [ ]</span> New feature
+<span class="k">- [ ]</span> Documentation update
+<span class="k">- [ ]</span> Refactoring
+<span class="k">- [ ]</span> Dependency update
+
+<span class="gu">## How to Test</span>
+
+Steps to verify the change works.
+
+<span class="gu">## Related Issues</span>
+
+Fixes <span class="ni">#123</span>
+
+<span class="gu">## Screenshots</span>
+
+If applicable, add screenshots.
+
+<span class="gu">## Checklist</span>
+
+<span class="k">- [ ]</span> Code follows style guidelines
+<span class="k">- [ ]</span> Tests pass
+<span class="k">- [ ]</span> Documentation updated
+<span class="k">- [ ]</span> No new warnings
+</pre></div>
+</div>
+<p><strong>What Gets Reviewed</strong></p>
+<p>PRs are reviewed for:</p>
+<ul class="simple">
+<li><p>Code correctness</p></li>
+<li><p>Alignment with project vision</p></li>
+<li><p>Code quality and style</p></li>
+<li><p>Documentation completeness</p></li>
+<li><p>Test coverage</p></li>
+<li><p>Performance impact</p></li>
+</ul>
+<p><strong>After Submission</strong></p>
+<p>You’ll get feedback. Common types:</p>
+<ul class="simple">
+<li><p><strong>Requests for changes</strong> - Usually phrased as questions, refactor code</p></li>
+<li><p><strong>Suggestions</strong> - Nice to have but not required</p></li>
+<li><p><strong>Concerns</strong> - Changes needed before merge</p></li>
+</ul>
+<p>Address feedback by pushing new commits to your branch—the PR updates automatically.</p>
+</section>
+<section id="common-scenarios">
+<h2>Common Scenarios<a class="headerlink" href="#common-scenarios" title="Link to this heading">#</a></h2>
+<p><strong>“I want to add X feature”</strong></p>
+<ol class="arabic simple">
+<li><p>Create an issue describing the feature first</p></li>
+<li><p>Discuss approach with maintainers</p></li>
+<li><p>Get agreement on design</p></li>
+<li><p>Implement with confidence</p></li>
+</ol>
+<p><strong>“I found a bug”</strong></p>
+<ol class="arabic simple">
+<li><p>Create an issue with reproduction steps</p></li>
+<li><p>If you can fix it, create a PR</p></li>
+<li><p>Link the PR to the issue</p></li>
+</ol>
+<p><strong>“I want to update documentation”</strong></p>
+<ol class="arabic simple">
+<li><p>Create a PR directly (no issue needed)</p></li>
+<li><p>Make one logical change per PR</p></li>
+<li><p>Improve clarity and examples</p></li>
+</ol>
+<p><strong>“I want to refactor a module”</strong></p>
+<ol class="arabic simple">
+<li><p>Create an issue explaining why</p></li>
+<li><p>Get feedback before investing time</p></li>
+<li><p>Keep refactoring separate from feature PRs</p></li>
+</ol>
+<p><strong>“The project doesn’t build on my system”</strong></p>
+<ol class="arabic simple">
+<li><p>Create an issue with:
+- Your OS and version
+- Python version
+- Full error message
+- Steps to reproduce</p></li>
+<li><p>We’ll work through it together</p></li>
+<li><p>Documentation might need updating</p></li>
+</ol>
+</section>
+<section id="development-workflow-example">
+<h2>Development Workflow Example<a class="headerlink" href="#development-workflow-example" title="Link to this heading">#</a></h2>
+<p><strong>Scenario: Fix a speech recognition timeout bug</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 1. Create an issue (if not already done)</span>
+<span class="c1"># &quot;Speech recognition hangs on slow audio devices&quot;</span>
+
+<span class="c1"># 2. Set up your branch</span>
+git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>fix/speech-recognition-timeout
+
+<span class="c1"># 3. Reproduce the bug</span>
+python3<span class="w"> </span>main.py
+<span class="c1"># Confirms: hangs when audio device is slow</span>
+
+<span class="c1"># 4. Find and fix the issue</span>
+vim<span class="w"> </span>vaani_assistant/core/speech_recognition.py
+<span class="c1"># Add timeout parameter to device initialization</span>
+
+<span class="c1"># 5. Test the fix</span>
+python3<span class="w"> </span>main.py
+<span class="c1"># Test with: &quot;Hey Aria, what time is it?&quot;</span>
+<span class="c1"># Confirms: no hang, works correctly</span>
+
+<span class="c1"># 6. Verify code quality</span>
+black<span class="w"> </span>vaani_assistant/core/speech_recognition.py
+flake8<span class="w"> </span>vaani_assistant/core/speech_recognition.py
+
+<span class="c1"># 7. Update documentation</span>
+vim<span class="w"> </span>docs/troubleshooting.rst
+<span class="c1"># Add section about timeout configuration</span>
+
+<span class="c1"># 8. Commit</span>
+git<span class="w"> </span>add<span class="w"> </span>vaani_assistant/core/speech_recognition.py
+git<span class="w"> </span>add<span class="w"> </span>docs/troubleshooting.rst
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Fix speech recognition timeout on slow audio devices</span>
+
+<span class="s2">The speech recognition module was not respecting timeouts</span>
+<span class="s2">on slow audio devices, causing the system to hang.</span>
+
+<span class="s2">- Add timeout parameter to audio device initialization</span>
+<span class="s2">- Default to 10 seconds, configurable via settings</span>
+<span class="s2">- Document timeout configuration in troubleshooting guide&quot;</span>
+
+<span class="c1"># 9. Push and create PR</span>
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>fix/speech-recognition-timeout
+</pre></div>
+</div>
+</section>
+<section id="getting-help">
+<h2>Getting Help<a class="headerlink" href="#getting-help" title="Link to this heading">#</a></h2>
+<p><strong>Questions About Code</strong></p>
+<ul class="simple">
+<li><p>Comment in the issue you’re working on</p></li>
+<li><p>Check the <a class="reference internal" href="../architecture.html"><span class="doc">Architecture</span></a> documentation</p></li>
+<li><p>Look at the <a class="reference internal" href="project_structure.html"><span class="doc">Project Structure and Code Organization</span></a> for module details</p></li>
+<li><p>Read existing code in the same module</p></li>
+</ul>
+<p><strong>Questions About Contributing</strong></p>
+<ul class="simple">
+<li><p>Create an issue labeled “question”</p></li>
+<li><p>Check CONTRIBUTING.md in the repo</p></li>
+<li><p>Look for similar PRs to see what was accepted</p></li>
+</ul>
+<p><strong>Something Not Working</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable debug logging</span>
+<span class="nv">LOG_LEVEL</span><span class="o">=</span>DEBUG<span class="w"> </span>python3<span class="w"> </span>main.py
+
+<span class="c1"># Check error logs</span>
+tail<span class="w"> </span>-100<span class="w"> </span>logs/error.log
+
+<span class="c1"># Try a simple test</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core import your_module</span>
+<span class="s">your_module.test_function()</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="code-of-conduct">
+<h2>Code of Conduct<a class="headerlink" href="#code-of-conduct" title="Link to this heading">#</a></h2>
+<p>We are committed to providing a welcoming and inspiring community for all. Be respectful.</p>
+</section>
+<section id="recognition">
+<h2>Recognition<a class="headerlink" href="#recognition" title="Link to this heading">#</a></h2>
+<p>Contributors to Vaani are recognized in:</p>
+<ul class="simple">
+<li><p>The README.md file</p></li>
+<li><p>Release notes for their contributions</p></li>
+<li><p>Git history (forever!)</p></li>
+</ul>
+<p>See <a class="reference internal" href="../credits.html"><span class="doc">credits</span></a> for the current list.</p>
+</section>
+<section id="legal">
+<h2>Legal<a class="headerlink" href="#legal" title="Link to this heading">#</a></h2>
+<p>By contributing to Vaani, you agree that:</p>
+<ul class="simple">
+<li><p>Your contributions can be used under the project’s license</p></li>
+<li><p>You have the right to grant these rights</p></li>
+<li><p>You won’t contribute code you don’t have rights to</p></li>
+</ul>
+<p>No contributor agreement needed—just contribute!</p>
+</section>
+<section id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Pick something</strong> to work on (from issues or your own idea)</p></li>
+<li><p><strong>Discuss</strong> if it’s a major change</p></li>
+<li><p><strong>Make changes</strong> following <a class="reference internal" href="coding_style.html"><span class="doc">Coding Style and Standards</span></a></p></li>
+<li><p><strong>Test thoroughly</strong> and check code quality</p></li>
+<li><p><strong>Create a PR</strong> with clear description</p></li>
+<li><p><strong>Respond to feedback</strong> and iterate</p></li>
+<li><p><strong>Celebrate</strong> when it merges! 🎉</p></li>
+</ol>
+</section>
+<section id="questions">
+<h2>Questions?<a class="headerlink" href="#questions" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Create an issue on GitHub</p></li>
+<li><p>Check existing issues/discussions</p></li>
+<li><p>Email the maintainer (see README.md)</p></li>
+</ul>
+<p>Thank you for contributing to Vaani!</p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="coding_style.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Coding Style and Standards</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../modules/core.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">core</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

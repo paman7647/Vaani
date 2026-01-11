@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Architecture &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'architecture';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Voice and Audio System" href="voice_system.html" />
+    <link rel="prev" title="Vaani.config.settings" href="modules/config/Vaani.config.settings.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Architecture</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="architecture">
+<h1>Architecture<a class="headerlink" href="#architecture" title="Link to this heading">#</a></h1>
+<p>Vaani is built on a modular, event-driven architecture where each component has a clear responsibility. This design makes the system easier to understand, test, and extend.</p>
+<section id="system-overview">
+<h2>System Overview<a class="headerlink" href="#system-overview" title="Link to this heading">#</a></h2>
+<p>The interaction flow:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>User (Voice/Text)
+     ↓
+[Input Processing]
+- Speech Recognition
+- Wake Word Detection
+     ↓
+[Intent Understanding]
+- Smart Intent Classifier
+- Command Routing
+     ↓
+[Response Generation]
+- AI Engine (with Gemini)
+- Web Search Integration
+- Conversation Memory
+     ↓
+[Output Processing]
+- Text-to-Speech
+- Audio Playback
+- Music Control
+     ↓
+User (Audio Response)
+</pre></div>
+</div>
+<p>Each box represents one or more modules working together.</p>
+</section>
+<section id="core-principles">
+<h2>Core Principles<a class="headerlink" href="#core-principles" title="Link to this heading">#</a></h2>
+<dl class="simple">
+<dt><strong>Single Responsibility</strong></dt><dd><p>Each module does one thing well. The speech recognizer recognizes speech, nothing more. The AI engine handles language understanding, not audio playback.</p>
+</dd>
+<dt><strong>Loose Coupling</strong></dt><dd><p>Components communicate through well-defined interfaces. You can swap the TTS engine without touching the AI logic.</p>
+</dd>
+<dt><strong>Configurable</strong></dt><dd><p>System behavior is driven by configuration, not hardcoded values. Languages, voices, API keys all come from config or environment.</p>
+</dd>
+<dt><strong>Testable</strong></dt><dd><p>Modules can be tested independently. You can test speech recognition without running the full system.</p>
+</dd>
+<dt><strong>Documented</strong></dt><dd><p>Each module has clear docstrings. Future developers should understand what it does without reading dozens of lines of code.</p>
+</dd>
+</dl>
+</section>
+<section id="module-organization">
+<h2>Module Organization<a class="headerlink" href="#module-organization" title="Link to this heading">#</a></h2>
+<p>Vaani’s code is organized into distinct packages:</p>
+<dl class="simple">
+<dt><strong>vaani_assistant.config</strong></dt><dd><p>System-wide configuration, voice mappings, constants</p>
+</dd>
+<dt><strong>vaani_assistant.core</strong></dt><dd><p>Core orchestration: assistant manager, command processor</p>
+</dd>
+<dt><strong>vaani_assistant.voice</strong></dt><dd><p>Voice I/O: speech recognition, text-to-speech, audio player</p>
+</dd>
+<dt><strong>vaani_assistant.intelligence</strong></dt><dd><p>AI &amp; understanding: conversation engine, intent classifier, memory, personality</p>
+</dd>
+<dt><strong>vaani_assistant.integrations</strong></dt><dd><p>External services: web search, music manager</p>
+</dd>
+<dt><strong>vaani_assistant.utils</strong></dt><dd><p>Shared utilities: logging, helpers</p>
+</dd>
+</dl>
+</section>
+<section id="the-main-loop">
+<h2>The Main Loop<a class="headerlink" href="#the-main-loop" title="Link to this heading">#</a></h2>
+<p>The Assistant Manager coordinates everything:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">AssistantManager</span><span class="p">:</span>
+    <span class="err">├──</span> <span class="n">Speech</span> <span class="n">Recognizer</span>       <span class="p">(</span><span class="n">listens</span> <span class="k">for</span> <span class="n">voice</span><span class="p">)</span>
+    <span class="err">├──</span> <span class="n">Conversation</span> <span class="n">Engine</span>     <span class="p">(</span><span class="n">generates</span> <span class="n">responses</span><span class="p">)</span>
+    <span class="err">├──</span> <span class="n">Text</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">Speech</span>          <span class="p">(</span><span class="n">converts</span> <span class="n">text</span> <span class="n">to</span> <span class="n">speech</span><span class="p">)</span>
+    <span class="err">├──</span> <span class="n">Audio</span> <span class="n">Player</span>            <span class="p">(</span><span class="n">plays</span> <span class="n">music</span> <span class="ow">and</span> <span class="n">responses</span><span class="p">)</span>
+    <span class="err">├──</span> <span class="n">Conversation</span> <span class="n">Memory</span>     <span class="p">(</span><span class="n">maintains</span> <span class="n">conversation</span> <span class="n">history</span><span class="p">)</span>
+    <span class="err">├──</span> <span class="n">Command</span> <span class="n">Processor</span>       <span class="p">(</span><span class="n">handles</span> <span class="n">specific</span> <span class="n">tasks</span><span class="p">)</span>
+    <span class="err">└──</span> <span class="n">Watchdog</span>                <span class="p">(</span><span class="n">monitors</span> <span class="n">system</span> <span class="n">health</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The flow in pseudocode:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">running</span><span class="p">:</span>
+    <span class="mf">1.</span> <span class="n">Listen</span> <span class="k">for</span> <span class="n">wake</span> <span class="n">word</span>
+    <span class="mf">2.</span> <span class="n">Capture</span> <span class="n">user</span> <span class="nb">input</span> <span class="p">(</span><span class="n">voice</span><span class="p">)</span>
+    <span class="mf">3.</span> <span class="n">Convert</span> <span class="n">to</span> <span class="n">text</span>
+    <span class="mf">4.</span> <span class="n">Classify</span> <span class="n">intent</span>
+    <span class="mf">5.</span> <span class="n">Route</span> <span class="n">to</span> <span class="n">appropriate</span> <span class="n">handler</span>
+    <span class="mf">6.</span> <span class="n">Generate</span> <span class="n">response</span>
+    <span class="mf">7.</span> <span class="n">Synthesize</span> <span class="n">speech</span>
+    <span class="mf">8.</span> <span class="n">Play</span> <span class="n">audio</span>
+    <span class="mf">9.</span> <span class="n">Store</span> <span class="ow">in</span> <span class="n">memory</span>
+    <span class="mf">10.</span> <span class="n">Loop</span>
+</pre></div>
+</div>
+<p>All of this happens in real-time with minimal latency.</p>
+</section>
+<section id="key-components">
+<h2>Key Components<a class="headerlink" href="#key-components" title="Link to this heading">#</a></h2>
+<section id="speech-recognition">
+<h3>Speech Recognition<a class="headerlink" href="#speech-recognition" title="Link to this heading">#</a></h3>
+<p>Captures and processes audio input. Handles background noise, multiple languages, and can work offline.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">speech_recognition.py</span></code> - Basic voice input</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">enhanced_speech_recognition.py</span></code> - Advanced noise handling</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">wake_word_detector.py</span></code> - Always-listening wake word detection</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Listens continuously in background. When the wake word is detected (“Hey Aria”, “Hi Aria”), captures the following speech for command processing.</p>
+</section>
+<section id="artificial-intelligence-engine">
+<h3>Artificial Intelligence Engine<a class="headerlink" href="#artificial-intelligence-engine" title="Link to this heading">#</a></h3>
+<p>Generates natural, contextual responses. Can access web search, remember conversation history, and adapt based on user preferences.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ai_engine.py</span></code> - Main AI orchestrator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">web_search.py</span></code> - Real-time search integration</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">memory.py</span></code> - Conversation history and context</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">smart_intent_classifier.py</span></code> - Determines what user wants</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">personality.py</span></code> - Customizable response style</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Takes user input, checks conversation memory, searches web if needed, generates response using Gemini API or fallback logic.</p>
+</section>
+<section id="text-to-speech">
+<h3>Text-to-Speech<a class="headerlink" href="#text-to-speech" title="Link to this heading">#</a></h3>
+<p>Converts text responses into natural-sounding audio. Supports multiple languages and voice variants.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tts_engine.py</span></code> - Core TTS orchestrator</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">advanced_tts.py</span></code> - Higher quality synthesis</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">voice_synthesis.py</span></code> - Production TTS with fallback</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Receives text, selects appropriate voice based on configuration, generates audio, plays it immediately.</p>
+</section>
+<section id="audio-playback-and-music">
+<h3>Audio Playback and Music<a class="headerlink" href="#audio-playback-and-music" title="Link to this heading">#</a></h3>
+<p>Plays audio responses and manages music playback from various sources.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">audio_player.py</span></code> - Audio output and playback control</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">music_manager.py</span></code> - Music source discovery and playback</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Handles playback controls (play, pause, stop, skip), supports local files and YouTube sources, manages volume and audio mixing.</p>
+</section>
+<section id="command-processing">
+<h3>Command Processing<a class="headerlink" href="#command-processing" title="Link to this heading">#</a></h3>
+<p>Routes specific user requests to specialized handlers. Examples: “Play music”, “Set a timer”, “Search Wikipedia”.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">command_processor.py</span></code> - Command detection and execution</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">command_router.py</span></code> - Routing logic</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Analyzes user intent, finds the right handler, executes the command, returns results to response generator.</p>
+</section>
+<section id="memory-and-context">
+<h3>Memory and Context<a class="headerlink" href="#memory-and-context" title="Link to this heading">#</a></h3>
+<p>Maintains conversation history and context to make responses more natural and relevant.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">memory.py</span></code> - Conversation storage and retrieval</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Stores conversation exchanges (user input + Vaani response). When generating new responses, includes relevant previous exchanges for context.</p>
+</section>
+<section id="configuration-system">
+<h3>Configuration System<a class="headerlink" href="#configuration-system" title="Link to this heading">#</a></h3>
+<p>Centralized configuration for languages, voices, API keys, system parameters.</p>
+<p><strong>Related modules:</strong></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">global_config.py</span></code> - Constants and voice mappings (32 languages)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">settings.py</span></code> - Runtime configuration from environment</p></li>
+</ul>
+<p><strong>Behavior:</strong></p>
+<p>Loads from <code class="docutils literal notranslate"><span class="pre">.env</span></code> file at startup. Provides default values for all parameters. Can be overridden via environment variables.</p>
+</section>
+</section>
+<section id="data-flow-examples">
+<h2>Data Flow Examples<a class="headerlink" href="#data-flow-examples" title="Link to this heading">#</a></h2>
+<section id="simple-query">
+<h3>Simple Query<a class="headerlink" href="#simple-query" title="Link to this heading">#</a></h3>
+<p>User: “What’s the capital of France?”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Wake Word Detected
+     ↓
+Capture: &quot;What&#39;s the capital of France&quot;
+     ↓
+Intent: QUERY
+     ↓
+Check Memory (no relevant context)
+     ↓
+Web Search: &quot;capital of France&quot;
+     ↓
+AI Engine generates: &quot;The capital of France is Paris&quot;
+     ↓
+Text-to-Speech synthesizes response
+     ↓
+Audio Player plays: &quot;The capital of France is Paris&quot;
+     ↓
+Memory stores: [input, response]
+</pre></div>
+</div>
+</section>
+<section id="contextual-conversation">
+<h3>Contextual Conversation<a class="headerlink" href="#contextual-conversation" title="Link to this heading">#</a></h3>
+<p>User: “Tell me about France”
+(Vaani responds with information)</p>
+<p>User: “What’s the capital?”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Wake Word Detected
+     ↓
+Capture: &quot;What&#39;s the capital&quot;
+     ↓
+Intent: QUERY
+     ↓
+Check Memory (finds &quot;France&quot; from previous exchange)
+     ↓
+AI Engine with context: &quot;...capital of France is Paris&quot;
+     ↓
+(Shorter, more natural response because context is known)
+</pre></div>
+</div>
+</section>
+<section id="music-playback">
+<h3>Music Playback<a class="headerlink" href="#music-playback" title="Link to this heading">#</a></h3>
+<p>User: “Play some jazz”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Wake Word Detected
+     ↓
+Capture: &quot;Play some jazz&quot;
+     ↓
+Intent: PLAY_MUSIC
+     ↓
+Command Processor routes to Music Manager
+     ↓
+Music Manager searches: &quot;jazz music&quot;
+     ↓
+Finds YouTube source (or local library)
+     ↓
+Audio Player starts playback
+     ↓
+Vaani says: &quot;Now playing jazz&quot;
+</pre></div>
+</div>
+</section>
+</section>
+<section id="threading-and-async">
+<h2>Threading and Async<a class="headerlink" href="#threading-and-async" title="Link to this heading">#</a></h2>
+<p>Most components run in separate threads to prevent blocking:</p>
+<ul class="simple">
+<li><p><strong>Main thread</strong> - User interaction loop</p></li>
+<li><p><strong>Speech recognition thread</strong> - Always listening</p></li>
+<li><p><strong>Audio playback thread</strong> - Handles long audio without blocking</p></li>
+<li><p><strong>Web search thread</strong> - Searches happen without freezing response</p></li>
+</ul>
+<p>This ensures Vaani remains responsive even when doing heavy work like downloading music or processing complex searches.</p>
+</section>
+<section id="error-handling">
+<h2>Error Handling<a class="headerlink" href="#error-handling" title="Link to this heading">#</a></h2>
+<p>Each module is designed to fail gracefully:</p>
+<ul class="simple">
+<li><p><strong>Speech not recognized?</strong> - Prompts user to repeat</p></li>
+<li><p><strong>Web search fails?</strong> - Falls back to AI-only response</p></li>
+<li><p><strong>TTS fails?</strong> - Uses FallbackSpeech engine (simpler fallback)</p></li>
+<li><p><strong>Network unavailable?</strong> - Operates in offline mode</p></li>
+</ul>
+<p>The system never crashes due to a single component failure.</p>
+</section>
+<section id="extensibility">
+<h2>Extensibility<a class="headerlink" href="#extensibility" title="Link to this heading">#</a></h2>
+<p>Adding new capabilities is straightforward:</p>
+<ol class="arabic simple">
+<li><p><strong>New command type</strong> - Add handler to <code class="docutils literal notranslate"><span class="pre">command_processor.py</span></code></p></li>
+<li><p><strong>New language</strong> - Add voice mapping to <code class="docutils literal notranslate"><span class="pre">global_config.py</span></code></p></li>
+<li><p><strong>New AI provider</strong> - Implement provider interface in <code class="docutils literal notranslate"><span class="pre">ai_engine.py</span></code></p></li>
+<li><p><strong>New audio source</strong> - Add source to <code class="docutils literal notranslate"><span class="pre">music_manager.py</span></code></p></li>
+</ol>
+<p>Each extension is isolated from others.</p>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="voice_system.html"><span class="doc">Voice and Audio System</span></a> for audio details</p></li>
+<li><p>Read <a class="reference internal" href="intelligence.html"><span class="doc">How Vaani Thinks</span></a> for AI engine specifics</p></li>
+<li><p>Check <a class="reference internal" href="memory_context.html"><span class="doc">Memory and Conversation Context</span></a> for conversation handling</p></li>
+<li><p>Review <a class="reference internal" href="development/project_structure.html"><span class="doc">Project Structure and Code Organization</span></a> for code organization</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="modules/config/Vaani.config.settings.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vaani.config.settings</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="voice_system.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Voice and Audio System</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1981 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>intelligence &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'modules/intelligence';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Vaani.intelligence.conversation" href="intelligence/Vaani.intelligence.conversation.html" />
+    <link rel="prev" title="Vaani.voice.wake_word" href="voice/Vaani.voice.wake_word.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.conversation.html">Vaani.intelligence.conversation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html">Vaani.intelligence.intent_analyzer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.context.html">Vaani.intelligence.context</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.personality.html">Vaani.intelligence.personality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.responses.html">Vaani.intelligence.responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html">Vaani.intelligence.classifier</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">intelligence</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="intelligence">
+<h1>intelligence<a class="headerlink" href="#intelligence" title="Link to this heading">#</a></h1>
+<p>AI understanding and context modules for Vaani.</p>
+<div class="pst-scrollable-table-container"><table class="autosummary longtable table">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.conversation.html#module-Vaani.intelligence.conversation" title="Vaani.intelligence.conversation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.conversation</span></code></a></p></td>
+<td><p>Conversation Manager - AI Response Engine</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html#module-Vaani.intelligence.intent_analyzer" title="Vaani.intelligence.intent_analyzer"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.intent_analyzer</span></code></a></p></td>
+<td><p>Intent Analyzer - Fast Command Classification</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.context.html#module-Vaani.intelligence.context" title="Vaani.intelligence.context"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.context</span></code></a></p></td>
+<td><p>Context Manager - Conversation Memory &amp; State</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.personality.html#module-Vaani.intelligence.personality" title="Vaani.intelligence.personality"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.personality</span></code></a></p></td>
+<td><p>Personality Engine - Voice &amp; Behavior Customization</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.responses.html#module-Vaani.intelligence.responses" title="Vaani.intelligence.responses"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.responses</span></code></a></p></td>
+<td><p>Response Generator - Template-Based Replies</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html#module-Vaani.intelligence.classifier" title="Vaani.intelligence.classifier"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Vaani.intelligence.classifier</span></code></a></p></td>
+<td><p>Classifier - Intent &amp; Entity Recognition</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<section id="intelligence-modules-overview">
+<h2>Intelligence Modules Overview<a class="headerlink" href="#intelligence-modules-overview" title="Link to this heading">#</a></h2>
+<section id="module-Vaani.intelligence.conversation">
+<span id="conversation-engine"></span><h3>Conversation Engine<a class="headerlink" href="#module-Vaani.intelligence.conversation" title="Link to this heading">#</a></h3>
+<section id="conversation-manager-ai-response-engine">
+<h4>Conversation Manager - AI Response Engine<a class="headerlink" href="#conversation-manager-ai-response-engine" title="Link to this heading">#</a></h4>
+<p>Features:
+- Google Gemini Pro integration with search grounding
+- Conversation history management (rolling window)
+- Context-aware responses using recent conversation
+- Personality-driven interactions
+- Real-time web search integration for current information
+- Multi-turn conversation support
+- Fallback responses when AI unavailable
+- Configurable memory limits (conversation window)
+- Professional, helpful personality</p>
+<p>Manages AI-powered conversations using Google Gemini with live web
+search for accurate, current information. Remembers context and
+maintains natural conversation flow.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.conversation.</span></span><span class="sig-name descname"><span class="pre">ConversationManager</span></span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Generates conversational responses with context awareness and web search integration</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager.generate_response">
+<span class="sig-name descname"><span class="pre">generate_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conversation'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager.generate_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager.generate_response" title="Link to this definition">#</a></dt>
+<dd><p>Generate AI response with intelligent fallback to web search when AI fails</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+<li><p><strong>use_context</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>)</p></li>
+<li><p><strong>context_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager.set_user_name">
+<span class="sig-name descname"><span class="pre">set_user_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager.set_user_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager.set_user_name" title="Link to this definition">#</a></dt>
+<dd><p>Set user’s name for personalitylized responses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager.clear_history">
+<span class="sig-name descname"><span class="pre">clear_history</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager.clear_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager.clear_history" title="Link to this definition">#</a></dt>
+<dd><p>Clear conversation history</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager.get_history">
+<span class="sig-name descname"><span class="pre">get_history</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager.get_history"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager.get_history" title="Link to this definition">#</a></dt>
+<dd><p>Get recent conversation history</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>limit</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.ConversationManager.quick_response">
+<span class="sig-name descname"><span class="pre">quick_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#ConversationManager.quick_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.ConversationManager.quick_response" title="Link to this definition">#</a></dt>
+<dd><p>Generate quick responses for common queries</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>query_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.conversation.get_conversation_manager">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.conversation.</span></span><span class="sig-name descname"><span class="pre">get_conversation_manager</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/conversation.html#get_conversation_manager"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.conversation.get_conversation_manager" title="Link to this definition">#</a></dt>
+<dd><p>Get or create global conversation engine instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.conversation.html#Vaani.intelligence.conversation.ConversationManager" title="Vaani.intelligence.conversation.ConversationManager"><em>ConversationManager</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Generates natural language responses using Google Gemini with web search.</p>
+</section>
+<section id="module-Vaani.intelligence.intent_analyzer">
+<span id="intent-classifier"></span><h3>Intent Classifier<a class="headerlink" href="#module-Vaani.intelligence.intent_analyzer" title="Link to this heading">#</a></h3>
+<section id="intent-analyzer-fast-command-classification">
+<h4>Intent Analyzer - Fast Command Classification<a class="headerlink" href="#intent-analyzer-fast-command-classification" title="Link to this heading">#</a></h4>
+<p>Features:
+- RapidFuzz-based pattern matching (sub-second classification)
+- Multiple intent types (music, time, information, conversation, etc.)
+- Entity extraction (song names, times, topics)
+- Confidence scoring
+- AI-powered fallback for complex queries
+- Keyword-based classification with fuzzy matching
+- Support for natural language variations
+- Minimal logging (professional output)</p>
+<p>Quickly figures out what you want using fast pattern matching.
+Uses AI only when needed for complex or ambiguous requests.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.intent_analyzer.</span></span><span class="sig-name descname"><span class="pre">IntentType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/intent_analyzer.html#IntentType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Refined intent categories</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PLAY">
+<span class="sig-name descname"><span class="pre">MUSIC_PLAY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_play'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PLAY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PAUSE">
+<span class="sig-name descname"><span class="pre">MUSIC_PAUSE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_pause'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PAUSE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_STOP">
+<span class="sig-name descname"><span class="pre">MUSIC_STOP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_stop'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_STOP" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_RESUME">
+<span class="sig-name descname"><span class="pre">MUSIC_RESUME</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_resume'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_RESUME" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_NEXT">
+<span class="sig-name descname"><span class="pre">MUSIC_NEXT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_next'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_NEXT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PREVIOUS">
+<span class="sig-name descname"><span class="pre">MUSIC_PREVIOUS</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_previous'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_PREVIOUS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_UP">
+<span class="sig-name descname"><span class="pre">MUSIC_VOLUME_UP</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_volume_up'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_UP" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_DOWN">
+<span class="sig-name descname"><span class="pre">MUSIC_VOLUME_DOWN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_volume_down'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_DOWN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_SET">
+<span class="sig-name descname"><span class="pre">MUSIC_VOLUME_SET</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_volume_set'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_VOLUME_SET" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_ADD">
+<span class="sig-name descname"><span class="pre">MUSIC_QUEUE_ADD</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_queue_add'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_ADD" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_SHOW">
+<span class="sig-name descname"><span class="pre">MUSIC_QUEUE_SHOW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_queue_show'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_SHOW" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_CLEAR">
+<span class="sig-name descname"><span class="pre">MUSIC_QUEUE_CLEAR</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_queue_clear'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_QUEUE_CLEAR" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.MUSIC_CURRENT">
+<span class="sig-name descname"><span class="pre">MUSIC_CURRENT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_current'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.MUSIC_CURRENT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_TIME">
+<span class="sig-name descname"><span class="pre">SYSTEM_TIME</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'system_time'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_TIME" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_DATE">
+<span class="sig-name descname"><span class="pre">SYSTEM_DATE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'system_date'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_DATE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_WEATHER">
+<span class="sig-name descname"><span class="pre">SYSTEM_WEATHER</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'system_weather'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_WEATHER" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_EXIT">
+<span class="sig-name descname"><span class="pre">SYSTEM_EXIT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'system_exit'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.SYSTEM_EXIT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_WHAT">
+<span class="sig-name descname"><span class="pre">INFO_WHAT</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_what'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_WHAT" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_WHO">
+<span class="sig-name descname"><span class="pre">INFO_WHO</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_who'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_WHO" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_WHERE">
+<span class="sig-name descname"><span class="pre">INFO_WHERE</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_where'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_WHERE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_WHEN">
+<span class="sig-name descname"><span class="pre">INFO_WHEN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_when'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_WHEN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_WHY">
+<span class="sig-name descname"><span class="pre">INFO_WHY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_why'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_WHY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.INFO_HOW">
+<span class="sig-name descname"><span class="pre">INFO_HOW</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'info_how'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.INFO_HOW" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.CONVERSATION">
+<span class="sig-name descname"><span class="pre">CONVERSATION</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'conversation'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.CONVERSATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentType.UNKNOWN">
+<span class="sig-name descname"><span class="pre">UNKNOWN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unknown'</span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentType.UNKNOWN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentResult">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.intent_analyzer.</span></span><span class="sig-name descname"><span class="pre">IntentResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intent</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">confidence</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">entities</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requires_ai</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/intent_analyzer.html#IntentResult"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentResult" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Result of intent classification</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>intent</strong> (<a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentType" title="Vaani.intelligence.intent_analyzer.IntentType"><em>IntentType</em></a>)</p></li>
+<li><p><strong>confidence</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><em>float</em></a>)</p></li>
+<li><p><strong>entities</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><em>Dict</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>, </em><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a><em>]</em>)</p></li>
+<li><p><strong>requires_ai</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><em>bool</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentResult.intent">
+<span class="sig-name descname"><span class="pre">intent</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentType" title="Vaani.intelligence.intent_analyzer.IntentType"><span class="pre">IntentType</span></a></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentResult.intent" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentResult.confidence">
+<span class="sig-name descname"><span class="pre">confidence</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#float" title="(in Python v3.14)"><span class="pre">float</span></a></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentResult.confidence" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentResult.entities">
+<span class="sig-name descname"><span class="pre">entities</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><span class="pre">Dict</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><span class="pre">Any</span></a><span class="p"><span class="pre">]</span></span></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentResult.entities" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentResult.requires_ai">
+<span class="sig-name descname"><span class="pre">requires_ai</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)"><span class="pre">bool</span></a></span><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentResult.requires_ai" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentMatcher">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.intent_analyzer.</span></span><span class="sig-name descname"><span class="pre">IntentMatcher</span></span><a class="reference internal" href="../_modules/Vaani/intelligence/intent_analyzer.html#IntentMatcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentMatcher" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Intent matching using free NLP tools</p>
+<p>Features:
+- Fuzzy matching for typos and variations
+- Entity extraction (numbers, names, etc.)
+- Synonym handling
+- Multi-language support (English + Hindi)
+- Pattern-based extraction
+- Context awareness</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.IntentMatcher.classify">
+<span class="sig-name descname"><span class="pre">classify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/intent_analyzer.html#IntentMatcher.classify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.IntentMatcher.classify" title="Link to this definition">#</a></dt>
+<dd><p>Classify user command into intent + extract entities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User command text</p></li>
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><em>Dict</em></a><em> | </em><em>None</em>) – Optional context (music_playing, last_intent, etc.)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>IntentResult with intent, confidence, and entities</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentResult" title="Vaani.intelligence.intent_analyzer.IntentResult"><em>IntentResult</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.intent_analyzer.get_intent_matcher">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.intent_analyzer.</span></span><span class="sig-name descname"><span class="pre">get_intent_matcher</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/intent_analyzer.html#get_intent_matcher"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.intent_analyzer.get_intent_matcher" title="Link to this definition">#</a></dt>
+<dd><p>Get or create global intent matcher instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.intent_analyzer.html#Vaani.intelligence.intent_analyzer.IntentMatcher" title="Vaani.intelligence.intent_analyzer.IntentMatcher"><em>IntentMatcher</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Classifies user intent using fuzzy matching and NLP.</p>
+</section>
+<section id="module-Vaani.intelligence.context">
+<span id="conversation-memory"></span><h3>Conversation Memory<a class="headerlink" href="#module-Vaani.intelligence.context" title="Link to this heading">#</a></h3>
+<section id="context-manager-conversation-memory-state">
+<h4>Context Manager - Conversation Memory &amp; State<a class="headerlink" href="#context-manager-conversation-memory-state" title="Link to this heading">#</a></h4>
+<p>Features:
+- Short-term conversation memory (last N exchanges)
+- Long-term memory storage (persistent across restarts)
+- User preference tracking
+- Session state management
+- Context-aware query understanding
+- Memory pruning (keeps recent, relevant context)
+- Topic tracking and continuity
+- Entity tracking (people, places, things mentioned)</p>
+<p>Tracks conversation history and context to enable natural,
+context-aware responses. Remembers what was discussed recently
+and maintains topic continuity.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.context.</span></span><span class="sig-name descname"><span class="pre">ConversationMemory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">max_history</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Manages conversation history and context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>max_history</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.add_interaction">
+<span class="sig-name descname"><span class="pre">add_interaction</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">assistant_response</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interaction_type</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conversation'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.add_interaction"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.add_interaction" title="Link to this definition">#</a></dt>
+<dd><p>Add an interaction to context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>user_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – What user said</p></li>
+<li><p><strong>assistant_response</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – What assistant responded</p></li>
+<li><p><strong>interaction_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Type of interaction (conversation, command, music, etc.)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_recent_context">
+<span class="sig-name descname"><span class="pre">get_recent_context</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">num_interactions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_recent_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_recent_context" title="Link to this definition">#</a></dt>
+<dd><p>Get recent conversation context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>num_interactions</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><em>List</em></a>[<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a>]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_context_summary">
+<span class="sig-name descname"><span class="pre">get_context_summary</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_context_summary"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_context_summary" title="Link to this definition">#</a></dt>
+<dd><p>Get a summary of recent context for AI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.remember_preference">
+<span class="sig-name descname"><span class="pre">remember_preference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.remember_preference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.remember_preference" title="Link to this definition">#</a></dt>
+<dd><p>Remember a user preference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_preference">
+<span class="sig-name descname"><span class="pre">get_preference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_preference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_preference" title="Link to this definition">#</a></dt>
+<dd><p>Get a user preference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.has_discussed_recently">
+<span class="sig-name descname"><span class="pre">has_discussed_recently</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">within_seconds</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">300</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.has_discussed_recently"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.has_discussed_recently" title="Link to this definition">#</a></dt>
+<dd><p>Check if topic was discussed recently</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>topic</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+<li><p><strong>within_seconds</strong> (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)"><em>int</em></a>)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_last_user_input">
+<span class="sig-name descname"><span class="pre">get_last_user_input</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_last_user_input"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_last_user_input" title="Link to this definition">#</a></dt>
+<dd><p>Get the last thing user said</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_last_response">
+<span class="sig-name descname"><span class="pre">get_last_response</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_last_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_last_response" title="Link to this definition">#</a></dt>
+<dd><p>Get the last assistant response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.clear_session">
+<span class="sig-name descname"><span class="pre">clear_session</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.clear_session"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.clear_session" title="Link to this definition">#</a></dt>
+<dd><p>Clear current session context</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.ConversationMemory.get_session_stats">
+<span class="sig-name descname"><span class="pre">get_session_stats</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#ConversationMemory.get_session_stats"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.ConversationMemory.get_session_stats" title="Link to this definition">#</a></dt>
+<dd><p>Get statistics about current session</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Dict" title="(in Python v3.14)"><em>Dict</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.LongTermMemory">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.context.</span></span><span class="sig-name descname"><span class="pre">LongTermMemory</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">storage_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#LongTermMemory"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.LongTermMemory" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Optional long-term context using simple JSON storage</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>storage_path</strong> (<a class="reference external" href="https://docs.python.org/3/library/pathlib.html#pathlib.Path" title="(in Python v3.14)"><em>Path</em></a><em> | </em><em>None</em>)</p>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.LongTermMemory.remember_fact">
+<span class="sig-name descname"><span class="pre">remember_fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#LongTermMemory.remember_fact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.LongTermMemory.remember_fact" title="Link to this definition">#</a></dt>
+<dd><p>Remember a fact long-term</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.LongTermMemory.recall_fact">
+<span class="sig-name descname"><span class="pre">recall_fact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#LongTermMemory.recall_fact"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.LongTermMemory.recall_fact" title="Link to this definition">#</a></dt>
+<dd><p>Recall a fact</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.LongTermMemory.store_preference">
+<span class="sig-name descname"><span class="pre">store_preference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#LongTermMemory.store_preference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.LongTermMemory.store_preference" title="Link to this definition">#</a></dt>
+<dd><p>Store a preference long-term</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a>)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.LongTermMemory.get_preference">
+<span class="sig-name descname"><span class="pre">get_preference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#LongTermMemory.get_preference"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.LongTermMemory.get_preference" title="Link to this definition">#</a></dt>
+<dd><p>Get a stored preference</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>key</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Any" title="(in Python v3.14)"><em>Any</em></a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.get_conversation_context">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.context.</span></span><span class="sig-name descname"><span class="pre">get_conversation_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#get_conversation_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.get_conversation_context" title="Link to this definition">#</a></dt>
+<dd><p>Get or create global conversation context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.context.html#Vaani.intelligence.context.ConversationMemory" title="Vaani.intelligence.context.ConversationMemory"><em>ConversationMemory</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.context.get_long_term_context">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.context.</span></span><span class="sig-name descname"><span class="pre">get_long_term_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/context.html#get_long_term_context"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.context.get_long_term_context" title="Link to this definition">#</a></dt>
+<dd><p>Get or create global long-term context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.context.html#Vaani.intelligence.context.LongTermMemory" title="Vaani.intelligence.context.LongTermMemory"><em>LongTermMemory</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Maintains conversation history and context across sessions.</p>
+</section>
+<section id="module-Vaani.intelligence.personality">
+<span id="personality"></span><h3>Personality<a class="headerlink" href="#module-Vaani.intelligence.personality" title="Link to this heading">#</a></h3>
+<section id="personality-engine-voice-behavior-customization">
+<h4>Personality Engine - Voice &amp; Behavior Customization<a class="headerlink" href="#personality-engine-voice-behavior-customization" title="Link to this heading">#</a></h4>
+<p>Features:
+- Configurable personality traits (helpful, friendly, professional)
+- Tone adaptation based on context
+- Mood tracking and appropriate responses
+- Cultural awareness and sensitivity
+- Humor and casual conversation support
+- Response style customization
+- Personality profiles (formal, casual, witty)</p>
+<p>Defines Vaani’s personality and interaction style. Makes conversations
+feel natural and human-like with consistent character traits.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.personality.</span></span><span class="sig-name descname"><span class="pre">PersonalityModule</span></span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Applies personality traits to responses - handles tone, style, and speech optimization</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.process_response">
+<span class="sig-name descname"><span class="pre">process_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">text</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'conversation'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.process_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.process_response" title="Link to this definition">#</a></dt>
+<dd><p>Post-process AI response for natural speech</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Raw AI response</p></li>
+<li><p><strong>context</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Literal" title="(in Python v3.14)"><em>Literal</em></a><em>[</em><em>'greeting'</em><em>, </em><em>'command'</em><em>, </em><em>'conversation'</em><em>, </em><em>'error'</em><em>, </em><em>'confirmation'</em><em>]</em>) – Response context</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Processed, speech-optimized response</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.create_system_prompt">
+<span class="sig-name descname"><span class="pre">create_system_prompt</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.create_system_prompt"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.create_system_prompt" title="Link to this definition">#</a></dt>
+<dd><p>Create system prompt that defines personality</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.handle_interruption">
+<span class="sig-name descname"><span class="pre">handle_interruption</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.handle_interruption"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.handle_interruption" title="Link to this definition">#</a></dt>
+<dd><p>Generate response when interrupted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.handle_confusion">
+<span class="sig-name descname"><span class="pre">handle_confusion</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_input</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.handle_confusion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.handle_confusion" title="Link to this definition">#</a></dt>
+<dd><p>Generate response when command is unclear</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>user_input</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.processing_message">
+<span class="sig-name descname"><span class="pre">processing_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.processing_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.processing_message" title="Link to this definition">#</a></dt>
+<dd><p>Message to say when processing takes time</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.PersonalityModule.thinking_message">
+<span class="sig-name descname"><span class="pre">thinking_message</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#PersonalityModule.thinking_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.PersonalityModule.thinking_message" title="Link to this definition">#</a></dt>
+<dd><p>Message when generating complex response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.personality.get_personality_module">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.personality.</span></span><span class="sig-name descname"><span class="pre">get_personality_module</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/personality.html#get_personality_module"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.personality.get_personality_module" title="Link to this definition">#</a></dt>
+<dd><p>Get singleton personality module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.personality.html#Vaani.intelligence.personality.PersonalityModule" title="Vaani.intelligence.personality.PersonalityModule"><em>PersonalityModule</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Defines assistant personality and response tone.</p>
+</section>
+<section id="module-Vaani.intelligence.responses">
+<span id="natural-responses"></span><h3>Natural Responses<a class="headerlink" href="#module-Vaani.intelligence.responses" title="Link to this heading">#</a></h3>
+<section id="response-generator-template-based-replies">
+<h4>Response Generator - Template-Based Replies<a class="headerlink" href="#response-generator-template-based-replies" title="Link to this heading">#</a></h4>
+<p>Features:
+- Pre-defined response templates for common scenarios
+- Randomized variation to avoid repetition
+- Context-aware response selection
+- Personality-driven tone
+- Error message formatting
+- Acknowledgment phrases
+- Fallback responses for failures
+- Natural language formatting</p>
+<p>Generates natural-sounding responses using templates and variations.
+Provides consistent personality while avoiding robotic repetition.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.responses.</span></span><span class="sig-name descname"><span class="pre">NaturalResponses</span></span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Human-written responses for every situation.</p>
+<p>Why this exists:
+AI-generated text often sounds stiff or templated. This module ensures
+every spoken word feels intentionally crafted by a human designer who
+cares about how the assistant sounds.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.WAKE_ACKNOWLEDGMENTS">
+<span class="sig-name descname"><span class="pre">WAKE_ACKNOWLEDGMENTS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Yes?',</span> <span class="pre">&quot;I'm</span> <span class="pre">here.&quot;,</span> <span class="pre">&quot;What's</span> <span class="pre">up?&quot;,</span> <span class="pre">'How</span> <span class="pre">can</span> <span class="pre">I</span> <span class="pre">help?',</span> <span class="pre">'Go</span> <span class="pre">ahead.',</span> <span class="pre">&quot;I'm</span> <span class="pre">listening.&quot;,</span> <span class="pre">'What</span> <span class="pre">do</span> <span class="pre">you</span> <span class="pre">need?',</span> <span class="pre">'Yep?',</span> <span class="pre">'Mmhm?']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.WAKE_ACKNOWLEDGMENTS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.CONFIRMATIONS">
+<span class="sig-name descname"><span class="pre">CONFIRMATIONS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Got</span> <span class="pre">it.',</span> <span class="pre">'Sure</span> <span class="pre">thing.',</span> <span class="pre">'On</span> <span class="pre">it.',</span> <span class="pre">'Okay.',</span> <span class="pre">'Alright.',</span> <span class="pre">'No</span> <span class="pre">problem.',</span> <span class="pre">'You</span> <span class="pre">got</span> <span class="pre">it.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.CONFIRMATIONS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_SEARCHING">
+<span class="sig-name descname"><span class="pre">MUSIC_SEARCHING</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Let</span> <span class="pre">me</span> <span class="pre">find</span> <span class="pre">that</span> <span class="pre">for</span> <span class="pre">you.',</span> <span class="pre">'Looking</span> <span class="pre">that</span> <span class="pre">up.',</span> <span class="pre">'Give</span> <span class="pre">me</span> <span class="pre">a</span> <span class="pre">second.',</span> <span class="pre">'Searching</span> <span class="pre">now.',</span> <span class="pre">'One</span> <span class="pre">moment.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_SEARCHING" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_PLAYING">
+<span class="sig-name descname"><span class="pre">MUSIC_PLAYING</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Here</span> <span class="pre">we</span> <span class="pre">go.',</span> <span class="pre">'Playing</span> <span class="pre">now.',</span> <span class="pre">'Enjoy.',</span> <span class="pre">'There</span> <span class="pre">you</span> <span class="pre">go.',</span> <span class="pre">&quot;This</span> <span class="pre">one's</span> <span class="pre">great.&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_PLAYING" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_PAUSED">
+<span class="sig-name descname"><span class="pre">MUSIC_PAUSED</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Paused.',</span> <span class="pre">'Stopping</span> <span class="pre">for</span> <span class="pre">now.',</span> <span class="pre">'Alright,</span> <span class="pre">paused.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_PAUSED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_RESUMED">
+<span class="sig-name descname"><span class="pre">MUSIC_RESUMED</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Continuing.',</span> <span class="pre">'Back</span> <span class="pre">on.',</span> <span class="pre">'There</span> <span class="pre">we</span> <span class="pre">go.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_RESUMED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_STOPPED">
+<span class="sig-name descname"><span class="pre">MUSIC_STOPPED</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Stopped.',</span> <span class="pre">&quot;Music's</span> <span class="pre">off.&quot;,</span> <span class="pre">'Done.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_STOPPED" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_NOT_FOUND">
+<span class="sig-name descname"><span class="pre">MUSIC_NOT_FOUND</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;Hmm,</span> <span class="pre">I</span> <span class="pre">couldn't</span> <span class="pre">find</span> <span class="pre">that</span> <span class="pre">one.&quot;,</span> <span class="pre">&quot;I'm</span> <span class="pre">not</span> <span class="pre">seeing</span> <span class="pre">that</span> <span class="pre">song.</span> <span class="pre">Want</span> <span class="pre">to</span> <span class="pre">try</span> <span class="pre">something</span> <span class="pre">else?&quot;,</span> <span class="pre">&quot;Can't</span> <span class="pre">find</span> <span class="pre">that.</span> <span class="pre">Got</span> <span class="pre">another</span> <span class="pre">one</span> <span class="pre">in</span> <span class="pre">mind?&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_NOT_FOUND" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.MUSIC_ERRORS">
+<span class="sig-name descname"><span class="pre">MUSIC_ERRORS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Had</span> <span class="pre">trouble</span> <span class="pre">playing</span> <span class="pre">that.</span> <span class="pre">Want</span> <span class="pre">to</span> <span class="pre">try</span> <span class="pre">something</span> <span class="pre">else?',</span> <span class="pre">&quot;That</span> <span class="pre">didn't</span> <span class="pre">work.</span> <span class="pre">Got</span> <span class="pre">another</span> <span class="pre">song</span> <span class="pre">in</span> <span class="pre">mind?&quot;,</span> <span class="pre">&quot;I</span> <span class="pre">couldn't</span> <span class="pre">get</span> <span class="pre">that</span> <span class="pre">one</span> <span class="pre">to</span> <span class="pre">play.</span> <span class="pre">Try</span> <span class="pre">another?&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.MUSIC_ERRORS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.GENERAL_ERRORS">
+<span class="sig-name descname"><span class="pre">GENERAL_ERRORS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;Something</span> <span class="pre">didn't</span> <span class="pre">work</span> <span class="pre">there.</span> <span class="pre">Want</span> <span class="pre">to</span> <span class="pre">try</span> <span class="pre">again?&quot;,</span> <span class="pre">&quot;Hmm,</span> <span class="pre">that</span> <span class="pre">didn't</span> <span class="pre">go</span> <span class="pre">through.</span> <span class="pre">One</span> <span class="pre">more</span> <span class="pre">time?&quot;,</span> <span class="pre">&quot;I</span> <span class="pre">had</span> <span class="pre">trouble</span> <span class="pre">with</span> <span class="pre">that.</span> <span class="pre">Let's</span> <span class="pre">try</span> <span class="pre">again.&quot;,</span> <span class="pre">&quot;That</span> <span class="pre">didn't</span> <span class="pre">quite</span> <span class="pre">work.</span> <span class="pre">Can</span> <span class="pre">you</span> <span class="pre">repeat</span> <span class="pre">that?&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.GENERAL_ERRORS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.UNCLEAR_SPEECH">
+<span class="sig-name descname"><span class="pre">UNCLEAR_SPEECH</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;I</span> <span class="pre">didn't</span> <span class="pre">catch</span> <span class="pre">that.</span> <span class="pre">Could</span> <span class="pre">you</span> <span class="pre">say</span> <span class="pre">it</span> <span class="pre">again?&quot;,</span> <span class="pre">'Sorry,</span> <span class="pre">I</span> <span class="pre">missed</span> <span class="pre">that.</span> <span class="pre">One</span> <span class="pre">more</span> <span class="pre">time?',</span> <span class="pre">&quot;I</span> <span class="pre">couldn't</span> <span class="pre">hear</span> <span class="pre">you</span> <span class="pre">clearly.</span> <span class="pre">Try</span> <span class="pre">again?&quot;,</span> <span class="pre">'Mind</span> <span class="pre">repeating</span> <span class="pre">that?']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.UNCLEAR_SPEECH" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.TIMEOUT_RESPONSES">
+<span class="sig-name descname"><span class="pre">TIMEOUT_RESPONSES</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;I</span> <span class="pre">didn't</span> <span class="pre">hear</span> <span class="pre">anything.</span> <span class="pre">Still</span> <span class="pre">there?&quot;,</span> <span class="pre">'No</span> <span class="pre">response.</span> <span class="pre">Want</span> <span class="pre">to</span> <span class="pre">try</span> <span class="pre">again?',</span> <span class="pre">&quot;Didn't</span> <span class="pre">get</span> <span class="pre">that.</span> <span class="pre">Say</span> <span class="pre">it</span> <span class="pre">again</span> <span class="pre">when</span> <span class="pre">you're</span> <span class="pre">ready.&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.TIMEOUT_RESPONSES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.GREETINGS">
+<span class="sig-name descname"><span class="pre">GREETINGS</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['Hey!</span> <span class="pre">How</span> <span class="pre">can</span> <span class="pre">I</span> <span class="pre">help?',</span> <span class="pre">&quot;Hi</span> <span class="pre">there!</span> <span class="pre">What's</span> <span class="pre">up?&quot;,</span> <span class="pre">'Hello!</span> <span class="pre">What</span> <span class="pre">do</span> <span class="pre">you</span> <span class="pre">need?',</span> <span class="pre">&quot;Hey!</span> <span class="pre">I'm</span> <span class="pre">here.&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.GREETINGS" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.THANKS_RESPONSES">
+<span class="sig-name descname"><span class="pre">THANKS_RESPONSES</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;You're</span> <span class="pre">welcome!&quot;,</span> <span class="pre">'Anytime!',</span> <span class="pre">'Happy</span> <span class="pre">to</span> <span class="pre">help.',</span> <span class="pre">'Of</span> <span class="pre">course!',</span> <span class="pre">'No</span> <span class="pre">problem</span> <span class="pre">at</span> <span class="pre">all.']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.THANKS_RESPONSES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.HOW_ARE_YOU">
+<span class="sig-name descname"><span class="pre">HOW_ARE_YOU</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[&quot;I'm</span> <span class="pre">good,</span> <span class="pre">thanks!</span> <span class="pre">What</span> <span class="pre">can</span> <span class="pre">I</span> <span class="pre">do</span> <span class="pre">for</span> <span class="pre">you?&quot;,</span> <span class="pre">'Doing</span> <span class="pre">great!</span> <span class="pre">How</span> <span class="pre">about</span> <span class="pre">you?',</span> <span class="pre">&quot;I'm</span> <span class="pre">here</span> <span class="pre">and</span> <span class="pre">ready</span> <span class="pre">to</span> <span class="pre">help!&quot;]</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.HOW_ARE_YOU" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.GOODBYE">
+<span class="sig-name descname"><span class="pre">GOODBYE</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><span class="pre">List</span></a><span class="p"><span class="pre">[</span></span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a><span class="p"><span class="pre">]</span></span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['See</span> <span class="pre">you</span> <span class="pre">later!',</span> <span class="pre">'Take</span> <span class="pre">care!',</span> <span class="pre">'Bye!',</span> <span class="pre">'Catch</span> <span class="pre">you</span> <span class="pre">later!']</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.GOODBYE" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.CAPABILITIES">
+<span class="sig-name descname"><span class="pre">CAPABILITIES</span></span><span class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><span class="pre">str</span></a></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'I</span> <span class="pre">can</span> <span class="pre">help</span> <span class="pre">you</span> <span class="pre">with</span> <span class="pre">music,</span> <span class="pre">answer</span> <span class="pre">questions,</span> <span class="pre">tell</span> <span class="pre">you</span> <span class="pre">the</span> <span class="pre">time,</span> <span class="pre">give</span> <span class="pre">you</span> <span class="pre">weather</span> <span class="pre">updates,</span> <span class="pre">and</span> <span class="pre">more.</span> <span class="pre">Just</span> <span class="pre">ask!'</span></span><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.CAPABILITIES" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.get_random">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">get_random</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response_list</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.get_random"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.get_random" title="Link to this definition">#</a></dt>
+<dd><p>Pick a random response to avoid repetition.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>response_list</strong> (<a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.List" title="(in Python v3.14)"><em>List</em></a><em>[</em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a><em>]</em>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.wake_acknowledgment">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">wake_acknowledgment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.wake_acknowledgment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.wake_acknowledgment" title="Link to this definition">#</a></dt>
+<dd><p>Natural way to acknowledge the wake word.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.confirmation">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">confirmation</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.confirmation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.confirmation" title="Link to this definition">#</a></dt>
+<dd><p>Quick confirmation that we understood.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.music_searching">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">music_searching</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.music_searching"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.music_searching" title="Link to this definition">#</a></dt>
+<dd><p>Let them know we’re looking for music.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.music_playing">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">music_playing</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">song_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.music_playing"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.music_playing" title="Link to this definition">#</a></dt>
+<dd><p>Announce we’re starting playback.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>song_name</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.error">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">error</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.error"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.error" title="Link to this definition">#</a></dt>
+<dd><p>Calm, apologetic error message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.unclear_speech">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">unclear_speech</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.unclear_speech"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.unclear_speech" title="Link to this definition">#</a></dt>
+<dd><p>When we couldn’t understand.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.timeout">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">timeout</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.timeout"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.timeout" title="Link to this definition">#</a></dt>
+<dd><p>When we didn’t hear anything.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.greeting">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">greeting</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.greeting"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.greeting" title="Link to this definition">#</a></dt>
+<dd><p>Friendly hello.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.thanks">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">thanks</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.thanks"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.thanks" title="Link to this definition">#</a></dt>
+<dd><p>Response to thank you.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.goodbye">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">goodbye</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.goodbye"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.goodbye" title="Link to this definition">#</a></dt>
+<dd><p>Friendly farewell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.responses.NaturalResponses.polish_ai_response">
+<span class="property"><span class="k"><span class="pre">static</span></span><span class="w"> </span></span><span class="sig-name descname"><span class="pre">polish_ai_response</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">raw_text</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/responses.html#NaturalResponses.polish_ai_response"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.responses.NaturalResponses.polish_ai_response" title="Link to this definition">#</a></dt>
+<dd><p>Take raw AI output and make it sound human.</p>
+<p>Why this matters:
+AI models often generate technically correct but emotionally flat text.
+This function adds warmth, breaks up long sentences, and ensures
+natural pacing for speech.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>raw_text</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p>Human-written response templates for natural interactions.</p>
+</section>
+<section id="module-Vaani.intelligence.classifier">
+<span id="command-classifier"></span><h3>Command Classifier<a class="headerlink" href="#module-Vaani.intelligence.classifier" title="Link to this heading">#</a></h3>
+<section id="classifier-intent-entity-recognition">
+<h4>Classifier - Intent &amp; Entity Recognition<a class="headerlink" href="#classifier-intent-entity-recognition" title="Link to this heading">#</a></h4>
+<p>Features:
+- Fast pattern-based classification
+- Entity extraction (names, dates, numbers, etc.)
+- Intent confidence scoring
+- Support for multiple intent types
+- Fuzzy matching for variations
+- Context-aware classification
+- Multi-language support
+- Fallback to AI for ambiguous queries</p>
+<p>Analyzes user input to determine intent and extract relevant
+entities. Uses fast pattern matching with AI fallback for
+accuracy.</p>
+<p>Vaani Voice Assistant
+Copyright (c) 2026 Aman Kumar Pandey.
+All Rights Reserved.</p>
+<p>This file is part of the Vaani Voice Assistant core and is proprietary.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.classifier.</span></span><span class="sig-name descname"><span class="pre">CommandType</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandType"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/enum.html#enum.Enum" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></a></p>
+<p>Command classification types</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.MUSIC_PLAYBACK">
+<span class="sig-name descname"><span class="pre">MUSIC_PLAYBACK</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_playback'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.MUSIC_PLAYBACK" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.MUSIC_CONTROL">
+<span class="sig-name descname"><span class="pre">MUSIC_CONTROL</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_control'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.MUSIC_CONTROL" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.MUSIC_QUERY">
+<span class="sig-name descname"><span class="pre">MUSIC_QUERY</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'music_query'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.MUSIC_QUERY" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.SYSTEM">
+<span class="sig-name descname"><span class="pre">SYSTEM</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'system'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.SYSTEM" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.CONVERSATION">
+<span class="sig-name descname"><span class="pre">CONVERSATION</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'conversation'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.CONVERSATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.INFORMATION">
+<span class="sig-name descname"><span class="pre">INFORMATION</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'information'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.INFORMATION" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandType.UNKNOWN">
+<span class="sig-name descname"><span class="pre">UNKNOWN</span></span><span class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'unknown'</span></span><a class="headerlink" href="#Vaani.intelligence.classifier.CommandType.UNKNOWN" title="Link to this definition">#</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler">
+<span class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.classifier.</span></span><span class="sig-name descname"><span class="pre">CommandHandler</span></span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler" title="Link to this definition">#</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.14)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Routes user commands to the right handler based on keyword matching</p>
+<p>Music commands bypass the AI and go straight to the music manager.
+Everything else goes through the conversation engine.</p>
+<p>Professional command classifier and router</p>
+<p>Routes commands to appropriate handlers:
+- Music → Music Manager (bypasses AI)
+- System → System handlers
+- Conversation → AI Engine</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.classify_command">
+<span class="sig-name descname"><span class="pre">classify_command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.classify_command"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.classify_command" title="Link to this definition">#</a></dt>
+<dd><p>Classify command into appropriate category</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – User command text</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>CommandType classification</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html#Vaani.intelligence.classifier.CommandType" title="Vaani.intelligence.classifier.CommandType"><em>CommandType</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.extract_song_name">
+<span class="sig-name descname"><span class="pre">extract_song_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.extract_song_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.extract_song_name" title="Link to this definition">#</a></dt>
+<dd><p>Extract song name from play command</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>) – Play command text</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Song name or None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a> | None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.extract_volume_change">
+<span class="sig-name descname"><span class="pre">extract_volume_change</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.extract_volume_change"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.extract_volume_change" title="Link to this definition">#</a></dt>
+<dd><p>Extract volume change intent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Tuple of (action, value) where action is ‘set’, ‘up’, ‘down’, or ‘mute’</p>
+</dd>
+<dt class="field-even">Parameters<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/typing.html#typing.Tuple" title="(in Python v3.14)"><em>Tuple</em></a>[<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a>, <a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.14)">int</a> | None]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.is_queue_operation">
+<span class="sig-name descname"><span class="pre">is_queue_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.is_queue_operation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.is_queue_operation" title="Link to this definition">#</a></dt>
+<dd><p>Determine queue operation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>‘add’, ‘clear’, ‘show’, ‘remove’</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>Tuple of (operation, index) where operation is</p>
+</dd>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)"><em>str</em></a>)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.should_bypass_ai">
+<span class="sig-name descname"><span class="pre">should_bypass_ai</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.should_bypass_ai"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.should_bypass_ai" title="Link to this definition">#</a></dt>
+<dd><p>Determine if command should bypass AI engine</p>
+<p>Music and system commands bypass AI for instant response</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command_type</strong> (<a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html#Vaani.intelligence.classifier.CommandType" title="Vaani.intelligence.classifier.CommandType"><em>CommandType</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.14)">bool</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.CommandHandler.get_confirmation_message">
+<span class="sig-name descname"><span class="pre">get_confirmation_message</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">command_type</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#CommandHandler.get_confirmation_message"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.CommandHandler.get_confirmation_message" title="Link to this definition">#</a></dt>
+<dd><p>Get appropriate confirmation for command type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>command_type</strong> (<a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html#Vaani.intelligence.classifier.CommandType" title="Vaani.intelligence.classifier.CommandType"><em>CommandType</em></a>)</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.14)">str</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="Vaani.intelligence.classifier.get_command_handler">
+<span class="sig-prename descclassname"><span class="pre">Vaani.intelligence.classifier.</span></span><span class="sig-name descname"><span class="pre">get_command_handler</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/Vaani/intelligence/classifier.html#get_command_handler"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#Vaani.intelligence.classifier.get_command_handler" title="Link to this definition">#</a></dt>
+<dd><p>Get singleton command handler</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p><a class="reference internal" href="intelligence/Vaani.intelligence.classifier.html#Vaani.intelligence.classifier.CommandHandler" title="Vaani.intelligence.classifier.CommandHandler"><em>CommandHandler</em></a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>Routes commands to appropriate handlers.</p>
+</section>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="voice/Vaani.voice.wake_word.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Vaani.voice.wake_word</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intelligence/Vaani.intelligence.conversation.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Vaani.intelligence.conversation</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

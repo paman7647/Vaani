@@ -3,6 +3,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux-lightgrey?style=for-the-badge&logo=linux)
 ![License](https://img.shields.io/badge/License-Proprietary-red?style=for-the-badge)
+[![Documentation Status](https://readthedocs.org/projects/vaani/badge/?version=latest)](https://vaani.readthedocs.io/en/latest/?badge=latest)
 
 **Vaani** is an advanced, context-aware voice assistant designed to bridge the gap between human interaction and machine intelligence. It prioritizes privacy, speed, and natural conversation flow.
 
@@ -113,6 +114,22 @@ For deep dives into architecture, modules, and advanced usage, check out the **[
 - [Architecture Overview](docs/architecture.rst)
 - [Voice System Details](docs/voice_system.rst)
 - [Intelligence & NLP](docs/intelligence.rst)
+
+### Hosted Docs (Read the Docs)
+
+The project is configured for Read the Docs.
+
+- Config file: [.readthedocs.yaml](.readthedocs.yaml)
+- Build dependencies: [docs/requirements.txt](docs/requirements.txt)
+
+To enable hosted docs:
+
+1. Sign in at https://readthedocs.org with your GitHub account.
+2. Import this repository into Read the Docs.
+3. The default configuration will build Sphinx using `docs/conf.py`.
+4. Your docs will be available at a URL like `https://<project-slug>.readthedocs.io`.
+
+Optional: If you prefer the legacy config filename, [readthedocs.yml](readthedocs.yml) mirrors the main config.
 
 ### Directory Structure
 

@@ -1,0 +1,1060 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vaani.config.global_config &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../../_static/documentation_options.js?v=8d563738"></script>
+    <script src="../../../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = '_modules/Vaani/config/global_config';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar hide-on-wide">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../voice_system.html">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="../../../license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../../../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="../../index.html" class="nav-link">Module code</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Vaani.config.global_config</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <h1>Source code for Vaani.config.global_config</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Global Configuration - System-Wide Settings</span>
+<span class="sd">===============================================</span>
+
+<span class="sd">Features:</span>
+<span class="sd">- External config.json loading and validation</span>
+<span class="sd">- Environment variable integration</span>
+<span class="sd">- API key management (Gemini, Groq, etc.)</span>
+<span class="sd">- Feature toggles (enable/disable components)</span>
+<span class="sd">- System paths (logs, temp, models)</span>
+<span class="sd">- Debug mode settings</span>
+<span class="sd">- Performance tuning parameters</span>
+<span class="sd">- Default value fallbacks</span>
+<span class="sd">- Voice mappings for 32 languages</span>
+
+<span class="sd">Loads configuration from external config.json and environment variables.</span>
+<span class="sd">Provides centralized access to all system settings with validation.</span>
+
+<span class="sd">Vaani Voice Assistant</span>
+<span class="sd">Copyright (c) 2026 Aman Kumar Pandey.</span>
+<span class="sd">All Rights Reserved.</span>
+
+<span class="sd">This file is part of the Vaani Voice Assistant core and is proprietary.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># ASSISTANT IDENTITY</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># PRIMARY CONFIGURATION - Change here to rename assistant</span>
+<span class="n">ASSISTANT_NAME</span> <span class="o">=</span> <span class="s2">&quot;Vaani&quot;</span>
+<span class="n">ASSISTANT_NAME_LOWER</span> <span class="o">=</span> <span class="n">ASSISTANT_NAME</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
+
+<span class="c1"># Wake words (automatically includes name)</span>
+<span class="n">WAKE_WORDS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="sa">f</span><span class="s2">&quot;hey </span><span class="si">{</span><span class="n">ASSISTANT_NAME_LOWER</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;hi </span><span class="si">{</span><span class="n">ASSISTANT_NAME_LOWER</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="sa">f</span><span class="s2">&quot;hello </span><span class="si">{</span><span class="n">ASSISTANT_NAME_LOWER</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="n">ASSISTANT_NAME_LOWER</span>
+<span class="p">]</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># MULTILINGUAL SUPPORT</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># All 22 Scheduled Indian Languages + Major Global Languages</span>
+<span class="n">SUPPORTED_LANGUAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Indian Languages (Constitutional)</span>
+    <span class="s1">&#39;as&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Assamese&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;অসমীয়া&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;bn&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bengali&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;বাংলা&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;brx&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Bodo&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;बड़ो&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;doi&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Dogri&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;डोगरी&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;gu&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Gujarati&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ગુજરાતી&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Hindi&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;हिन्दी&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;kn&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Kannada&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ಕನ್ನಡ&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ks&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Kashmiri&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;कॉशुर&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;kok&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Konkani&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;कोंकणी&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;mai&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Maithili&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;मैथिली&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ml&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Malayalam&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;മലയാളം&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;mni&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Manipuri&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;মৈতৈলোন্&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;mr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Marathi&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;मराठी&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ne&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Nepali&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;नेपाली&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;or&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Odia&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ଓଡ଼ିଆ&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;pa&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Punjabi&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ਪੰਜਾਬੀ&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;sa&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sanskrit&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;संस्कृतम्&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;sat&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Santali&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ᱥᱟᱱᱛᱟᱲᱤ&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;sd&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Sindhi&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;سنڌي&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Tamil&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;தமிழ்&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;te&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Telugu&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;తెలుగు&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ur&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Urdu&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;اردو&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    
+    <span class="c1"># English (Indian &amp; International)</span>
+    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;English&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Global&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;en-IN&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;English (India)&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;English (India)&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;India&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;en-US&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;English (US)&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;English (US)&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;USA&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;en-GB&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;English (UK)&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;English (UK)&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;UK&#39;</span><span class="p">},</span>
+    
+    <span class="c1"># Major Global Languages</span>
+    <span class="s1">&#39;es&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Español&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Spain/Latin America&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;fr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;French&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Français&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;France&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;German&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Deutsch&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Germany&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;it&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Italian&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Italiano&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Italy&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;pt&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Portuguese&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Português&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Portugal/Brazil&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ru&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Russian&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Русский&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Russia&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ar&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Arabic&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;العربية&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Middle East&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;zh&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Chinese (Simplified)&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;简体中文&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;China&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;zh-TW&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Chinese (Traditional)&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;繁體中文&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Taiwan&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Japanese&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;日本語&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Japan&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;ko&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Korean&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;한국어&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Korea&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Indonesian&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Bahasa Indonesia&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Indonesia&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;th&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Thai&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;ไทย&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Thailand&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;vi&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Vietnamese&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Tiếng Việt&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Vietnam&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Turkish&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Türkçe&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Turkey&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;fa&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Persian&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;فارسی&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Iran&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;he&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Hebrew&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;עברית&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;Israel&#39;</span><span class="p">},</span>
+    <span class="s1">&#39;sw&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Swahili&#39;</span><span class="p">,</span> <span class="s1">&#39;native&#39;</span><span class="p">:</span> <span class="s1">&#39;Kiswahili&#39;</span><span class="p">,</span> <span class="s1">&#39;region&#39;</span><span class="p">:</span> <span class="s1">&#39;East Africa&#39;</span><span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># Default language (supports both Hindi and English for Indian users)</span>
+<span class="n">DEFAULT_LANGUAGE</span> <span class="o">=</span> <span class="s1">&#39;en-IN&#39;</span>  <span class="c1"># English (India) - gives Romanized output for mixed Hindi-English</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># VOICE MAPPING (edge-speech_synthesis Neural Voices)</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="n">EDGE_TTS_VOICES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="c1"># Indian Languages (PREMIUM HD Dragon Neural Voices - Best Available)</span>
+    <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;hi-IN-SwaraNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;hi-IN-MadhurNeural&#39;</span><span class="p">],</span>  <span class="c1"># Hindi - Warm, clear (best available)</span>
+    <span class="s1">&#39;en-IN&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;en-IN-Meera:DragonHDLatestNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-IN-Aarti:DragonHDLatestNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-IN-Arjun:DragonHDLatestNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-IN-NeerjaExpressiveNeural&#39;</span><span class="p">],</span>  <span class="c1"># English (India) - PREMIUM HD voices</span>
+    <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ta-IN-PallaviNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ta-IN-ValluvarNeural&#39;</span><span class="p">],</span>  <span class="c1"># Tamil - Smooth</span>
+    <span class="s1">&#39;te&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;te-IN-ShrutiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;te-IN-MohanNeural&#39;</span><span class="p">],</span>  <span class="c1"># Telugu - Melodic</span>
+    <span class="s1">&#39;bn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bn-IN-TanishaaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;bn-IN-BashkarNeural&#39;</span><span class="p">],</span>  <span class="c1"># Bengali - Expressive</span>
+    <span class="s1">&#39;mr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;mr-IN-AarohiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;mr-IN-ManoharNeural&#39;</span><span class="p">],</span>  <span class="c1"># Marathi - Rich tone</span>
+    <span class="s1">&#39;gu&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gu-IN-DhwaniNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;gu-IN-NiranjanNeural&#39;</span><span class="p">],</span>  <span class="c1"># Gujarati - Pleasant</span>
+    <span class="s1">&#39;kn&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;kn-IN-SapnaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;kn-IN-GaganNeural&#39;</span><span class="p">],</span>  <span class="c1"># Kannada - Articulate</span>
+    <span class="s1">&#39;ml&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ml-IN-SobhanaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ml-IN-MidhunNeural&#39;</span><span class="p">],</span>  <span class="c1"># Malayalam - Smooth</span>
+    <span class="s1">&#39;pa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pa-IN-SuhitaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;pa-IN-GagandeepNeural&#39;</span><span class="p">],</span>  <span class="c1"># Punjabi - Energetic</span>
+    <span class="s1">&#39;ur&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ur-IN-GulNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ur-IN-SalmanNeural&#39;</span><span class="p">],</span>  <span class="c1"># Urdu - Refined</span>
+    
+    <span class="c1"># Global Languages (Premium Expressive Neural Voices)</span>
+    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;en-US-VaaniNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US-JennyMultilingualNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US-AndrewNeural&#39;</span><span class="p">],</span>  <span class="c1"># English (US) - Very natural, conversational</span>
+    <span class="s1">&#39;en-US&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;en-US-VaaniNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US-JennyMultilingualNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-US-AndrewNeural&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;en-GB&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;en-GB-SoniaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;en-GB-RyanNeural&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;es&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;es-ES-ElviraNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;es-MX-DaliaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;es-ES-AlvaroNeural&#39;</span><span class="p">],</span>  <span class="c1"># Spanish - Warm &amp; clear</span>
+    <span class="s1">&#39;fr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;fr-FR-DeniseNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;fr-FR-HenriNeural&#39;</span><span class="p">],</span>  <span class="c1"># French - Sophisticated</span>
+    <span class="s1">&#39;de&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;de-DE-KatjaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;de-DE-ConradNeural&#39;</span><span class="p">],</span>  <span class="c1"># German - Clear &amp; precise</span>
+    <span class="s1">&#39;it&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;it-IT-ElsaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;it-IT-IsabellaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;it-IT-DiegoNeural&#39;</span><span class="p">],</span>  <span class="c1"># Italian - Melodic</span>
+    <span class="s1">&#39;pt&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pt-BR-FranciscaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;pt-BR-ThalitaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;pt-BR-AntonioNeural&#39;</span><span class="p">],</span>  <span class="c1"># Portuguese - Warm</span>
+    <span class="s1">&#39;ru&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ru-RU-SvetlanaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ru-RU-DariyaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ru-RU-DmitryNeural&#39;</span><span class="p">],</span>  <span class="c1"># Russian - Rich</span>
+    <span class="s1">&#39;ar&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ar-SA-ZariyahNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ar-EG-SalmaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ar-SA-HamedNeural&#39;</span><span class="p">],</span>  <span class="c1"># Arabic - Expressive</span>
+    <span class="s1">&#39;zh&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;zh-CN-XiaoxiaoNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;zh-CN-XiaoyiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;zh-CN-YunxiNeural&#39;</span><span class="p">],</span>  <span class="c1"># Chinese - Natural</span>
+    <span class="s1">&#39;zh-TW&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;zh-TW-HsiaoChenNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;zh-TW-HsiaoYuNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;zh-TW-YunJheNeural&#39;</span><span class="p">],</span>  <span class="c1"># Chinese (Traditional)</span>
+    <span class="s1">&#39;ja&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ja-JP-NanamiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ja-JP-AoiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ja-JP-KeitaNeural&#39;</span><span class="p">],</span>  <span class="c1"># Japanese - Polite &amp; clear</span>
+    <span class="s1">&#39;ko&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;ko-KR-SunHiNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;ko-KR-InJoonNeural&#39;</span><span class="p">],</span>  <span class="c1"># Korean - Natural</span>
+    <span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;id-ID-GadisNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;id-ID-ArdiNeural&#39;</span><span class="p">],</span>  <span class="c1"># Indonesian - Friendly</span>
+    <span class="s1">&#39;th&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;th-TH-PremwadeeNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;th-TH-AcharaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;th-TH-NiwatNeural&#39;</span><span class="p">],</span>  <span class="c1"># Thai - Pleasant</span>
+    <span class="s1">&#39;vi&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;vi-VN-HoaiMyNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;vi-VN-NamMinhNeural&#39;</span><span class="p">],</span>  <span class="c1"># Vietnamese - Melodic</span>
+    <span class="s1">&#39;tr&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;tr-TR-EmelNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;tr-TR-AhmetNeural&#39;</span><span class="p">],</span>  <span class="c1"># Turkish - Dynamic</span>
+    <span class="s1">&#39;fa&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;fa-IR-DilaraNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;fa-IR-FaridNeural&#39;</span><span class="p">],</span>  <span class="c1"># Persian - Elegant</span>
+    <span class="s1">&#39;he&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;he-IL-HilaNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;he-IL-AvriNeural&#39;</span><span class="p">],</span>  <span class="c1"># Hebrew - Clear</span>
+    <span class="s1">&#39;sw&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;sw-KE-ZuriNeural&#39;</span><span class="p">,</span> <span class="s1">&#39;sw-KE-RafikiNeural&#39;</span><span class="p">],</span>  <span class="c1"># Swahili - Warm</span>
+<span class="p">}</span>
+
+<span class="c1"># Voice gender preference</span>
+<span class="n">PREFERRED_VOICE_GENDER</span> <span class="o">=</span> <span class="s1">&#39;female&#39;</span>  <span class="c1"># &#39;female&#39;, &#39;male&#39;, or &#39;any&#39;</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># TTS ENGINE CONFIGURATION</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># TTS fallback priority</span>
+<span class="n">TTS_ENGINE_PRIORITY</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;edge-speech_synthesis&#39;</span><span class="p">,</span> <span class="s1">&#39;pyspeech_synthesisx3&#39;</span><span class="p">,</span> <span class="s1">&#39;os-native&#39;</span><span class="p">]</span>
+
+<span class="c1"># TTS reliability settings</span>
+<span class="n">TTS_RETRY_ATTEMPTS</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># Retry speech this many times on failure</span>
+<span class="n">TTS_TIMEOUT</span> <span class="o">=</span> <span class="mi">120</span>  <span class="c1"># Maximum seconds for single speech operation (increased for long multilingual responses)</span>
+<span class="n">TTS_AUDIO_BUFFER_DELAY</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># Seconds to wait for audio buffer readiness</span>
+
+<span class="c1"># pyspeech_synthesisx3 settings (when used as fallback)</span>
+<span class="n">PYTTSX3_RATE</span> <span class="o">=</span> <span class="mi">175</span>  <span class="c1"># Speaking rate (words per minute)</span>
+<span class="n">PYTTSX3_VOLUME</span> <span class="o">=</span> <span class="mf">0.9</span>  <span class="c1"># Volume (0.0 to 1.0)</span>
+<span class="n">PYTTSX3_FRESH_ENGINE_PER_SPEECH</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Fix reuse bug: create new engine each time</span>
+
+<span class="c1"># edge-speech_synthesis settings (optimized for natural conversation)</span>
+<span class="n">EDGE_TTS_RATE</span> <span class="o">=</span> <span class="s2">&quot;+5%&quot;</span>  <span class="c1"># Slightly faster for more dynamic feel</span>
+<span class="n">EDGE_TTS_VOLUME</span> <span class="o">=</span> <span class="s2">&quot;+10%&quot;</span>  <span class="c1"># Slightly louder for clarity</span>
+<span class="n">EDGE_TTS_PITCH</span> <span class="o">=</span> <span class="s2">&quot;+2Hz&quot;</span>  <span class="c1"># Warmer, more pleasant tone</span>
+
+<span class="c1"># OS Native TTS (final fallback)</span>
+<span class="n">OS_NATIVE_VOICES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;darwin&#39;</span><span class="p">:</span> <span class="p">{</span>  <span class="c1"># macOS</span>
+        <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="s1">&#39;Lekha&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;en-IN&#39;</span><span class="p">:</span> <span class="s1">&#39;Rishi&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;Samantha&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;linux&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;english&#39;</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;win32&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;default&#39;</span><span class="p">:</span> <span class="s1">&#39;Microsoft David Desktop&#39;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># AI ENGINE CONFIGURATION</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># Gemini multilingual instructions</span>
+<span class="n">GEMINI_SYSTEM_INSTRUCTIONS</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;You are </span><span class="si">{</span><span class="n">ASSISTANT_NAME</span><span class="si">}</span><span class="s2">, a warm, intelligent multilingual voice assistant.</span>
+
+<span class="s2">CRITICAL RULES:</span>
+<span class="s2">1. ALWAYS respond in the SAME LANGUAGE as the user&#39;s input</span>
+<span class="s2">2. Detect language automatically - never ask which language to use</span>
+<span class="s2">3. Support mixed-language input (Hinglish, Tanglish, etc.) - respond in the primary language</span>
+<span class="s2">4. Use natural, conversational phrasing - avoid robotic/literal translations</span>
+<span class="s2">5. Match regional tone and cultural context where possible</span>
+<span class="s2">6. Keep responses concise for voice interaction (2-3 sentences max unless asked for details)</span>
+<span class="s2">7. Be warm, helpful, and personalityble</span>
+
+<span class="s2">LANGUAGE HANDLING:</span>
+<span class="s2">- If user writes in Hindi, respond in Hindi</span>
+<span class="s2">- If user writes in Tamil, respond in Tamil</span>
+<span class="s2">- If user mixes English + Hindi (Hinglish), respond primarily in Hindi</span>
+<span class="s2">- If unsure, default to English (India) tone</span>
+<span class="s2">- Preserve the user&#39;s choice of script (Devanagari, Latin, etc.)</span>
+
+<span class="s2">PERSONALITY:</span>
+<span class="s2">- Friendly but professional</span>
+<span class="s2">- Patient and encouraging</span>
+<span class="s2">- Culturally sensitive</span>
+<span class="s2">- Conversational, not formal</span>
+<span class="s2">- Use appropriate greetings for time of day and culture</span>
+
+<span class="s2">Remember: You&#39;re a VOICE assistant - keep responses naturally speakable.&quot;&quot;&quot;</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># AUDIO &amp; PLAYBACK SETTINGS</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># Audio player settings</span>
+<span class="n">DEFAULT_VOLUME</span> <span class="o">=</span> <span class="mf">0.9</span>  <span class="c1"># Default playback volume (0.0 to 1.0)</span>
+<span class="n">DOWNLOAD_AUDIO</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Download music before playing (more reliable)</span>
+<span class="n">VLC_NETWORK_CACHING</span> <span class="o">=</span> <span class="mi">3000</span>  <span class="c1"># VLC network cache (ms)</span>
+<span class="n">BUFFER_SIZE</span> <span class="o">=</span> <span class="mi">2048</span>  <span class="c1"># Audio buffer size</span>
+<span class="n">MAX_QUEUE_SIZE</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># Maximum queued songs</span>
+
+<span class="c1"># Audio ducking (lower music volume during speech)</span>
+<span class="n">ENABLE_AUDIO_DUCKING</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">MUSIC_DUCKED_VOLUME</span> <span class="o">=</span> <span class="mf">0.3</span>  <span class="c1"># Music volume during speech</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># LOGGING &amp; DEBUGGING</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="c1"># Logging</span>
+<span class="n">DEBUG_MODE</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># Verbose logging</span>
+<span class="n">LOG_LEVEL</span> <span class="o">=</span> <span class="s2">&quot;INFO&quot;</span>  <span class="c1"># DEBUG, INFO, WARNING, ERROR</span>
+<span class="n">LOG_FILE</span> <span class="o">=</span> <span class="s2">&quot;logs/vaani.log&quot;</span>
+
+<span class="c1"># Audio verification</span>
+<span class="n">LOG_AUDIO_VERIFICATION</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Log when audio actually plays</span>
+<span class="n">LOG_LANGUAGE_DETECTION</span> <span class="o">=</span> <span class="kc">True</span>  <span class="c1"># Log detected languages</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># DIRECTORIES</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="n">TEMP_AUDIO_DIR</span> <span class="o">=</span> <span class="s2">&quot;temp/audio&quot;</span>
+<span class="n">LOG_DIR</span> <span class="o">=</span> <span class="s2">&quot;logs&quot;</span>
+<span class="n">DATA_DIR</span> <span class="o">=</span> <span class="s2">&quot;data&quot;</span>
+
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+<span class="c1"># ERROR MESSAGES (Multilingual)</span>
+<span class="c1"># ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━</span>
+
+<span class="n">ERROR_MESSAGES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;en&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;speech_synthesis_failure&#39;</span><span class="p">:</span> <span class="s2">&quot;Sorry, my voice glitched for a moment.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_not_found&#39;</span><span class="p">:</span> <span class="s2">&quot;I couldn&#39;t find that song.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_playback_failed&#39;</span><span class="p">:</span> <span class="s2">&quot;Sorry, I had trouble playing that.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;no_internet&#39;</span><span class="p">:</span> <span class="s2">&quot;I need an internet connection for that.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;hi&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;speech_synthesis_failure&#39;</span><span class="p">:</span> <span class="s2">&quot;माफ़ करें, मेरी आवाज़ में कुछ गड़बड़ी हुई।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_not_found&#39;</span><span class="p">:</span> <span class="s2">&quot;मुझे वह गाना नहीं मिला।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_playback_failed&#39;</span><span class="p">:</span> <span class="s2">&quot;माफ़ करें, मुझे वो बजाने में परेशानी हुई।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;no_internet&#39;</span><span class="p">:</span> <span class="s2">&quot;इसके लिए मुझे इंटरनेट कनेक्शन चाहिए।&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;ta&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;speech_synthesis_failure&#39;</span><span class="p">:</span> <span class="s2">&quot;மன்னிக்கவும், எனது குரல் சிக்கல் உள்ளது.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_not_found&#39;</span><span class="p">:</span> <span class="s2">&quot;அந்த பாடலை என்னால் கண்டுபிடிக்க முடியவில்லை.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_playback_failed&#39;</span><span class="p">:</span> <span class="s2">&quot;மன்னிக்கவும், அதை இயக்குவதில் சிக்கல்.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;no_internet&#39;</span><span class="p">:</span> <span class="s2">&quot;இதற்கு எனக்கு இணைய இணைப்பு தேவை.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;te&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;speech_synthesis_failure&#39;</span><span class="p">:</span> <span class="s2">&quot;క్షమించండి, నా వాయిస్ లో సమస్య వచ్చింది.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_not_found&#39;</span><span class="p">:</span> <span class="s2">&quot;ఆ పాటను నేను కనుగొనలేకపోయాను.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_playback_failed&#39;</span><span class="p">:</span> <span class="s2">&quot;క్షమించండి, దానిని ప్లే చేయడంలో సమస్య.&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;no_internet&#39;</span><span class="p">:</span> <span class="s2">&quot;దీని కోసం నాకు ఇంటర్నెట్ కనెక్షన్ కావాలి.&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+    <span class="s1">&#39;bn&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s1">&#39;speech_synthesis_failure&#39;</span><span class="p">:</span> <span class="s2">&quot;দু��ঃখিত, আমার কণ্ঠে সমস্যা হয়েছে।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_not_found&#39;</span><span class="p">:</span> <span class="s2">&quot;আমি সেই গানটি খুঁজে পাইনি।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;music_playback_failed&#39;</span><span class="p">:</span> <span class="s2">&quot;দুঃখিত, এটি বাজাতে সমস্যা হয়েছে।&quot;</span><span class="p">,</span>
+        <span class="s1">&#39;no_internet&#39;</span><span class="p">:</span> <span class="s2">&quot;এর জন্য আমার ইন্টারনেট সংযোগ প্রয়োজন।&quot;</span><span class="p">,</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+
+<span class="c1"># Default to English if language not found</span>
+<div class="viewcode-block" id="get_error_message">
+<a class="viewcode-back" href="../../../modules/config/Vaani.config.global_config.html#Vaani.config.global_config.get_error_message">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">get_error_message</span><span class="p">(</span><span class="n">error_key</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">language</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s1">&#39;en&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Get localized error message&quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">ERROR_MESSAGES</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">language</span><span class="p">,</span> <span class="n">ERROR_MESSAGES</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+        <span class="n">error_key</span><span class="p">,</span> 
+        <span class="n">ERROR_MESSAGES</span><span class="p">[</span><span class="s1">&#39;en&#39;</span><span class="p">][</span><span class="n">error_key</span><span class="p">]</span>
+    <span class="p">)</span></div>
+
+</pre></div>
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

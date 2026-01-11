@@ -1,0 +1,1367 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Voice and Audio System &#8212; Vaani 1.0.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=8d563738"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'voice_system';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="How Vaani Thinks" href="intelligence.html" />
+    <link rel="prev" title="Architecture" href="architecture.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="index.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Vaani 1.0.0 documentation</p>
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="configuration.html">
+    Configuration
+  </a>
+</li>
+
+            <li class="nav-item dropdown">
+                <button class="btn dropdown-toggle nav-item" type="button"
+                data-bs-toggle="dropdown" aria-expanded="false"
+                aria-controls="pst-nav-more-links">
+                    More
+                </button>
+                <ul id="pst-nav-more-links" class="dropdown-menu">
+                    
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class=" current active">
+  <a class="nav-link dropdown-item nav-internal" href="#">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class=" ">
+  <a class="nav-link dropdown-item nav-internal" href="license.html">
+    license
+  </a>
+</li>
+
+                </ul>
+            </li>
+            
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="overview.html">
+    Overview
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="getting_started.html">
+    Getting Started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="installation.html">
+    Installation
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="usage.html">
+    Using Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="configuration.html">
+    Configuration
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="architecture.html">
+    Architecture
+  </a>
+</li>
+
+
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#">
+    Voice and Audio System
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="intelligence.html">
+    How Vaani Thinks
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="memory_context.html">
+    Memory and Conversation Context
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="customization.html">
+    customization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="troubleshooting.html">
+    troubleshooting
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="faq.html">
+    faq
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/setup.html">
+    Development Setup
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/project_structure.html">
+    Project Structure and Code Organization
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/coding_style.html">
+    Coding Style and Standards
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="development/contributing.html">
+    Contributing to Vaani
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/config.html">
+    config
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/core.html">
+    core
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/voice.html">
+    voice
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/intelligence.html">
+    intelligence
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/integrations.html">
+    integrations
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="modules/utils.html">
+    utils
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="deployment.html">
+    deployment
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="performance.html">
+    performance
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="debugging.html">
+    debugging
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="credits.html">
+    credits
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="disclaimer.html">
+    disclaimer
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="license.html">
+    license
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/paman7647/vaani" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Voice and Audio System</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="voice-and-audio-system">
+<h1>Voice and Audio System<a class="headerlink" href="#voice-and-audio-system" title="Link to this heading">#</a></h1>
+<p>How Vaani captures, generates, and plays voice with multi-engine reliability.</p>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">#</a></h2>
+<p>Vaani’s audio system has three main components:</p>
+<ol class="arabic simple">
+<li><p><strong>Multi-Engine Speech Recognition</strong> - Converting your voice to text using multiple engines</p></li>
+<li><p><strong>Native Text-to-Speech</strong> - Converting responses to audio using Indian voices</p></li>
+<li><p><strong>Audio Playback</strong> - Playing music and voice through your speakers</p></li>
+</ol>
+<p>Each component uses a fallback architecture for maximum reliability.</p>
+<p><strong>Recognition Architecture (V2):</strong></p>
+<ul class="simple">
+<li><p><strong>Primary:</strong> Google Speech API (en-IN) - Cloud-based, 95% accuracy for Indian accents</p></li>
+<li><p><strong>Backup:</strong> Vosk (Indian English model) - Offline, 85% accuracy, &lt;100ms processing</p></li>
+<li><p><strong>Fallback:</strong> Sphinx - Emergency recognition when others fail</p></li>
+</ul>
+<p><strong>Version:</strong> 2.0 (the multi-engine rewrite)</p>
+<p><strong>Branch:</strong> dev (where active development happens)</p>
+</section>
+<section id="speech-recognition-multi-engine-v2">
+<h2>Speech Recognition (Multi-Engine V2)<a class="headerlink" href="#speech-recognition-multi-engine-v2" title="Link to this heading">#</a></h2>
+<p><strong>How Multi-Engine Recognition Works</strong></p>
+<ol class="arabic">
+<li><p><strong>Audio Capture</strong>
+- Records audio from your microphone
+- Captures 16-bit PCM audio at 16kHz sample rate
+- Balanced energy threshold: 300 (optimized for Indian accents)
+- Optimized timing:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Pause threshold: 0.8s (prevents early cutoff)</p></li>
+<li><p>Phrase threshold: 0.3s (quick capture start)</p></li>
+<li><p>Non-speaking duration: 0.6s (balanced end detection)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><strong>Processing</strong>
+- No ambient calibration (removed for speed)
+- Wake word detection with fuzzy matching (85% threshold)
+- Context-aware wake word requirement (idle vs active)</p></li>
+<li><p><strong>Multi-Engine Recognition Chain</strong>
+- <strong>Step 1:</strong> Try Google Speech API (language: en-IN)</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Best accuracy (~95% for Indian English)</p></li>
+<li><p>Requires internet connection</p></li>
+<li><p>Typical latency: 1-2 seconds</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Step 2:</strong> If Google fails, try Vosk (Indian English model: en-in-0.4)
+- Good accuracy (~85%)
+- Fully offline
+- Ultra-fast: &lt;100ms processing</p></li>
+<li><p><strong>Step 3:</strong> If Vosk fails, try Sphinx
+- Basic accuracy
+- Emergency fallback
+- Always available</p></li>
+</ul>
+</li>
+<li><p><strong>Wake Word Detection</strong>
+- Fuzzy matching using RapidFuzz (85% threshold)
+- Handles accent variations
+- Context-aware requirement:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>Idle: No wake word needed</p></li>
+<li><p>Music/TTS: “Hey Vaani” required</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Microphone Requirements</strong></p>
+<ul class="simple">
+<li><p>Standard USB or built-in laptop microphone</p></li>
+<li><dl class="simple">
+<dt>The system checks your config for <code class="docutils literal notranslate"><span class="pre">MICROPHONE_TYPE</span></code>:</dt><dd><ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">internal</span></code>: Prioritizes “MacBook”, “Built-in” microphones.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">external</span></code>: Prioritizes “USB”, “Bluetooth”, “AirPods”.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p>If your preferred type isn’t found, it falls back to the best available option.</p></li>
+</ul>
+<p><strong>Testing Your Microphone</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Quick test</span>
+python3<span class="w"> </span>test_audio_direct.py
+
+<span class="c1"># Detailed test</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.voice.speech_recognition import recognize_speech</span>
+<span class="s">print(&quot;Speak something (5 seconds)...&quot;)</span>
+<span class="s">text = recognize_speech(timeout=5)</span>
+<span class="s">print(f&quot;You said: {text}&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p><strong>Microphone Setup by OS</strong></p>
+<p><strong>macOS</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check microphone</span>
+system_profiler<span class="w"> </span>SPAudioDataType<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s2">&quot;Microphone&quot;</span>
+
+<span class="c1"># In System Preferences → Sound → Input:</span>
+<span class="c1"># Select your microphone</span>
+<span class="c1"># Ensure input volume is above 50%</span>
+</pre></div>
+</div>
+<p><strong>Linux</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Check microphone</span>
+arecord<span class="w"> </span>-l
+
+<span class="c1"># Test recording</span>
+arecord<span class="w"> </span>-D<span class="w"> </span>hw:0,0<span class="w"> </span>-d<span class="w"> </span><span class="m">5</span><span class="w"> </span>test.wav
+aplay<span class="w"> </span>test.wav
+</pre></div>
+</div>
+<p><strong>Windows (WSL)</strong></p>
+<p>Audio capture in WSL has limitations. For best experience:</p>
+<ol class="arabic simple">
+<li><p>Configure WSL to use Windows audio</p></li>
+<li><p>Set microphone as default in Windows Sound settings</p></li>
+<li><p>Grant WSL microphone permission</p></li>
+</ol>
+<p>See <a class="reference internal" href="troubleshooting.html"><span class="doc">troubleshooting</span></a> for WSL audio issues.</p>
+<p><strong>Microphone Settings in Vaani</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View current settings</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.config import settings</span>
+<span class="s">config = settings.config</span>
+<span class="s">print(f&quot;Sample rate: {config.get(&#39;SPEECH_RECOGNITION_SAMPLE_RATE&#39;, 16000)}&quot;)</span>
+<span class="s">print(f&quot;Language: {config.get(&#39;VOICE_LANGUAGE&#39;, &#39;en&#39;)}&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="text-to-speech-native-indian-voices">
+<h2>Text-to-Speech (Native Indian Voices)<a class="headerlink" href="#text-to-speech-native-indian-voices" title="Link to this heading">#</a></h2>
+<p><strong>How TTS Works</strong></p>
+<ol class="arabic">
+<li><p><strong>Text Input</strong>
+- Receives response text to speak
+- Non-blocking queue-based processing
+- Thread-safe state management</p></li>
+<li><p><strong>Voice Selection</strong>
+- Prioritizes Indian voices:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><strong>Veena</strong> (Indian English Female) - Primary</p></li>
+<li><p><strong>Rishi</strong> (Indian English Male)</p></li>
+<li><p><strong>Lekha</strong> (Hindi Female)</p></li>
+<li><p><strong>Samantha</strong> (US English) - Fallback</p></li>
+</ul>
+</div></blockquote>
+<ul class="simple">
+<li><p>Automatic selection based on language</p></li>
+<li><p>Graceful fallback if preferred voice unavailable</p></li>
+</ul>
+</li>
+<li><p><strong>Audio Generation</strong>
+- Uses macOS native TTS (nsss engine)
+- Natural pronunciation for Indian English
+- Handles Hindi and other Indian languages
+- Queue-based processing (producer-consumer pattern)</p></li>
+<li><p><strong>Audio Output</strong>
+- Plays through system audio device
+- Automatic volume ducking during music playback
+- Thread-safe speaking state management
+- Updates context for wake word requirement</p></li>
+</ol>
+<p><strong>Voice Configuration</strong></p>
+<p>Default configuration (config.json):</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;PREFERRED_VOICES&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;Veena&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Rishi&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Samantha&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Lekha&quot;</span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;LANGUAGE_VOICE_MAP&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;hi&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Veena&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;en&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Veena&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ta&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Veena&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;te&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Veena&quot;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>Testing Voices</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List available Indian voices</span>
+say<span class="w"> </span>-v<span class="w"> </span>?<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-E<span class="w"> </span><span class="s2">&quot;(hi_IN|en_IN)&quot;</span>
+
+<span class="c1"># Test Veena voice</span>
+say<span class="w"> </span>-v<span class="w"> </span>Veena<span class="w"> </span><span class="s2">&quot;Testing Indian English voice&quot;</span>
+
+<span class="c1"># Test Lekha voice (Hindi)</span>
+say<span class="w"> </span>-v<span class="w"> </span>Lekha<span class="w"> </span><span class="s2">&quot;नमस्ते, मैं वाणी हूँ&quot;</span>
+</pre></div>
+</div>
+<p><strong>Voice Configuration</strong></p>
+<p>Choose different voices by language:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># View available voices</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.config import settings</span>
+<span class="s">config = settings.config</span>
+<span class="s">language = config.get(&#39;VOICE_LANGUAGE&#39;, &#39;en&#39;)</span>
+<span class="s">print(f&quot;Current language: {language}&quot;)</span>
+<span class="s">print(f&quot;Available voices: {config.get(&#39;VOICE_OPTIONS&#39;, {}).get(language, [])}&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p><strong>Configure Voice</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit .env file</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VOICE_LANGUAGE=en&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TTS_ENGINE_VOICE_ID=female&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Then restart Vaani</span>
+python3<span class="w"> </span>main.py
+</pre></div>
+</div>
+<p>Available voice identifiers by language are in <a class="reference internal" href="configuration.html"><span class="doc">Configuration</span></a>.</p>
+<p><strong>TTS Testing</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test TTS</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core.tts_engine import text_to_speech</span>
+
+<span class="s">text = &quot;Hello, this is Vaani. Testing text to speech.&quot;</span>
+<span class="s">audio_file = text_to_speech(text, language=&quot;en&quot;)</span>
+<span class="s">print(f&quot;Generated audio: {audio_file}&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+</section>
+<section id="audio-playback">
+<h2>Audio Playback<a class="headerlink" href="#audio-playback" title="Link to this heading">#</a></h2>
+<p><strong>Playback Pipeline</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Audio File</strong>
+- Generated TTS audio (WAV, MP3)
+- Or music from YouTube</p></li>
+<li><p><strong>Audio Device Selection</strong>
+- Detects available audio output devices
+- Selects default or configured device
+- Falls back to next available</p></li>
+<li><p><strong>Playback</strong>
+- Initiates playback through system audio
+- Handles volume control
+- May reduce music volume if configured</p></li>
+<li><p><strong>Completion</strong>
+- Waits for audio to finish
+- Cleans up resources</p></li>
+</ol>
+<p><strong>Audio Devices</strong></p>
+<p>Check available audio devices:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># List audio devices</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">import sounddevice as sd</span>
+<span class="s">devices = sd.query_devices()</span>
+<span class="s">for i, device in enumerate(devices):</span>
+<span class="s">    print(f&quot;{i}: {device[&#39;name&#39;]}&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p><strong>Configuring Audio Output</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Edit .env to specify device</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_OUTPUT_DEVICE_INDEX=0&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Or let Vaani auto-detect</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_OUTPUT_DEVICE_INDEX=-1&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Music Playback</strong></p>
+<p>Music playback is a special type of audio:</p>
+<ol class="arabic simple">
+<li><p><strong>Music Search</strong> - Query YouTube for song/artist</p></li>
+<li><p><strong>Download</strong> - Get audio stream from YouTube</p></li>
+<li><p><strong>Playback</strong> - Play through audio output device</p></li>
+</ol>
+<p>See <a class="reference internal" href="customization.html"><span class="doc">customization</span></a> for music-specific settings.</p>
+<p><strong>Testing Playback</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test speaker/headphones</span>
+python3<span class="w"> </span>test_audio_verification.py
+
+<span class="c1"># Test music playback</span>
+python3<span class="w"> </span>test_music.py
+</pre></div>
+</div>
+</section>
+<section id="audio-quality">
+<h2>Audio Quality<a class="headerlink" href="#audio-quality" title="Link to this heading">#</a></h2>
+<p><strong>Sample Rate</strong></p>
+<ul class="simple">
+<li><p><strong>16kHz</strong> (Standard) - Default for Vaani, good for voice</p></li>
+<li><p><strong>44.1kHz</strong> (CD Quality) - Better for music, uses more bandwidth</p></li>
+<li><p><strong>48kHz</strong> (Professional) - Highest quality, rarely needed</p></li>
+</ul>
+<p>Default: 16kHz for speech recognition (sufficient for voice quality)</p>
+<p><strong>Bit Depth</strong></p>
+<ul class="simple">
+<li><p><strong>16-bit</strong> (Standard) - Default, good enough for voice</p></li>
+<li><p><strong>24-bit</strong> (High) - Better dynamic range, rarely needed</p></li>
+</ul>
+<p>Default: 16-bit (standard)</p>
+<p><strong>Noise and Issues</strong></p>
+<p>Common audio problems:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Echo (hearing yourself)
+→ Check microphone position
+→ Reduce speaker volume
+→ Use noise cancellation headset
+
+Background noise being amplified
+→ Move closer to microphone
+→ Check microphone levels
+→ Enable noise reduction in settings
+
+Crackling or distortion
+→ Lower input/output volume
+→ Use higher quality microphone
+→ Check audio cable connections
+
+Stuttering playback
+→ Close other applications
+→ Increase audio buffer size
+→ Check CPU usage with: top -l 1
+</pre></div>
+</div>
+</section>
+<section id="noise-handling">
+<h2>Noise Handling<a class="headerlink" href="#noise-handling" title="Link to this heading">#</a></h2>
+<p><strong>Noise Reduction</strong></p>
+<p>Vaani can reduce background noise before recognition:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable noise reduction in .env</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_NOISE_REDUCTION=true&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Restart Vaani</span>
+python3<span class="w"> </span>main.py
+</pre></div>
+</div>
+<p><strong>How It Works</strong></p>
+<ol class="arabic simple">
+<li><p>Records baseline of room noise (first 0.5 seconds)</p></li>
+<li><p>Subtracts baseline from incoming audio</p></li>
+<li><p>Reduces background noise while preserving voice</p></li>
+</ol>
+<p><strong>Limitations</strong></p>
+<ul class="simple">
+<li><p>Works best with consistent background noise</p></li>
+<li><p>Degrades performance with varying noise</p></li>
+<li><p>May remove part of speech if sound is overlapping</p></li>
+</ul>
+<p><strong>When to Disable</strong></p>
+<p>Disable noise reduction if:</p>
+<ol class="arabic simple">
+<li><p>You’re in a quiet environment (unnecessary processing)</p></li>
+<li><p>Noise reduction is cutting off parts of speech</p></li>
+<li><p>Performance is a concern</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_NOISE_REDUCTION=false&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+</section>
+<section id="audio-ducking">
+<h2>Audio Ducking<a class="headerlink" href="#audio-ducking" title="Link to this heading">#</a></h2>
+<p><strong>What Is Audio Ducking?</strong></p>
+<p><strong>Smart Ducking Strategy</strong></p>
+<p>Vaani uses a “Smart Ducking” approach to balance music enjoyment and voice interaction:</p>
+<ol class="arabic simple">
+<li><p><strong>Wake Word Listening</strong>: Music plays at <strong>FULL VOLUME</strong>. The music is <em>not</em> ducked while Vaani waits for “Hey Vaani”.</p></li>
+<li><p><strong>Command Listening</strong>: Only <em>after</em> the wake word is detected, the music volume drops instantly to 15% (configurable).</p></li>
+<li><p><strong>Response</strong>: Music stays low while Vaani speaks the response.</p></li>
+<li><p><strong>Resuming</strong>: Music volume gracefully fades back up to original level.</p></li>
+</ol>
+<p><strong>Why?</strong>
+Previous assistants ducked music <em>constantly</em> while listening for the wake word, ruining the song. Vaani’s approach keeps the music loud until you actually engage the assistant.</p>
+<p><strong>Music Mode Sensitivity</strong></p>
+<p>When music is playing loudly, Vaani automatically switches to <strong>Music Mode</strong>:
+- <strong>Heuristic Filter</strong>: It ignores long sentences (likely lyrics) to prevent false wake word triggers.
+- <strong>Dynamic Threshold</strong>: It raises the microphone threshold significantly (to &gt;3000) so it only hears you if you speak <em>over</em> the music.</p>
+<p><strong>Configure Ducking</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Enable ducking (default)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_DUCKING_ENABLED=true&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Set ducking level (0.2 = 20% volume while speaking)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_DUCKING_LEVEL=0.2&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Set fade time (milliseconds)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_DUCKING_FADE_TIME=500&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Disable Ducking</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_DUCKING_ENABLED=false&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Limitations</strong></p>
+<ul class="simple">
+<li><p>Only works with audio Vaani controls</p></li>
+<li><p>System-level music apps won’t be affected</p></li>
+<li><p>Timing might be slightly off on slower systems</p></li>
+</ul>
+</section>
+<section id="multi-language-audio">
+<h2>Multi-Language Audio<a class="headerlink" href="#multi-language-audio" title="Link to this heading">#</a></h2>
+<p><strong>Language Support</strong></p>
+<p>Vaani supports 32 languages for audio:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>English (en), Spanish (es), French (fr), German (de),
+Italian (it), Portuguese (pt), Russian (ru), Japanese (ja),
+Chinese (zh), Korean (ko), Arabic (ar), Hindi (hi),
+Turkish (tr), Polish (pl), Dutch (nl), Swedish (sv),
+Norwegian (no), Danish (da), Finnish (fi), Czech (cs),
+Greek (el), Hebrew (he), Thai (th), Vietnamese (vi),
+Indonesian (id), Filipino (fil), Malay (ms), Romanian (ro),
+Bulgarian (bg), Hungarian (hu), Croatian (hr), Serbian (sr)
+</pre></div>
+</div>
+<p><strong>Switching Languages</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Interactive setup</span>
+python3<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;from vaani_assistant.config import global_config; global_config.setup_initial()&quot;</span>
+
+<span class="c1"># Or edit .env</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VOICE_LANGUAGE=es&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Language-Specific Voices</strong></p>
+<p>Each language has multiple voice options:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Example: English voices</span>
+<span class="c1"># female, male, female_uk, male_deep, etc.</span>
+
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;VOICE_LANGUAGE=en&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TTS_ENGINE_VOICE_ID=female&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="configuration.html"><span class="doc">Configuration</span></a> for complete voice list by language.</p>
+<p><strong>Accent Considerations</strong></p>
+<ul class="simple">
+<li><p>Speech recognition works with various accents</p></li>
+<li><p>Specify your language for best accuracy</p></li>
+<li><p>Some accents may reduce recognition accuracy</p></li>
+</ul>
+</section>
+<section id="advanced-configuration">
+<h2>Advanced Configuration<a class="headerlink" href="#advanced-configuration" title="Link to this heading">#</a></h2>
+<p><strong>Audio Buffering</strong></p>
+<p>For systems with audio lag or dropouts:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Increase buffer size (higher = more latency but fewer dropouts)</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_BUFFER_SIZE=4096&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Sample Rate Override</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Match your system&#39;s default</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_SAMPLE_RATE=44100&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>Device Fallback</strong></p>
+<p>If primary audio device fails:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Try next device automatically</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;AUDIO_FALLBACK_ENABLED=true&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+</section>
+<section id="debugging-audio-issues">
+<h2>Debugging Audio Issues<a class="headerlink" href="#debugging-audio-issues" title="Link to this heading">#</a></h2>
+<p><strong>Enable Audio Logging</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">LOG_LEVEL</span><span class="o">=</span>DEBUG<span class="w"> </span>python3<span class="w"> </span>main.py<span class="w"> </span><span class="m">2</span>&gt;<span class="p">&amp;</span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>audio
+</pre></div>
+</div>
+<p><strong>Check Audio System</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># macOS</span>
+system_profiler<span class="w"> </span>SPAudioDataType
+
+<span class="c1"># Linux</span>
+aplay<span class="w"> </span>-l
+pactl<span class="w"> </span>list<span class="w"> </span>short<span class="w"> </span>sinks
+
+<span class="c1"># Windows (WSL)</span>
+pactl<span class="w"> </span>list<span class="w"> </span>short<span class="w"> </span>sinks
+</pre></div>
+</div>
+<p><strong>Test Components Independently</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Test microphone</span>
+python3<span class="w"> </span>test_audio_direct.py
+
+<span class="c1"># Test TTS</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core.tts_engine import text_to_speech</span>
+<span class="s">text_to_speech(&quot;Testing text to speech&quot;)</span>
+<span class="s">EOF</span>
+
+<span class="c1"># Test playback</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core.audio_player import play_audio</span>
+<span class="s">play_audio(&quot;test_audio.wav&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p><strong>Capture Audio for Analysis</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Record what Vaani is hearing</span>
+python3<span class="w"> </span><span class="s">&lt;&lt; &#39;EOF&#39;</span>
+<span class="s">from vaani_assistant.core.speech_recognition import recognize_speech</span>
+<span class="s">import sounddevice as sd</span>
+<span class="s">import soundfile as sf</span>
+
+<span class="s">duration = 5  # seconds</span>
+<span class="s">print(f&quot;Recording for {duration} seconds...&quot;)</span>
+<span class="s">recording = sd.rec(int(16000 * duration), samplerate=16000, channels=1)</span>
+<span class="s">sd.wait()</span>
+<span class="s">sf.write(&quot;captured_audio.wav&quot;, recording, 16000)</span>
+<span class="s">print(&quot;Saved to captured_audio.wav&quot;)</span>
+<span class="s">EOF</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="troubleshooting.html"><span class="doc">troubleshooting</span></a> for common audio problems and solutions.</p>
+</section>
+<section id="technical-details">
+<h2>Technical Details<a class="headerlink" href="#technical-details" title="Link to this heading">#</a></h2>
+<p><strong>Audio Processing Pipeline</strong></p>
+<p>When you speak to Vaani:</p>
+<ol class="arabic simple">
+<li><p>Microphone captures analog sound</p></li>
+<li><p>Sound card converts to digital (analog-to-digital conversion)</p></li>
+<li><p>Vaani records 16-bit PCM at 16kHz</p></li>
+<li><p>Optional noise reduction is applied</p></li>
+<li><p>Audio is buffered in 1-second chunks</p></li>
+<li><p>When you stop speaking (silence detected), processing starts</p></li>
+<li><p>Audio sent to speech recognition engine</p></li>
+<li><p>Recognized text is returned</p></li>
+</ol>
+<p><strong>TTS Generation Pipeline</strong></p>
+<p>When Vaani responds:</p>
+<ol class="arabic simple">
+<li><p>Response text is prepared</p></li>
+<li><p>Selected TTS engine is called</p></li>
+<li><p>Engine generates audio data</p></li>
+<li><p>Audio may be cached</p></li>
+<li><p>Audio output device is selected</p></li>
+<li><p>Audio is decoded (if necessary)</p></li>
+<li><p>Volume levels are set</p></li>
+<li><p>Audio is played through output device</p></li>
+</ol>
+<p><strong>Music Playback Pipeline</strong></p>
+<p>When music is requested:</p>
+<ol class="arabic simple">
+<li><p>Song name is sent to YouTube search</p></li>
+<li><p>Top result is selected</p></li>
+<li><p>Audio stream is downloaded</p></li>
+<li><p>Stream is decoded in real-time</p></li>
+<li><p>Audio ducking is applied if enabled</p></li>
+<li><p>Audio is played through output device</p></li>
+</ol>
+</section>
+<section id="performance-tuning">
+<h2>Performance Tuning<a class="headerlink" href="#performance-tuning" title="Link to this heading">#</a></h2>
+<p><strong>For Slow Systems</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use faster TTS engine</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TTS_ENGINE_PRIORITY=standard&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Disable noise reduction</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_NOISE_REDUCTION=false&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Reduce sample rate</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_SAMPLE_RATE=8000&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+<p><strong>For High Quality</strong></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use advanced TTS</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;TTS_ENGINE_PRIORITY=advanced&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Enable noise reduction</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_NOISE_REDUCTION=true&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+
+<span class="c1"># Use higher sample rate</span>
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;SPEECH_RECOGNITION_SAMPLE_RATE=44100&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>.env
+</pre></div>
+</div>
+</section>
+<section id="next-steps">
+<h2>Next Steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>See <a class="reference internal" href="configuration.html"><span class="doc">Configuration</span></a> for all audio settings</p></li>
+<li><p>Read <a class="reference internal" href="troubleshooting.html"><span class="doc">troubleshooting</span></a> for audio problems</p></li>
+<li><p>Check <a class="reference internal" href="customization.html"><span class="doc">customization</span></a> for music options</p></li>
+<li><p>Review <span class="xref std std-doc">project_structure</span> for code details</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="architecture.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Architecture</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="intelligence.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">How Vaani Thinks</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2026, Aman Kumar Pandey.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.1.0.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.16.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
