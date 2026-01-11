@@ -17,7 +17,6 @@ Copyright (c) 2026 Aman Kumar Pandey.
 All Rights Reserved.
 
 This file is part of the Vaani Voice Assistant core and is proprietary.
-
-External integrations for the Vaani voice assistant.
-
 """
+
+__all__ = []
