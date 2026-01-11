@@ -1,0 +1,53 @@
+VAANI VOICE ASSISTANT LICENSE
+=============================
+
+Copyright (c) 2026 Aman Kumar Pandey. All Rights Reserved.
+
+GitHub Repository: https://github.com/paman7647/Vaani
+
+1. PROPRIETARY CORE CODE
+------------------------
+All files located in the `vaani/` directory and `main.py` are the proprietary 
+intellectual property of Aman Kumar Pandey.
+
+- You MAY: View the code for educational purposes.
+- You MAY NOT: Copy, modify, distribute, sublicense, or use this code for 
+  commercial purposes without explicit written permission from the copyright holder.
+
+2. OPEN SOURCE INSTALLATION SCRIPTS
+-----------------------------------
+The following files are licensed under the MIT License:
+- setup.sh (Linux/macOS installation script)
+- setup.ps1 (Windows installation script)
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy 
+of this software and associated documentation files (the "Software"), to deal 
+in the Software without restriction, including without limitation the rights 
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell 
+copies of the Software, and to permit persons to whom the Software is 
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in 
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR 
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE 
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN 
+THE SOFTWARE.
+
+3. THIRD-PARTY DEPENDENCIES
+---------------------------
+This project uses various open-source libraries, each governed by their own 
+licenses. See requirements.txt for a complete list.
+
+4. CONTACT
+----------
+For permissions, licensing inquiries, or contributions:
+- GitHub: https://github.com/paman7647/Vaani
+- Author: Aman Kumar Pandey
+

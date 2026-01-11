@@ -1,0 +1,61 @@
+# Vaani Voice Assistant - Core Dependencies
+# Version 1.0
+# Install: pip install -r requirements.txt
+
+# ============================================
+# CORE AI & NLP
+# ============================================
+google-genai>=0.2.0                    # Google Gemini AI
+rapidfuzz>=3.0.0                       # Fast fuzzy string matching for intent classification
+
+# ============================================
+# SPEECH RECOGNITION
+# ============================================
+SpeechRecognition>=3.10.0              # Multi-engine speech recognition
+pyaudio>=0.2.13                        # Audio I/O
+vosk>=0.3.45                           # Offline speech recognition
+pocketsphinx>=0.1.15                   # Offline speech recognition fallback
+
+# ============================================
+# TEXT-TO-SPEECH
+# ============================================
+pyttsx3>=2.90                          # Cross-platform TTS
+
+# ============================================
+# AUDIO & MEDIA PLAYBACK
+# ============================================
+yt-dlp>=2023.0.0                       # YouTube audio extraction
+python-vlc>=3.0.18121                  # VLC media player bindings
+pygame>=2.5.0                          # Audio playback fallback
+
+# ============================================
+# WEB SEARCH & INFORMATION
+# ============================================
+duckduckgo-search>=4.1.1               # Privacy-focused search
+wikipedia>=1.4.0                       # Wikipedia API
+beautifulsoup4>=4.12.0                 # HTML parsing
+requests>=2.31.0                       # HTTP requests
+lxml>=4.9.0                            # XML/HTML parser (faster than html.parser)
+
+# ============================================
+# TRANSLATION
+# ============================================
+deep-translator>=1.11.4                # Multi-language translation (no API key required)
+
+# ============================================
+# CONFIGURATION & ENVIRONMENT
+# ============================================
+python-dotenv>=1.0.0                   # Environment variable management
+
+# ============================================
+# SYSTEM UTILITIES
+# ============================================
+psutil>=5.9.0                          # System and process utilities
+numpy>=1.21.0                          # Numerical operations
+
+# ============================================
+# OPTIONAL DEPENDENCIES
+# ============================================
+spacy>=3.7.0                           # Advanced NLP and entity recognition
+textblob>=0.17.0                       # Sentiment analysis
+googlesearch-python>=1.2.0             # Google search fallback

@@ -1,0 +1,35 @@
+{
+    "GOOGLE_API_KEY": "AIzaSyCz6dv3ymkNRKdiqPKLoBNVAMvrLRHVQq0",
+    "WEATHER_API_KEY": "YOUR_OPENWEATHERMAP_KEY_HERE",
+    "MICROPHONE_TYPE": "system",
+    "MUSIC_DUCK_VOLUME": 0.15,
+    "DEFAULT_VOLUME": 1.0,
+    "PREFERRED_VOICES": [
+        "Veena",
+        "Rishi",
+        "Samantha",
+        "Lekha",
+        "Damayanti",
+        "Piya"
+    ],
+    "LANGUAGE_VOICE_MAP": {
+        "hi": "Veena",
+        "ta": "Vani",
+        "bn": "Piya",
+        "en": "Veena"
+    },
+    "WAKE_WORDS": [
+        "hey vani",
+        "vani",
+        "shivani",
+        "hey shivani"
+    ],
+    "AI_MODEL": "gemini-2.5-flash",
+    "RESPONSE_LENGTH": "medium",
+    "AI_TEMPERATURE": 0.9,
+    "SPEECH_RATE": 160,
+    "ENERGY_THRESHOLD": 300,
+    "COMMAND_TIMEOUT": 10,
+    "DEBUG_MODE": true,
+    "USE_GOOGLE_SEARCH_GROUNDING": true
+}
