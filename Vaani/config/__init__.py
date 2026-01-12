@@ -18,7 +18,4 @@ All Rights Reserved.
 This file is part of the Vaani Voice Assistant core and is proprietary.
 """
 
-
-from . import settings
-
-__all__ = ['settings']
+__all__ = []
