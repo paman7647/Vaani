@@ -20,4 +20,3 @@ All Rights Reserved.
 This file is part of the Vaani Voice Assistant core and is proprietary.
 """
 
-__all__ = []
