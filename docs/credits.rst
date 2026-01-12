@@ -1,7 +1,7 @@
 Credits & Acknowledgements
 ==========================
 
-Hey! This section is all about giving credit where it's due - both to me for building this, and to all the amazing open-source projects that made it possible.
+Hey! This section is all about giving credit where it's due - both to me for building this, and to all the amazing open-source libraries and tools that made it possible.
 
 Who Built This
 --------------
@@ -13,7 +13,7 @@ I'm the person behind Vaani. I designed it, wrote the code, debugged it at 2 AM,
 Some background about me:
 - I love working on AI and voice technology
 - Built this to solve my own frustration with existing assistants
-- Big believer in open-source and privacy
+- Big believer in privacy-first technology
 - Still learning and improving this project
 
 Find me at:

@@ -1,241 +1,190 @@
-# Vaani - My Personal AI Voice Assistant
+# Vaani 🎙️
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python&logoColor=white)
-![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+[![Platform](https://img.shields.io/badge/Platform-macOS%20%7C%20Linux%20%7C%20Windows-lightgrey?style=flat-square)](https://github.com/paman7647/vaani)
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
+[![Documentation](https://img.shields.io/badge/Docs-ReadTheDocs-blue?style=flat-square)](https://vaani.readthedocs.io/)
 
-**Vaani** (वाणी - meaning "voice" in Hindi) is an AI voice assistant I built from scratch as a personal project. It's privacy-focused, works offline, and supports 32 languages!
+> **Your personal, privacy-first AI voice assistant that actually works offline.**
 
-> **"I wanted a voice assistant I could actually trust and customize - so I built one."** - Aman Kumar Pandey
-
----
-
-## ✨ Why I Built This
-
-I got tired of voice assistants that:
-- Send all my data to the cloud
-- Don't work without internet
-- Only work well in English
-- Are locked down and can't be customized
-
-So I built Vaani to solve these issues. It's been an amazing learning experience!
-
-## 🚀 What Makes It Cool
-
-### 🔒 **Privacy First**
-- Most stuff runs on YOUR computer, not some company's server
-- Only uses cloud when you need smart AI responses or web search
-- You can go fully offline if you want
-- No data collection, no tracking - just you and your assistant
-
-### 🎯 **Actually Works**
-- **Three recognition engines**: Google API, Vosk (offline), and Sphinx (backup)
-- Switches automatically if one fails - you won't even notice
-- Fast responses (2-5 seconds typically)
-- Understands context from your previous questions
-
-### 🌏 **Multilingual**
-- Supports 32 languages (Hindi, English, Spanish, French, and many more)
-- Switch languages anytime
-- Great for multilingual households
-
-### 🎵 **Plays Music**
-- Stream from YouTube (because everyone uses YouTube for music!)
-- Natural controls: "play", "pause", "skip", "volume up"
-- Automatically lowers music when talking to you
-
----
-
-## 🛠️ What's Inside
-
-Built with some amazing open-source tools:
-
-| What It Does | What I Used |
-| :--- | :--- |
-| **Smart Conversations** | Google Gemini AI |
-| **Speech Recognition** | Vosk + Google Speech API + Sphinx |
-| **Text-to-Speech** | pyttsx3 + Edge TTS |
-| **Music Player** | VLC + yt-dlp |
-| **Web Search** | DuckDuckGo (privacy-friendly!) |
-
----
-
-## � Getting Started
-
-### What You'll Need
-- **Computer**: macOS, Linux, or Windows 10/11
-- **Python**: Version 3.10 or newer
-- **Audio**: A microphone and speakers (even laptop built-ins work!)
-- **Internet**: Optional - core features work offline
-
-### Super Easy Installation
-
-I made setup scripts so you don't have to worry about dependencies:
-
-#### 🍎 macOS / 🐧 Linux
+**Vaani** (वाणी - "voice" in Hindi) is a proprietary voice assistant I built to solve my frustrations with existing options. It runs primarily on your machine, respects your privacy, speaks 32 languages, and you can customize everything.
 
 ```bash
-# Grab the code
+# Quick Start
 git clone https://github.com/paman7647/vaani.git
-cd vaani
-
-# Run my setup script (it handles everything)
-chmod +x setup.sh
-./setup.sh
-
-# Start it up!
+cd vaani && chmod +x setup.sh && ./setup.sh
 python3 main.py
+# Say "Hey Vaani" and start talking!
 ```
 
-#### 🪟 Windows
+---
 
-Open PowerShell as Administrator:
+## Why Vaani?
 
+**🔒 Privacy-Focused** → Most processing happens locally. Your voice stays on your device.  
+**🗣️ 32 Languages** → English, Hindi, Spanish, French, and 28 more. Switch anytime.  
+**🎵 Music Ready** → Stream from YouTube with voice control (pause, skip, volume).  
+**🧠 Actually Smart** → Uses Google Gemini AI for natural conversations when you need it.  
+**⚡ Fast & Reliable** → 3-engine recognition system (Google API → Vosk → Sphinx) with automatic fallback.
+
+---
+
+## What Can It Do?
+
+- 🎤 **Voice Control**: Wake word detection, natural conversation flow
+- 💬 **Smart Conversations**: Context-aware responses using AI
+- 🔍 **Web Search**: Real-time information from DuckDuckGo
+- 🎶 **Music Playback**: YouTube streaming with voice controls
+- 🌍 **Multi-Language**: Switch between 32 languages seamlessly
+- 🏠 **Runs Locally**: No cloud dependency for core features
+
+---
+
+## 🚀 Quick Setup
+
+### Requirements
+- Python 3.10+
+- macOS, Linux, or Windows 10/11
+- Microphone and speakers
+- Internet (optional - works offline too!)
+
+### Installation
+
+**macOS / Linux:**
+```bash
+git clone https://github.com/paman7647/vaani.git
+cd vaani
+chmod +x setup.sh && ./setup.sh
+```
+
+**Windows (PowerShell as Admin):**
 ```powershell
 git clone https://github.com/paman7647/vaani.git
 cd vaani
 .\setup.ps1
-python main.py
 ```
 
-### Quick Configuration
+### Configuration (Optional)
 
-Want AI features? Add this to `.env` file:
-
-```ini
-# Get a free key from makersuite.google.com
-GEMINI_API_KEY=your_key_here
+Create a `.env` file for AI features:
+```bash
+# Get free key from makersuite.google.com
+GEMINI_API_KEY=your_api_key_here
 ```
 
-That's it! Everything else works with defaults, but you can customize tons of stuff in `config.json`.
+### Run It
+```bash
+python3 main.py
+# Say "Hey Vaani" and start talking!
+```
 
 ---
 
 ## 📚 Documentation
 
-For deep dives into architecture, modules, and advanced usage, check out the **[docs/](docs/)** directory.
+**Complete documentation is available at:** **[vaani.readthedocs.io](https://vaani.readthedocs.io/)**
 
-- [Installation Guide](docs/installation.rst)
-- [Architecture Overview](docs/architecture.rst)
-- [Voice System Details](docs/voice_system.rst)
-- [Intelligence & NLP](docs/intelligence.rst)
+- 📖 [Getting Started Guide](https://vaani.readthedocs.io/en/latest/getting_started.html)
+- 🏗️ [Architecture Overview](https://vaani.readthedocs.io/en/latest/architecture.html)
+- ⚙️ [Configuration Reference](https://vaani.readthedocs.io/en/latest/configuration.html)
+- 🔧 [Troubleshooting](https://vaani.readthedocs.io/en/latest/troubleshooting.html)
+- 💻 [Developer Guide](https://vaani.readthedocs.io/en/latest/development/project_structure.html)
 
-### Hosted Docs (Read the Docs)
+---
 
-The project is configured for Read the Docs.
+## 💡 Usage Examples
 
-- Config file: [.readthedocs.yaml](.readthedocs.yaml)
-- Build dependencies: [docs/requirements.txt](docs/requirements.txt)
-
-To enable hosted docs:
-
-1. Sign in at https://readthedocs.org with your GitHub account.
-2. Import this repository into Read the Docs.
-3. The default configuration will build Sphinx using `docs/conf.py`.
-4. Your docs will be available at a URL like `https://<project-slug>.readthedocs.io`.
-
-Optional: If you prefer the legacy config filename, [readthedocs.yml](readthedocs.yml) mirrors the main config.
-
-### Directory Structure
-
-- **`vaani/core/`**: The brain of the assistant.
-
-## 💬 How to Use It
-
-### Starting Up
 ```bash
-# Activate the virtual environment (if you set one up)
-source .venv/bin/activate
-
-# Run it!
+# Start Vaani
 python3 main.py
+
+# Then try:
+"Hey Vaani, play some jazz music"
+"What's the weather today?"
+"Tell me about quantum computing"
+"Pause the music"
+"What time is it?"
+"Tell me a joke"
 ```
 
-### Try These Commands
-- **Music**: "Play some jazz" / "Pause" / "Next song" / "Volume up"
-- **Questions**: "What's the weather?" / "Tell me about quantum computing"
-- **General Chat**: "Tell me a joke" / "Good morning" / "How are you?"
-- **Time**: "What time is it?" / "What's the date?"
-
-Just talk naturally - it understands context!
+**Tip:** It understands context! You can have natural conversations without repeating "Hey Vaani" every time.
 
 ---
 
-## 🐛 Having Issues?
+## 🛠️ Tech Stack
 
-**Microphone not working?**
-- Make sure your mic isn't muted in system settings
-- Try adjusting `ENERGY_THRESHOLD` in `config.json` (higher = less sensitive)
-
-**Can't find Vosk model?**
-- Run the setup script again: `./setup.sh`
-- Models should be in the `models/` folder
-
-**Music won't play?**
-- Install VLC: `brew install --cask vlc` (macOS) or `apt install vlc` (Linux)
-- Check your internet connection (YouTube needs it)
-
-**Other issues?**
-- Check the [full troubleshooting guide](docs/troubleshooting.rst)
-- Or open an issue on GitHub - I'm happy to help!
+| Component | Technology |
+|:---|:---|
+| AI Brain | Google Gemini 2.5 Flash |
+| Speech Recognition | Vosk + Google Speech API + Sphinx |
+| Text-to-Speech | pyttsx3 + Edge TTS |
+| Music Streaming | VLC + yt-dlp |
+| Web Search | DuckDuckGo API |
+| Audio Processing | PyAudio + sounddevice |
 
 ---
 
-## 🎯 What's Next?
+## 🗺️ Roadmap
 
-Things I'm working on or planning:
-
-- [x] Multi-engine speech recognition (Done!)
-- [x] Music playback (Done!)
-- [x] Web search integration (Done!)
-- [ ] **GUI interface** - Visual dashboard
-- [ ] **Smart home control** - HomeAssistant integration
-- [ ] **Better memory** - Remember things across sessions
-- [ ] **Voice profiles** - Multiple users
-- [ ] **Mobile app** - Control from phone
-
-Got ideas? Let me know in GitHub Discussions!
+- [x] Multi-engine speech recognition
+- [x] YouTube music playback
+- [x] Web search integration
+- [ ] GUI interface
+- [ ] Smart home integration (HomeAssistant)
+- [ ] Voice profiles for multiple users
+- [ ] Long-term memory persistence
+- [ ] Mobile app
 
 ---
 
-## 🤝 Want to Help?
+## 🐛 Troubleshooting
 
-I'd love contributions! Whether it's:
-- Fixing bugs
-- Adding features
-- Improving documentation
-- Testing on different systems
-- Just giving feedback
+**Quick Fixes:**
+- Microphone not working? → Check system permissions and `ENERGY_THRESHOLD` in `config.json`
+- Vosk model missing? → Run `./setup.sh` again
+- Music won't play? → Install VLC (`brew install vlc` or `apt install vlc`)
 
-**How to contribute:**
-1. Fork the repo
-2. Create a branch (`git checkout -b feature/awesome-thing`)
-3. Make your changes
-4. Test it out
-5. Submit a pull request
-
-Or just star the repo if you find it useful - it really motivates me to keep working on it!
+**Need more help?** Check the [full troubleshooting guide](https://vaani.readthedocs.io/en/latest/troubleshooting.html).
 
 ---
 
-## 👤 About Me
+## 🤝 Contributing
+
+Contributions are welcome! Whether you want to:
+- 🐛 Fix bugs
+- ✨ Add features
+- 📝 Improve docs
+- 🧪 Test on different platforms
+
+**Check out the [Contributing Guide](https://vaani.readthedocs.io/en/latest/development/contributing.html) to get started.**
+
+---
+
+## 📜 License
+
+MIT License - See [LICENSE](LICENSE) for details.
+
+Free to use, modify, and distribute. No restrictions!
+
+---
+
+## 👤 Author
 
 **Aman Kumar Pandey**
 
-I'm a developer who loves working on AI and voice technology. Built Vaani as a personal learning project and to solve problems I had with existing assistants.
+Built this as a personal project to learn about AI and voice technology. Feel free to reach out!
 
-- GitHub: [@paman7647](https://github.com/paman7647)
-- Email: paman7647@gmail.com
-
-Feel free to reach out if you have questions or just want to chat about the project!
-
-## 📄 License
-
-MIT License - Free to use, modify, and distribute. See [LICENSE](LICENSE) for details.
+- 🐙 GitHub: [@paman7647](https://github.com/paman7647)
+- 📚 Docs: [vaani.readthedocs.io](https://vaani.readthedocs.io/)
 
 ---
 
-**Made with ❤️ by Aman Kumar Pandey**
+## 🌟 Show Your Support
 
-*If you find Vaani useful, give it a star on GitHub! It really helps.* ⭐
-Unauthorized copying or distribution of this code is strictly prohibited.
+If you find Vaani useful:
+- ⭐ Star this repo
+- 🐛 Report bugs
+- 💡 Share ideas
+- 🔀 Submit pull requests
+
+**Made with ❤️ by Aman Kumar Pandey**

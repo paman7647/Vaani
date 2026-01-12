@@ -294,7 +294,7 @@ Comparison with Other Assistants
 
    Privacy:     Vaani ✓ (local first) | Alexa/GA ✗ (cloud required)
    Offline:     Vaani ✓ (partial)    | Alexa/GA ✗ (minimal)
-   Open Source: Vaani ✓              | Alexa/GA ✗
+   Proprietary: Vaani ✓              | Alexa/GA ✓ (both proprietary)
    Customizable: Vaani ✓             | Alexa/GA △ (limited)
    Smart Home: Vaani △ (extensible)  | Alexa/GA ✓ (native)
    Accuracy:    Vaani ~85-95%        | Alexa/GA ~95-98%

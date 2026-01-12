@@ -14,7 +14,7 @@ Hey there! 👋 I'm Aman Kumar Pandey, and this is **Vaani** - my personal AI vo
 - Actually respects your privacy (runs mostly on your computer)
 - Works offline when needed
 - Supports multiple languages (I speak Hindi and English daily!)
-- Is completely open-source (you can see and modify everything)
+- Is proprietary software (currently not open-source)
 - Actually smart conversations (thanks to Google's Gemini AI)
 
 Think of it as your personal assistant that you fully control and understand.
