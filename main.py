@@ -27,7 +27,7 @@ not commanding a machine.
 
 import sys
 import signal
-from vaani import get_assistant
+from Vaani import get_assistant
 
 
 def signal_handler(sig, frame):

@@ -1,0 +1,31 @@
+2026-01-12 08:28:23 | INFO     | vaani | error_handler:1146 | Error Handler initialized
+2026-01-12 08:28:23 | DEBUG    | vaani | error_handler:1147 | System: Darwin | Python: 3.14.1
+2026-01-12 08:28:52 | INFO     | vaani | web_search:58 | Wikipedia integration enabled
+2026-01-12 08:28:52 | DEBUG    | vaani | conversation:57 | Enhanced offline NLP not available
+2026-01-12 08:28:53 | INFO     | vaani | conversation:63 | Advanced response synthesizer available
+2026-01-12 08:29:17 | INFO     | vaani | error_handler:1146 | Error Handler initialized
+2026-01-12 08:29:17 | DEBUG    | vaani | error_handler:1147 | System: Darwin | Python: 3.14.1
+2026-01-12 08:29:17 | INFO     | vaani | web_search:58 | Wikipedia integration enabled
+2026-01-12 08:29:17 | DEBUG    | vaani | conversation:57 | Enhanced offline NLP not available
+2026-01-12 08:29:17 | INFO     | vaani | conversation:63 | Advanced response synthesizer available
+2026-01-12 08:29:24 | INFO     | vaani | error_handler:1146 | Error Handler initialized
+2026-01-12 08:29:24 | DEBUG    | vaani | error_handler:1147 | System: Darwin | Python: 3.14.1
+2026-01-12 08:29:24 | INFO     | vaani | web_search:58 | Wikipedia integration enabled
+2026-01-12 08:29:24 | DEBUG    | vaani | conversation:57 | Enhanced offline NLP not available
+2026-01-12 08:29:24 | INFO     | vaani | conversation:63 | Advanced response synthesizer available
+2026-01-12 08:30:57 | INFO     | vaani | error_handler:1146 | Error Handler initialized
+2026-01-12 08:30:57 | DEBUG    | vaani | error_handler:1147 | System: Darwin | Python: 3.14.0
+2026-01-12 08:30:58 | INFO     | vaani | web_search:58 | Wikipedia integration enabled
+2026-01-12 08:30:58 | DEBUG    | vaani | conversation:57 | Enhanced offline NLP not available
+2026-01-12 08:31:01 | INFO     | vaani | conversation:63 | Advanced response synthesizer available
+2026-01-12 08:31:01 | INFO     | vaani | speech_synthesis:63 | Using native macOS speech synthesizer (nsss)
+2026-01-12 08:31:01 | INFO     | vaani | speech_synthesis:79 | Selected voice: Rishi
+2026-01-12 08:31:01 | INFO     | vaani | speech_synthesis:93 | TTS engine initialized successfully
+2026-01-12 08:31:01 | DEBUG    | vaani | audio_engine:131 | Audio player initialized
+2026-01-12 08:31:01 | INFO     | vaani | personality:57 | Personality module loaded
+2026-01-12 08:31:01 | INFO     | vaani | context:47 | Conversation context initialized
+2026-01-12 08:31:01 | DEBUG    | vaani | web_search:80 | Web search engine initialized
+2026-01-12 08:31:01 | INFO     | vaani | conversation:108 | Advanced response synthesizer enabled
+2026-01-12 08:31:01 | DEBUG    | vaani | web_search:80 | Web search engine initialized
+2026-01-12 08:31:02 | INFO     | vaani | conversation:131 | Connected to Gemini AI (using API key 1/1)
+2026-01-12 08:31:02 | DEBUG    | vaani | processor:102 | Command processor initialized (advanced mode: True, smart classifier: True)

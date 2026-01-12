@@ -13,7 +13,7 @@ rapidfuzz>=3.0.0                       # Fast fuzzy string matching for intent c
 # ============================================
 SpeechRecognition>=3.10.0              # Multi-engine speech recognition
 pyaudio>=0.2.13                        # Audio I/O
-vosk>=0.3.45                           # Offline speech recognition
+vosk>=0.3.44                           # Offline speech recognition (latest available)
 pocketsphinx>=0.1.15                   # Offline speech recognition fallback
 
 # ============================================
