@@ -1,435 +1,764 @@
-Contributing to Vaani
-======================
+Contributing Guide
+==================
 
-Thank you for your interest in improving Vaani. Contributions of all types are welcome.
-
-Before Contributing
--------------------
-
-**This project is primarily maintained by its creator.** While contributions are welcome, understand:
-
-- Response times may vary
-- Not all suggestions will be accepted
-- The vision and direction are set by the creator
-- Major features should be discussed in issues first
-
-This doesn't mean we don't appreciate you—it means we want to be realistic about capacity.
+Thank you for your interest in contributing to Vaani Assistant! This document provides guidelines for contributing to the project.
 
 Ways to Contribute
 ------------------
 
-**Report Issues**
+**Code Contributions**
 
-Found a bug or have a feature idea? Create an issue:
+- Implement new features
+- Fix bugs
+- Improve performance
+- Add tests
+- Refactor code
 
-1. Check if the issue already exists
-2. Provide clear reproduction steps
-3. Include your system info (OS, Python version)
-4. Attach relevant log output
+**Documentation**
 
-**Improve Documentation**
+- Improve existing docs
+- Add usage examples
+- Create tutorials
+- Translate documentation
+- Fix typos and clarifications
 
-Documentation improvements are always welcome:
+**Testing and Quality**
 
-- Fix typos and unclear sections
-- Add examples to existing docs
-- Document undocumented behaviors
-- Improve installation guides for your platform
+- Report bugs
+- Test on different platforms
+- Improve test coverage
+- Performance testing
+- Security auditing
 
-**Small Bug Fixes**
+**Community**
 
-Small, focused bug fixes are ideal for first contributions:
+- Answer questions
+- Help other users
+- Share use cases
+- Provide feedback
+- Spread the word
 
-- One fix per pull request
-- Include test case if possible
-- Update documentation if behavior changes
+Getting Started
+---------------
 
-**Code Quality**
-
-Improvements that don't add features:
-
-- Refactoring for clarity
-- Performance improvements with measurements
-- Test coverage additions
-- Dependency updates
-
-Setup for Contributing
-----------------------
-
-**Clone and Install**
+**1. Fork the Repository**
 
 .. code-block:: bash
 
-   git clone https://github.com/paman7647/Vaani.git
-   cd Vaani
-   python3 -m venv venv
-   source venv/bin/activate
-   pip install -r requirements-full.txt
-   pip install black flake8
-
-**Verify Your Setup**
-
-.. code-block:: bash
-
-   # Test the installation
-   python3 main.py
+   # Fork on GitHub, then clone
+   git clone https://github.com/YOUR_USERNAME/vaani.git
+   cd vaani
    
-   # Check code quality tools work
-   black --version
-   flake8 --version
+   # Add upstream remote
+   git remote add upstream https://github.com/paman7647/vaani.git
 
-**Create a Feature Branch**
+**2. Set Up Development Environment**
 
 .. code-block:: bash
 
+   # Create virtual environment
+   python3 -m venv .venv
+   source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+   
+   # Install dependencies
+   pip install -r requirements.txt
+   
+   # Install development dependencies
+   pip install pytest pytest-cov black flake8 mypy
+
+**3. Create a Branch**
+
+.. code-block:: bash
+
+   # Update your fork
+   git checkout main
+   git pull upstream main
+   
+   # Create feature branch
    git checkout -b feature/your-feature-name
    # or
-   git checkout -b fix/bug-you-fixed
+   git checkout -b fix/bug-description
 
-Branch naming:
-- ``feature/`` - New features
-- ``fix/`` - Bug fixes
-- ``docs/`` - Documentation only
-- ``refactor/`` - Code improvements
+**4. Make Your Changes**
 
-Making Changes
---------------
+Follow the :doc:`coding_style` guidelines while making changes.
 
-**Follow the Style Guide**
-
-See :doc:`coding_style` for detailed guidelines.
-
-**Keep Changes Focused**
+**5. Test Your Changes**
 
 .. code-block:: bash
 
-   # Good - one fix
-   git commit -m "Fix timeout error in speech recognition"
+   # Run tests
+   pytest tests/
    
-   # Okay - related changes
-   git commit -m "Add timeout configuration and improve error handling"
+   # Run with coverage
+   pytest --cov=vaani_assistant tests/
    
-   # Bad - multiple unrelated changes
-   git commit -m "Fix timeout, update docs, refactor audio player"
-
-**Write Clear Commit Messages**
-
-.. code-block:: text
-
-   [Brief description - 50 chars max]
-   
-   [Longer explanation if needed]
-   
-   - Why this change?
-   - What problem does it solve?
-   - Any side effects or considerations?
-
-**Example**
-
-.. code-block:: text
-
-   Fix timeout error in speech recognition module
-   
-   The speech recognition module was not respecting the timeout
-   parameter when connecting to the audio device, causing hangs
-   on systems with slow audio hardware.
-   
-   - Add timeout to device initialization
-   - Test with different timeout values
-   - Update documentation with timeout guidance
-
-**Test Your Changes**
-
-.. code-block:: bash
-
-   # Run the code you changed
+   # Test manually
    python3 main.py
-   
-   # Check code style
-   black vaani_assistant/
-   flake8 vaani_assistant/ --max-line-length=100
-   
-   # If you changed a specific module:
-   python3 << 'EOF'
-   from vaani_assistant.core.your_module import YourClass
-   obj = YourClass()
-   # Test it
-   EOF
 
-**Update Documentation**
-
-If your change affects behavior or adds features:
+**6. Commit Your Changes**
 
 .. code-block:: bash
 
-   # Update relevant .rst files in docs/
-   # Run Sphinx to check it builds
-   cd docs
-   make html
-   cd ..
+   # Stage changes
+   git add .
+   
+   # Commit with descriptive message
+   git commit -m "feat(speech): Add Vosk recognition support"
+   
+   # Push to your fork
+   git push origin feature/your-feature-name
 
-**Add Docstrings**
+**7. Submit Pull Request**
 
-Every new function should have a docstring:
+1. Go to your fork on GitHub
+2. Click "Pull Request" button
+3. Select your branch
+4. Fill out the PR template
+5. Wait for review
 
-.. code-block:: python
-
-   def new_function(parameter: int) -> str:
-       """
-       Brief one-line description.
-       
-       Longer description of what it does and why you'd use it.
-       
-       Args:
-           parameter: What it represents.
-       
-       Returns:
-           What gets returned.
-       
-       Raises:
-           ValueError: When something is invalid.
-       """
-       pass
-
-Creating a Pull Request
+Pull Request Guidelines
 -----------------------
 
-**Before Submitting**
+**PR Title Format**
 
-Checklist:
+Use conventional commit format:
 
-- [ ] Code follows :doc:`coding_style` guidelines
-- [ ] Changes are tested and working
-- [ ] Documentation is updated
-- [ ] Commit messages are clear
-- [ ] No unrelated changes in the branch
-- [ ] Feature branch is rebased to latest main
+.. code-block:: text
 
-**Creating the PR**
+   <type>(<scope>): <description>
+   
+   Examples:
+   feat(voice): Add multi-language TTS support
+   fix(audio): Resolve buffer overflow in audio capture
+   docs(installation): Update macOS setup instructions
 
-1. Push your branch: ``git push origin feature/your-feature-name``
-2. Create a PR on GitHub
-3. Fill out the PR template completely
-4. Reference any related issues: "Fixes #123"
-
-**PR Template**
+**PR Description Template**
 
 .. code-block:: markdown
 
    ## Description
-   
-   What does this PR do?
+   Brief description of changes
    
    ## Type of Change
-   
    - [ ] Bug fix
    - [ ] New feature
+   - [ ] Breaking change
    - [ ] Documentation update
-   - [ ] Refactoring
-   - [ ] Dependency update
    
-   ## How to Test
-   
-   Steps to verify the change works.
-   
-   ## Related Issues
-   
-   Fixes #123
-   
-   ## Screenshots
-   
-   If applicable, add screenshots.
+   ## Testing
+   Describe how you tested these changes
    
    ## Checklist
-   
    - [ ] Code follows style guidelines
-   - [ ] Tests pass
+   - [ ] Self-review completed
    - [ ] Documentation updated
-   - [ ] No new warnings
+   - [ ] Tests added/updated
+   - [ ] All tests passing
+   - [ ] No breaking changes (or documented)
+   
+   ## Related Issues
+   Fixes #123
+   Related to #456
 
-**What Gets Reviewed**
+**What Makes a Good PR**
 
-PRs are reviewed for:
+✓ **Small and Focused**
 
-- Code correctness
-- Alignment with project vision
-- Code quality and style
-- Documentation completeness
-- Test coverage
-- Performance impact
+.. code-block:: text
 
-**After Submission**
+   Good:  Add Vosk recognition engine (150 lines, 1 feature)
+   Bad:   Add Vosk, refactor audio, update docs (800 lines, 3 features)
 
-You'll get feedback. Common types:
+✓ **Well Tested**
 
-- **Requests for changes** - Usually phrased as questions, refactor code
-- **Suggestions** - Nice to have but not required
-- **Concerns** - Changes needed before merge
+.. code-block:: python
 
-Address feedback by pushing new commits to your branch—the PR updates automatically.
+   # Include tests demonstrating your changes work
+   def test_vosk_recognition():
+       recognizer = VoskRecognizer()
+       result = recognizer.recognize(sample_audio)
+       assert result == "expected text"
 
-Common Scenarios
-----------------
+✓ **Documented**
 
-**"I want to add X feature"**
+.. code-block:: python
 
-1. Create an issue describing the feature first
-2. Discuss approach with maintainers
-3. Get agreement on design
-4. Implement with confidence
+   def new_function(param: str) -> bool:
+       """Clear docstring explaining purpose.
+       
+       Args:
+           param: Description of parameter
+       
+       Returns:
+           Description of return value
+       """
 
-**"I found a bug"**
-
-1. Create an issue with reproduction steps
-2. If you can fix it, create a PR
-3. Link the PR to the issue
-
-**"I want to update documentation"**
-
-1. Create a PR directly (no issue needed)
-2. Make one logical change per PR
-3. Improve clarity and examples
-
-**"I want to refactor a module"**
-
-1. Create an issue explaining why
-2. Get feedback before investing time
-3. Keep refactoring separate from feature PRs
-
-**"The project doesn't build on my system"**
-
-1. Create an issue with:
-   - Your OS and version
-   - Python version
-   - Full error message
-   - Steps to reproduce
-2. We'll work through it together
-3. Documentation might need updating
-
-Development Workflow Example
-----------------------------
-
-**Scenario: Fix a speech recognition timeout bug**
+✓ **Clear Commit History**
 
 .. code-block:: bash
 
-   # 1. Create an issue (if not already done)
-   # "Speech recognition hangs on slow audio devices"
+   # Good commit history
+   feat(speech): Add Vosk recognizer class
+   feat(speech): Integrate Vosk into recognition pipeline
+   test(speech): Add tests for Vosk integration
+   docs(speech): Document Vosk configuration
    
-   # 2. Set up your branch
-   git checkout -b fix/speech-recognition-timeout
-   
-   # 3. Reproduce the bug
-   python3 main.py
-   # Confirms: hangs when audio device is slow
-   
-   # 4. Find and fix the issue
-   vim vaani_assistant/core/speech_recognition.py
-   # Add timeout parameter to device initialization
-   
-   # 5. Test the fix
-   python3 main.py
-   # Test with: "Hey Aria, what time is it?"
-   # Confirms: no hang, works correctly
-   
-   # 6. Verify code quality
-   black vaani_assistant/core/speech_recognition.py
-   flake8 vaani_assistant/core/speech_recognition.py
-   
-   # 7. Update documentation
-   vim docs/troubleshooting.rst
-   # Add section about timeout configuration
-   
-   # 8. Commit
-   git add vaani_assistant/core/speech_recognition.py
-   git add docs/troubleshooting.rst
-   git commit -m "Fix speech recognition timeout on slow audio devices
-   
-   The speech recognition module was not respecting timeouts
-   on slow audio devices, causing the system to hang.
-   
-   - Add timeout parameter to audio device initialization
-   - Default to 10 seconds, configurable via settings
-   - Document timeout configuration in troubleshooting guide"
-   
-   # 9. Push and create PR
-   git push origin fix/speech-recognition-timeout
+   # Bad commit history  
+   wip
+   fixes
+   more fixes
+   final version
 
-Getting Help
-------------
+**Review Process**
 
-**Questions About Code**
+1. **Automated Checks** - CI runs tests, linting, type checking
+2. **Code Review** - Maintainer reviews code quality, design, tests
+3. **Testing** - Changes tested on multiple platforms if applicable
+4. **Feedback** - Reviewer provides feedback, requests changes
+5. **Approval** - Once approved, PR is merged
 
-- Comment in the issue you're working on
-- Check the :doc:`../architecture` documentation
-- Look at the :doc:`project_structure` for module details
-- Read existing code in the same module
-
-**Questions About Contributing**
-
-- Create an issue labeled "question"
-- Check CONTRIBUTING.md in the repo
-- Look for similar PRs to see what was accepted
-
-**Something Not Working**
+**Addressing Review Feedback**
 
 .. code-block:: bash
 
-   # Enable debug logging
-   LOG_LEVEL=DEBUG python3 main.py
+   # Make requested changes
+   # ... edit files ...
    
-   # Check error logs
-   tail -100 logs/error.log
+   # Commit changes
+   git add .
+   git commit -m "refactor: Address review feedback"
    
-   # Try a simple test
-   python3 << 'EOF'
-   from vaani_assistant.core import your_module
-   your_module.test_function()
-   EOF
+   # Push update
+   git push origin feature/your-feature-name
 
-Code of Conduct
----------------
-
-We are committed to providing a welcoming and inspiring community for all. Be respectful.
-
-Recognition
+Bug Reports
 -----------
 
-Contributors to Vaani are recognized in:
+**Before Reporting**
 
-- The README.md file
-- Release notes for their contributions
-- Git history (forever!)
+1. Check if bug already reported (GitHub Issues)
+2. Verify bug exists in latest version
+3. Try to reproduce with minimal example
+4. Check documentation for expected behavior
 
-See :doc:`../credits` for the current list.
+**Bug Report Template**
 
-Legal
------
+.. code-block:: markdown
 
-By contributing to Vaani, you agree that:
+   ## Description
+   Clear description of the bug
+   
+   ## To Reproduce
+   Steps to reproduce:
+   1. Start Vaani with config X
+   2. Say command Y
+   3. Observe error Z
+   
+   ## Expected Behavior
+   What should happen
+   
+   ## Actual Behavior
+   What actually happens
+   
+   ## Environment
+   - OS: macOS 13.0
+   - Python: 3.11.2
+   - Vaani Version: 1.0.0
+   - Installation Method: pip / git clone
+   
+   ## Logs
+   ```
+   Paste relevant log output here
+   ```
+   
+   ## Additional Context
+   - Screenshots if applicable
+   - Related issues
+   - Attempted workarounds
 
-- Your contributions can be used under the project's license
-- You have the right to grant these rights
-- You won't contribute code you don't have rights to
+**Good Bug Report Example**
 
-No contributor agreement needed—just contribute!
+.. code-block:: markdown
 
-Summary
--------
+   ## Audio playback cuts off prematurely
+   
+   ### Description
+   When Vaani responds with long sentences (>20 words), audio
+   playback stops after ~10 seconds even though response is longer.
+   
+   ### To Reproduce
+   1. Ask: "Explain quantum computing in detail"
+   2. Wait for response
+   3. Audio cuts off mid-sentence
+   
+   ### Expected
+   Full response should play
+   
+   ### Actual
+   Only first 10 seconds play, rest is silent
+   
+   ### Environment
+   - macOS 13.0.1
+   - Python 3.11.2
+   - Vaani 1.0.0 (git main branch)
+   
+   ### Logs
+   ```
+   [INFO] Playing response audio (length: 45s)
+   [ERROR] Audio player timeout after 10s
+   [DEBUG] Audio buffer: 720KB remaining
+   ```
+   
+   ### Context
+   Works fine with short responses (<10s).
+   Issue started after update to main branch yesterday.
 
-1. **Pick something** to work on (from issues or your own idea)
-2. **Discuss** if it's a major change
-3. **Make changes** following :doc:`coding_style`
-4. **Test thoroughly** and check code quality
-5. **Create a PR** with clear description
-6. **Respond to feedback** and iterate
-7. **Celebrate** when it merges! 🎉
+Feature Requests
+----------------
 
-Questions?
-----------
+**Feature Request Template**
 
-- Create an issue on GitHub
-- Check existing issues/discussions
-- Email the maintainer (see README.md)
+.. code-block:: markdown
 
-Thank you for contributing to Vaani!
+   ## Feature Description
+   Clear description of proposed feature
+   
+   ## Use Case
+   Why is this feature needed?
+   What problem does it solve?
+   
+   ## Proposed Solution
+   How should it work?
+   
+   ## Alternatives Considered
+   Other approaches you've thought about
+   
+   ## Additional Context
+   - Mockups or examples
+   - Related features
+   - Similar features in other projects
+
+**Good Feature Request Example**
+
+.. code-block:: markdown
+
+   ## Voice Profile Support (Multi-User)
+   
+   ### Description
+   Add ability to recognize different users by voice and maintain
+   separate preferences and conversation history for each.
+   
+   ### Use Case
+   In a household with multiple people, everyone has different:
+   - Music preferences
+   - Language preferences
+   - Conversation context
+   
+   Currently all users share same context and preferences.
+   
+   ### Proposed Solution
+   
+   1. **Training Phase**
+      - User says "Train my voice"
+      - Vaani records 5-10 sample phrases
+      - Creates voice profile
+   
+   2. **Recognition**
+      - On wake word, identify speaker
+      - Load speaker's profile
+      - Use speaker-specific preferences
+   
+   3. **Configuration**
+      ```json
+      {
+        "profiles": {
+          "user1": {
+            "name": "Alice",
+            "language": "en",
+            "music_preferences": ["jazz", "classical"]
+          },
+          "user2": {
+            "name": "Bob",
+            "language": "hi",
+            "music_preferences": ["bollywood", "rock"]
+          }
+        }
+      }
+      ```
+   
+   ### Alternatives
+   
+   1. **Manual Profile Selection**
+      - Say "Switch to Alice's profile"
+      - Simpler but less convenient
+   
+   2. **App-based Selection**
+      - Select profile in mobile/web app
+      - More complex setup
+   
+   ### References
+   - Amazon Alexa has "Voice Profiles"
+   - Google Home has "Voice Match"
+   
+   ### Implementation Notes
+   Could use libraries like:
+   - speechbrain for speaker recognition
+   - resemblyzer for voice embeddings
+
+Development Workflow
+--------------------
+
+**Branch Naming**
+
+.. code-block:: text
+
+   feature/feature-name    # New features
+   fix/bug-description     # Bug fixes
+   docs/doc-updates        # Documentation
+   refactor/component-name # Code refactoring
+   test/test-additions     # Test improvements
+
+**Development Cycle**
+
+::
+
+   Update from upstream
+           ↓
+   Create feature branch
+           ↓
+   Make changes (commit often)
+           ↓
+   Write/update tests
+           ↓
+   Run tests locally
+           ↓
+   Update documentation
+           ↓
+   Push to your fork
+           ↓
+   Create pull request
+           ↓
+   Address review feedback
+           ↓
+   Get approval & merge
+
+**Keeping Your Fork Updated**
+
+.. code-block:: bash
+
+   # Fetch upstream changes
+   git fetch upstream
+   
+   # Update main branch
+   git checkout main
+   git merge upstream/main
+   git push origin main
+   
+   # Update feature branch (if needed)
+   git checkout feature/your-feature
+   git rebase main
+   git push origin feature/your-feature --force-with-lease
+
+Code Review Guidelines
+----------------------
+
+**For Reviewers**
+
+**Be Constructive**
+
+.. code-block:: text
+
+   ❌ "This code is bad"
+   ✅ "Consider extracting this into a separate function for clarity"
+   
+   ❌ "Wrong approach"
+   ✅ "Have you considered using X instead? It might be more efficient"
+
+**Ask Questions**
+
+.. code-block:: text
+
+   - "Can you explain why you chose this approach?"
+   - "How does this handle the edge case where X?"
+   - "Is there a test for the error condition?"
+
+**Provide Examples**
+
+.. code-block:: python
+
+   # Instead of just saying "use type hints"
+   # Show example:
+   
+   # Current:
+   def process(data):
+       return result
+   
+   # Suggested:
+   def process(data: Dict[str, any]) -> ProcessResult:
+       return result
+
+**For Authors**
+
+**Respond Gracefully**
+
+.. code-block:: text
+
+   ✅ "Good point! I'll refactor that."
+   ✅ "I chose this because X, but open to alternatives."
+   ✅ "Added tests for that case in commit abc123."
+
+**Don't Take It Personally**
+
+- Reviews are about code, not you
+- Everyone's code gets reviewed
+- Goal is to improve the project
+
+**Ask for Clarification**
+
+.. code-block:: text
+
+   "Can you elaborate on what you mean by 'more robust'?"
+   "I'm not sure I understand the concern. Could you provide an example?"
+
+Testing Contributions
+---------------------
+
+**Writing Tests**
+
+Tests should go in ``tests/`` directory:
+
+.. code-block:: text
+
+   tests/
+   ├── test_speech_recognition.py
+   ├── test_intent_classifier.py
+   ├── test_audio_engine.py
+   └── fixtures/
+       ├── sample_audio.wav
+       └── test_configs.json
+
+**Test Structure**
+
+.. code-block:: python
+
+   import unittest
+   from unittest.mock import Mock, patch
+   from vaani_assistant.voice.speech_recognition import SpeechRecognizer
+   
+   class TestSpeechRecognizer(unittest.TestCase):
+       """Test suite for speech recognition."""
+       
+       def setUp(self):
+           """Run before each test."""
+           self.recognizer = SpeechRecognizer()
+       
+       def test_google_recognition_success(self):
+           """Test successful recognition with Google API."""
+           audio = self._load_test_audio("hello.wav")
+           result = self.recognizer.recognize(audio, engine="google")
+           self.assertEqual(result, "hello world")
+       
+       def test_fallback_when_google_fails(self):
+           """Test fallback to Vosk when Google unavailable."""
+           with patch('speech_recognition.Recognizer.recognize_google',
+                      side_effect=Exception("API Error")):
+               audio = self._load_test_audio("hello.wav")
+               result = self.recognizer.recognize(audio)
+               # Should still get result from fallback
+               self.assertIsInstance(result, str)
+       
+       def test_empty_audio_raises_error(self):
+           """Test that empty audio raises appropriate error."""
+           with self.assertRaises(ValueError):
+               self.recognizer.recognize(None)
+       
+       def _load_test_audio(self, filename):
+           """Helper to load test audio files."""
+           path = Path("tests/fixtures") / filename
+           return AudioFile(path)
+       
+       def tearDown(self):
+           """Run after each test."""
+           self.recognizer.cleanup()
+
+**Running Tests**
+
+.. code-block:: bash
+
+   # Run all tests
+   pytest tests/
+   
+   # Run specific test file
+   pytest tests/test_speech_recognition.py
+   
+   # Run specific test
+   pytest tests/test_speech_recognition.py::TestSpeechRecognizer::test_google_recognition_success
+   
+   # Run with coverage
+   pytest --cov=vaani_assistant --cov-report=html tests/
+   
+   # Run verbose
+   pytest -v tests/
+
+Documentation Contributions
+---------------------------
+
+**Documentation Structure**
+
+.. code-block:: text
+
+   docs/
+   ├── index.rst              # Main page
+   ├── installation.rst       # Setup guide
+   ├── getting_started.rst    # Quick start
+   ├── usage.rst              # Detailed usage
+   ├── configuration.rst      # Config reference
+   ├── architecture.rst       # System design
+   └── development/           # Dev docs
+       ├── setup.rst
+       ├── coding_style.rst
+       └── contributing.rst
+
+**Writing Documentation**
+
+Use clear, concise language:
+
+.. code-block:: rst
+
+   Good Practice
+   -------------
+   
+   Brief description of the concept.
+   
+   **Example**
+   
+   .. code-block:: bash
+   
+      # Command with comment
+      python3 main.py --verbose
+   
+   This will start Vaani in verbose mode, showing detailed logs.
+   
+   **Common Issues**
+   
+   - Issue 1: Description and solution
+   - Issue 2: Description and solution
+
+**Building Documentation Locally**
+
+.. code-block:: bash
+
+   # Install dependencies
+   cd docs/
+   pip install -r requirements.txt
+   
+   # Build HTML
+   make html
+   
+   # View in browser
+   open _build/html/index.html
+   
+   # Check for errors
+   make clean && make html
+
+Community Guidelines
+--------------------
+
+**Code of Conduct**
+
+- Be respectful and inclusive
+- Welcome newcomers
+- Accept constructive criticism
+- Focus on what's best for the project
+- Show empathy towards others
+
+**Communication Channels**
+
+- **GitHub Issues**: Bug reports, feature requests
+- **GitHub Discussions**: Questions, ideas, general discussion
+- **Pull Requests**: Code contributions
+- **Email**: maintainer email for private matters
+
+**Response Times**
+
+- Bug reports: Usually within 48 hours
+- Pull requests: Usually within 1 week
+- Feature requests: May take longer to discuss
+
+**Recognition**
+
+Contributors are recognized in:
+
+- ``CONTRIBUTORS.md`` file
+- Release notes
+- Documentation credits page
+
+First-Time Contributors
+-----------------------
+
+**Good First Issues**
+
+Look for issues tagged:
+
+- ``good first issue`` - Beginner-friendly
+- ``documentation`` - Doc improvements
+- ``help wanted`` - Need contributors
+
+**Getting Help**
+
+If you're stuck:
+
+1. Check documentation
+2. Search existing issues
+3. Ask in GitHub Discussions
+4. Tag maintainers in your PR
+
+**Learning Resources**
+
+- :doc:`project_structure` - Understand codebase
+- :doc:`coding_style` - Learn coding standards
+- :doc:`setup` - Set up development environment
+- :doc:`../architecture` - Understand system design
+
+Release Process
+---------------
+
+**Versioning**
+
+We use Semantic Versioning (SemVer):
+
+- **MAJOR**: Breaking changes
+- **MINOR**: New features (backwards compatible)
+- **PATCH**: Bug fixes
+
+Examples:
+- ``1.0.0`` → ``1.0.1`` (bug fix)
+- ``1.0.1`` → ``1.1.0`` (new feature)
+- ``1.1.0`` → ``2.0.0`` (breaking change)
+
+**Release Checklist**
+
+1. Update version in ``__init__.py``
+2. Update ``CHANGELOG.md``
+3. Run full test suite
+4. Build documentation
+5. Create git tag
+6. Create GitHub release
+7. Publish to PyPI (if applicable)
+
+Getting in Touch
+----------------
+
+**Maintainer**
+
+- GitHub: @paman7647
+- Project: https://github.com/paman7647/vaani
+
+**Reporting Security Issues**
+
+For security vulnerabilities, please email the maintainer directly rather than creating a public issue.
+
+**Thank You**
+
+Your contributions make Vaani better for everyone. We appreciate your time and effort! 🙏

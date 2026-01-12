@@ -97,17 +97,10 @@ elif [[ "$OS" == "arch" ]]; then
     echo -e "${GREEN}✓${NC} System dependencies installed"
 fi
 
-# Create virtual environment
-echo ""
-echo -e "${BLUE}[3/6]${NC} Setting up Python virtual environment..."
-python3 -m venv venv
-source venv/bin/activate
-pip install --upgrade pip setuptools wheel
-echo -e "${GREEN}✓${NC} Virtual environment created"
-
 # Install Python packages
 echo ""
 echo -e "${BLUE}[4/6]${NC} Installing Python packages..."
+pip install --upgrade pip setuptools wheel
 pip install -r requirements.txt
 echo -e "${GREEN}✓${NC} Python packages installed"
 

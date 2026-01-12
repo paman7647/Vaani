@@ -36,14 +36,17 @@ html_theme = 'pydata_sphinx_theme'
 html_static_path = ['_static']
 html_logo = None
 html_favicon = None
+html_show_sphinx = False
+html_show_copyright = True
 
 html_theme_options = {
     'github_url': 'https://github.com/paman7647/vaani',
     'navbar_start': ['navbar-logo'],
     'navbar_center': ['navbar-nav'],
     'navbar_end': ['navbar-icon-links'],
-    'secondary_sidebar_items': [],
+    'secondary_sidebar_items': ['page-toc'],
     'show_nav_level': 2,
+    'show_toc_level': 2,
 }
 
 autodoc_member_order = 'bysource'
@@ -83,6 +86,36 @@ autodoc_mock_imports = [
     'dotenv',
     'psutil',
     'numpy',
+    # Mock Vaani package and submodules to avoid import failures during docs build
+    'Vaani',
+    'Vaani.config',
+    'Vaani.config.global_config',
+    'Vaani.config.settings',
+    'Vaani.core',
+    'Vaani.core.assistant',
+    'Vaani.core.lifecycle',
+    'Vaani.core.processor',
+    'Vaani.integrations',
+    'Vaani.integrations.music_client',
+    'Vaani.integrations.web_search',
+    'Vaani.integrations.translator',
+    'Vaani.intelligence',
+    'Vaani.intelligence.classifier',
+    'Vaani.intelligence.context',
+    'Vaani.intelligence.conversation',
+    'Vaani.intelligence.intent_analyzer',
+    'Vaani.intelligence.offline_nlp',
+    'Vaani.intelligence.personality',
+    'Vaani.intelligence.response_synthesizer',
+    'Vaani.intelligence.responses',
+    'Vaani.utils',
+    'Vaani.utils.logger',
+    'Vaani.utils.error_handler',
+    'Vaani.voice',
+    'Vaani.voice.audio_engine',
+    'Vaani.voice.speech_recognition',
+    'Vaani.voice.speech_synthesis',
+    'Vaani.voice.wake_word',
 ]
 
 # Suppress warnings about missing imports during autosummary

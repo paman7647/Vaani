@@ -4,9 +4,3 @@
 .. automodule:: Vaani.intelligence.responses
 
    
-   .. rubric:: Classes
-
-   .. autosummary::
-   
-      NaturalResponses
-   

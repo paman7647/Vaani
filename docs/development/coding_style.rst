@@ -1,469 +1,767 @@
-Coding Style and Standards
-==========================
+Coding Style Guide
+==================
 
-Guidelines for writing code that fits with Vaani's codebase.
+This document outlines the coding standards and best practices for contributing to the Vaani Assistant project.
 
-Philosophy
-----------
+Python Style Guide
+------------------
 
-Code is read much more often than it's written. Write for the reader, not the machine.
+**General Principles**
 
-**Principles**
+Follow PEP 8 with these specific conventions:
 
-- Clarity over cleverness
-- Explicit over implicit
-- Simple over complex
-- Documented over assumed
+- **Line Length**: Maximum 100 characters (slightly longer than PEP 8's 79)
+- **Indentation**: 4 spaces (never tabs)
+- **Encoding**: UTF-8 for all Python files
+- **Quotes**: Double quotes for strings, single quotes for dict keys
 
-Python Style
-------------
+Naming Conventions
+------------------
 
-Vaani follows PEP 8 with some practical considerations.
+**Classes**
 
-**Formatting**
+Use PascalCase for class names:
 
-Use ``black`` for consistent formatting:
+.. code-block:: python
 
-.. code-block:: bash
+   class SpeechRecognizer:
+       pass
+   
+   class IntentAnalyzer:
+       pass
+   
+   class AudioEngine:
+       pass
 
-   pip install black
-   black vaani_assistant/
+**Functions and Methods**
 
-**Line length**
+Use snake_case for functions and methods:
 
-- Maximum 100 characters (not 79)
-- Rationale: Modern monitors, balances readability with density
+.. code-block:: python
 
-**Imports**
+   def process_audio_input():
+       pass
+   
+   def classify_intent(text):
+       pass
+   
+   def synthesize_speech(text, language="en"):
+       pass
 
-Group in this order with blank lines between:
+**Variables**
+
+Use snake_case for variables:
+
+.. code-block:: python
+
+   user_input = ""
+   audio_buffer = []
+   is_listening = True
+   max_retries = 3
+
+**Constants**
+
+Use UPPER_SNAKE_CASE for constants:
+
+.. code-block:: python
+
+   DEFAULT_LANGUAGE = "en"
+   MAX_MEMORY_SIZE = 100
+   WAKE_WORD_THRESHOLD = 85
+   AUDIO_SAMPLE_RATE = 16000
+
+**Private Members**
+
+Use leading underscore for private/internal members:
+
+.. code-block:: python
+
+   class AudioEngine:
+       def __init__(self):
+           self._audio_stream = None
+           self._is_recording = False
+       
+       def _initialize_stream(self):
+           # Private method
+           pass
+
+Documentation Standards
+-----------------------
+
+**Module Docstrings**
+
+Every module should have a docstring at the top:
+
+.. code-block:: python
+
+   """Speech recognition module for Vaani Assistant.
+   
+   This module provides multi-engine speech recognition with automatic
+   fallback between Google API, Vosk, and Sphinx engines.
+   
+   Example:
+       >>> recognizer = SpeechRecognizer()
+       >>> text = recognizer.recognize(audio_data)
+       >>> print(text)
+       'hello world'
+   
+   Attributes:
+       DEFAULT_ENGINE (str): Primary recognition engine to use
+       FALLBACK_ENGINES (list): List of fallback engines
+   """
+
+**Class Docstrings**
+
+Document the purpose, attributes, and usage:
+
+.. code-block:: python
+
+   class SpeechRecognizer:
+       """Multi-engine speech recognizer with automatic fallback.
+       
+       Attempts recognition with multiple engines in priority order,
+       automatically falling back if an engine fails or is unavailable.
+       
+       Attributes:
+           engines (list): List of available recognition engines
+           current_engine (str): Currently active engine
+           confidence_threshold (float): Minimum confidence for results
+       
+       Example:
+           >>> recognizer = SpeechRecognizer()
+           >>> with sr.Microphone() as source:
+           ...     audio = recognizer.listen(source)
+           ...     text = recognizer.recognize(audio)
+           >>> print(text)
+       """
+
+**Function Docstrings**
+
+Use Google-style docstrings:
+
+.. code-block:: python
+
+   def recognize_speech(audio_data, language="en-IN"):
+       """Recognize speech from audio data.
+       
+       Attempts recognition with all available engines in priority order.
+       Returns the result from the first successful engine.
+       
+       Args:
+           audio_data (AudioData): Audio data to recognize
+           language (str, optional): Language code for recognition.
+               Defaults to "en-IN".
+       
+       Returns:
+           str: Recognized text from audio
+       
+       Raises:
+           RecognitionError: If all engines fail to recognize
+           ValueError: If audio_data is invalid or empty
+       
+       Example:
+           >>> audio = record_audio()
+           >>> text = recognize_speech(audio, language="hi-IN")
+           >>> print(text)
+           'नमस्ते'
+       """
+
+Code Organization
+-----------------
+
+**Import Order**
+
+Organize imports in three groups, separated by blank lines:
+
+1. Standard library imports
+2. Third-party library imports
+3. Local application imports
 
 .. code-block:: python
 
    # Standard library
    import os
    import sys
-   from typing import Optional, List
+   from pathlib import Path
+   from typing import List, Optional, Dict
    
    # Third-party
-   import numpy as np
-   from google import genai
+   import speech_recognition as sr
+   from rapidfuzz import fuzz
+   import google.generativeai as genai
    
    # Local
-   from ..config import settings
-   from ..utils.logger import logger
+   from vaani_assistant.config import global_config
+   from vaani_assistant.utils.logger import get_logger
 
-**Naming**
+**File Structure**
 
-.. code-block:: python
-
-   # Classes - PascalCase
-   class AssistantManager:
-       pass
-   
-   # Functions and methods - snake_case
-   def get_assistant_manager():
-       pass
-   
-   def process_input(text):
-       pass
-   
-   # Constants - UPPER_SNAKE_CASE
-   ASSISTANT_NAME = "Aria"
-   MAX_MEMORY_SIZE = 100
-   
-   # Private - leading underscore
-   def _internal_method():
-       pass
-   
-   _private_variable = 42
-
-**Type Hints**
-
-Use type hints for clarity:
+Organize each module consistently:
 
 .. code-block:: python
 
-   # Good
-   def recognize_speech(timeout: int = 10) -> str:
+   """Module docstring."""
+   
+   # Imports
+   import os
+   import sys
+   
+   # Constants
+   DEFAULT_TIMEOUT = 5
+   MAX_RETRIES = 3
+   
+   # Module-level variables (if needed)
+   _logger = get_logger(__name__)
+   
+   # Classes
+   class MyClass:
        pass
    
-   def process_audio(data: bytes, sample_rate: int) -> Optional[str]:
+   # Functions
+   def my_function():
        pass
    
-   def get_voices(language: str) -> List[str]:
-       pass
-   
-   # Avoid - no hints
-   def recognize_speech(timeout=10):
-       pass
+   # Main execution (if applicable)
+   if __name__ == "__main__":
+       main()
 
-Documentation
---------------
+Type Hints
+----------
 
-**Module Docstrings**
-
-Every file should start with:
+Use type hints for function parameters and return values:
 
 .. code-block:: python
 
-   """
-   Brief description of module.
+   from typing import List, Optional, Dict, Tuple
    
-   Longer description explaining purpose, usage, and key concepts.
-   
-   Copyright © Aman Kumar Pandey 2026–2027. All rights reserved.
-   """
-
-**Function and Method Docstrings**
-
-Use Google-style docstrings (supported by Sphinx):
-
-.. code-block:: python
-
-   def recognize_speech(timeout: int = 10) -> str:
-       """
-       Capture and convert speech to text.
-       
-       Uses the configured speech recognition engine to listen
-       for user input and convert it to text.
+   def process_command(
+       command: str,
+       context: Optional[Dict[str, any]] = None
+   ) -> Tuple[str, bool]:
+       """Process user command with optional context.
        
        Args:
-           timeout: Maximum seconds to listen. Default is 10.
+           command: User's command text
+           context: Optional conversation context
        
        Returns:
-           Recognized text string.
-       
-       Raises:
-           TimeoutError: If no speech detected within timeout.
-           AudioError: If audio device fails or is unavailable.
-       
-       Example:
-           >>> text = recognize_speech(timeout=15)
-           >>> print(f"You said: {text}")
+           Tuple of (response text, success boolean)
        """
-       pass
-
-**Class Docstrings**
-
-.. code-block:: python
-
-   class AssistantManager:
+       # Implementation
+       return response, True
+   
+   def get_conversation_history(
+       limit: int = 10
+   ) -> List[Dict[str, str]]:
+       """Get recent conversation history.
+       
+       Args:
+           limit: Maximum number of exchanges to return
+       
+       Returns:
+           List of conversation exchanges
        """
-       Central orchestrator for Vaani.
-       
-       Coordinates all system components including speech recognition,
-       AI response generation, and audio playback.
-       
-       Attributes:
-           speech_recognizer: Module for voice-to-text conversion.
-           ai_engine: Module for response generation.
-           tts_engine: Module for text-to-speech.
-       """
-       
-       def __init__(self):
-           """Initialize all system components."""
-           pass
-
-**Inline Comments**
-
-Use sparingly and only to explain *why*, not *what*:
-
-.. code-block:: python
-
-   # Good - explains why
-   # We limit memory to prevent unbounded growth during long sessions
-   max_size = 100
-   
-   # Bad - just explains what
-   # Set max_size to 100
-   max_size = 100
-   
-   # Good - helps understand non-obvious code
-   # Sort by timestamp, most recent first (for relevance in conversation)
-   context = sorted(history, key=lambda x: x.timestamp, reverse=True)
-   
-   # Bad - obvious what it does
-   # Loop through items
-   for item in items:
-       pass
+       return history[:limit]
 
 Error Handling
 --------------
 
 **Use Specific Exceptions**
 
+Catch specific exceptions rather than bare except:
+
 .. code-block:: python
 
    # Good
    try:
-       result = process_audio(data)
-   except AudioProcessingError as e:
-       logger.error(f"Audio processing failed: {e}")
-       return None
+       result = recognize_speech(audio)
+   except sr.UnknownValueError:
+       logger.warning("Speech not recognized")
+       result = None
+   except sr.RequestError as e:
+       logger.error(f"API error: {e}")
+       result = None
    
-   # Bad - too broad
+   # Bad
    try:
-       result = process_audio(data)
-   except Exception:  # Catches everything, even bugs
+       result = recognize_speech(audio)
+   except:  # Too broad
+       result = None
+
+**Custom Exceptions**
+
+Create custom exceptions for domain-specific errors:
+
+.. code-block:: python
+
+   class VaaniException(Exception):
+       """Base exception for Vaani errors."""
        pass
    
-   # Bad - bare except
-   try:
-       result = process_audio(data)
-   except:  # Don't do this
-       pass
-
-**Always Log Errors**
-
-.. code-block:: python
-
-   try:
-       response = api_call()
-   except APIError as e:
-       logger.error(f"API call failed: {e}")
-       # Then either recover or re-raise
-       return fallback_response()
-
-**Define Custom Exceptions**
-
-.. code-block:: python
-
-   class AudioProcessingError(Exception):
-       """Raised when audio processing fails."""
+   class RecognitionError(VaaniException):
+       """Speech recognition failed."""
        pass
    
-   class ResponseGenerationError(Exception):
-       """Raised when AI response generation fails."""
+   class IntentClassificationError(VaaniException):
+       """Failed to classify user intent."""
        pass
-
-Testing and Verification
-------------------------
-
-**Check Code Quality**
-
-.. code-block:: bash
-
-   # Format with black
-   black vaani_assistant/
-   
-   # Check style with flake8
-   flake8 vaani_assistant/ --max-line-length=100
-   
-   # Check type hints
-   mypy vaani_assistant/
-
-**Test Modules Independently**
-
-.. code-block:: bash
-
-   python3 << 'EOF'
-   from vaani_assistant.core.speech_recognition import recognize_speech
-   
-   try:
-       text = recognize_speech(timeout=5)
-       print(f"Success: {text}")
-   except Exception as e:
-       print(f"Error: {e}")
-   EOF
-
-**Enable Debug Logging**
-
-.. code-block:: bash
-
-   LOG_LEVEL=DEBUG python3 main.py
-
-Common Patterns
----------------
-
-**Singleton with Configuration**
-
-.. code-block:: python
-
-   _instance = None
-   
-   def get_ai_engine():
-       global _instance
-       if _instance is None:
-           _instance = AIEngine()
-       return _instance
-
-**Graceful Degradation**
-
-.. code-block:: python
-
-   def generate_response(prompt):
-       try:
-           return gemini_response(prompt)
-       except APIError:
-           logger.warning("Gemini API failed, using fallback")
-           return fallback_response(prompt)
-
-**Context Management**
-
-.. code-block:: python
-
-   class AudioContext:
-       def __enter__(self):
-           self.device = open_audio_device()
-           return self.device
-       
-       def __exit__(self, exc_type, exc_val, exc_tb):
-           self.device.close()
    
    # Usage
-   with AudioContext() as device:
-       data = device.read()
+   if not text:
+       raise RecognitionError("No speech detected in audio")
 
-Things to Avoid
----------------
+**Logging Errors**
 
-**No Magic Numbers**
-
-.. code-block:: python
-
-   # Bad - what does 2048 mean?
-   buffer_size = 2048
-   
-   # Good
-   AUDIO_BUFFER_SIZE = 2048  # Samples for 50ms at 44kHz
-
-**No Deep Nesting**
+Always log exceptions with context:
 
 .. code-block:: python
 
-   # Bad - hard to follow
-   if condition1:
-       if condition2:
-           if condition3:
-               do_something()
-   
-   # Good - early returns
-   if not condition1:
-       return
-   if not condition2:
-       return
-   if not condition3:
-       return
-   do_something()
+   try:
+       result = process_command(command)
+   except Exception as e:
+       logger.error(
+           f"Failed to process command: {command}",
+           exc_info=True  # Include stack trace
+       )
+       raise
 
-**No Unused Variables**
+Logging Standards
+-----------------
 
-.. code-block:: python
+**Log Levels**
 
-   # Bad
-   for user_input in inputs:
-       process(inputs[0])  # Wrong!
-   
-   # Good
-   for user_input in inputs:
-       process(user_input)
-
-**No Global State**
+Use appropriate log levels:
 
 .. code-block:: python
 
-   # Bad - global mutable state
-   _data = []
+   # DEBUG: Detailed diagnostic information
+   logger.debug(f"Raw audio data: {len(audio_data)} bytes")
    
-   def add_data(item):
-       _data.append(item)
+   # INFO: General informational messages
+   logger.info("Speech recognition completed successfully")
    
-   # Good - encapsulated
-   class DataStore:
-       def __init__(self):
-           self._data = []
+   # WARNING: Potentially problematic situations
+   logger.warning("Using fallback engine, primary unavailable")
+   
+   # ERROR: Error events that might still allow app to continue
+   logger.error(f"Failed to connect to API: {error}")
+   
+   # CRITICAL: Serious errors causing application failure
+   logger.critical("Audio device not found, cannot continue")
+
+**Structured Logging**
+
+Include context in log messages:
+
+.. code-block:: python
+
+   logger.info(
+       "Speech recognized",
+       extra={
+           "engine": "google",
+           "language": "en-IN",
+           "confidence": 0.95,
+           "duration_ms": 234
+       }
+   )
+
+Testing Standards
+-----------------
+
+**Unit Tests**
+
+Write unit tests for all public functions:
+
+.. code-block:: python
+
+   import unittest
+   from unittest.mock import Mock, patch
+   
+   class TestSpeechRecognizer(unittest.TestCase):
+       """Tests for SpeechRecognizer class."""
        
-       def add(self, item):
-           self._data.append(item)
+       def setUp(self):
+           """Set up test fixtures."""
+           self.recognizer = SpeechRecognizer()
+       
+       def test_recognize_with_google_api(self):
+           """Test speech recognition with Google API."""
+           audio = Mock()
+           result = self.recognizer.recognize(audio, engine="google")
+           self.assertIsInstance(result, str)
+           self.assertTrue(len(result) > 0)
+       
+       def test_fallback_to_vosk(self):
+           """Test fallback to Vosk when Google fails."""
+           with patch.object(
+               self.recognizer,
+               '_recognize_google',
+               side_effect=Exception("API unavailable")
+           ):
+               audio = Mock()
+               result = self.recognizer.recognize(audio)
+               self.assertIsInstance(result, str)
+       
+       def tearDown(self):
+           """Clean up after tests."""
+           self.recognizer.cleanup()
 
-**No Hardcoded Paths**
+**Test Coverage**
 
-.. code-block:: python
+Aim for at least 80% code coverage:
 
-   # Bad
-   config = open("/home/user/vaani/config.txt")
+.. code-block:: bash
+
+   # Run tests with coverage
+   pytest --cov=vaani_assistant --cov-report=html tests/
    
-   # Good
-   config_path = os.path.join(os.path.expanduser("~"), ".vaani", "config.txt")
-   config = open(config_path)
+   # View coverage report
+   open htmlcov/index.html
 
-**No Hardcoded Configuration**
+Code Comments
+-------------
+
+**When to Comment**
+
+- **Why, not what**: Explain the reasoning, not obvious code
+- **Complex logic**: Clarify non-obvious algorithms
+- **Workarounds**: Explain temporary fixes or hacks
+- **TODO/FIXME**: Mark areas needing improvement
 
 .. code-block:: python
 
-   # Bad
-   RESPONSE_TIMEOUT = 30
+   # Good: Explains why
+   # Use fuzzy matching to handle pronunciation variations
+   # and microphone quality issues
+   score = fuzz.ratio(wake_word, heard_text)
    
-   # Good
-   RESPONSE_TIMEOUT = settings.config.get("RESPONSE_TIMEOUT", 30)
-
-Specific Guidelines
--------------------
-
-**Logging**
-
-.. code-block:: python
-
-   from ..utils.logger import logger
+   # Bad: Explains obvious code
+   # Increment counter by 1
+   counter += 1
    
-   # Appropriate logging levels
-   logger.debug("Detailed diagnostic info")    # Development
-   logger.info("General informational message") # User should see
-   logger.warning("Something unexpected")       # User should investigate
-   logger.error("An error occurred")            # System failed at something
-
-**Configuration Access**
-
-.. code-block:: python
-
-   from ..config import settings
+   # Good: Explains complex logic
+   # Calculate exponential backoff with jitter to prevent
+   # thundering herd when API comes back online
+   delay = min(base_delay * (2 ** attempt) + random.uniform(0, 1), max_delay)
    
-   # Always use config with defaults
-   language = settings.config.get("VOICE_LANGUAGE", "en")
-   api_key = settings.config.get("GEMINI_API_KEY")
+   # TODO marker
+   # TODO: Implement voice profile support for multi-user scenarios
+   # FIXME: Memory leak in audio buffer when running >24 hours
 
-**Response Generation**
+**Docstring vs Comments**
 
-.. code-block:: python
+- Use **docstrings** for API documentation (public interfaces)
+- Use **comments** for implementation details (private code)
 
-   # Always try graceful fallback
-   def generate_response(prompt: str) -> str:
-       try:
-           response = primary_method(prompt)
-       except Exception as e:
-           logger.warning(f"Primary method failed: {e}")
-           response = fallback_method(prompt)
-       return response
-
-**Audio Processing**
-
-.. code-block:: python
-
-   # Always specify sample rate and format
-   def process_audio(
-       data: bytes,
-       sample_rate: int = 16000,
-       channels: int = 1,
-   ) -> Optional[str]:
-       """Process audio data."""
-       pass
-
-Continuous Improvement
+Performance Guidelines
 ----------------------
 
-Code quality is not static. When you see code that breaks these guidelines:
+**Avoid Premature Optimization**
 
-1. **Comment** - Add a note explaining why the current approach exists
-2. **Document** - Update this guide if the situation is common
-3. **Improve** - Refactor when you have time and can test thoroughly
-4. **Review** - Have someone else review significant changes
+Write clear code first, optimize if needed:
 
-The goal is a codebase that's pleasant to work with, not perfection.
+.. code-block:: python
 
-Next Steps
-----------
+   # Good: Clear and readable
+   def is_wake_word(text):
+       return any(
+           fuzz.ratio(text.lower(), word) >= threshold
+           for word in wake_words
+       )
+   
+   # Premature optimization (only if profiling shows it's needed)
+   def is_wake_word_optimized(text):
+       text_lower = text.lower()
+       text_bytes = text_lower.encode()
+       # Complex optimized matching logic...
 
-- See :doc:`contributing` for contribution process
-- Read :doc:`../development/setup` for development environment
-- Check :doc:`project_structure` for code organization
+**Profile Before Optimizing**
+
+Use profiling to find bottlenecks:
+
+.. code-block:: python
+
+   import cProfile
+   import pstats
+   
+   profiler = cProfile.Profile()
+   profiler.enable()
+   
+   # Code to profile
+   result = process_audio_stream()
+   
+   profiler.disable()
+   stats = pstats.Stats(profiler)
+   stats.sort_stats('cumulative')
+   stats.print_stats(20)  # Top 20 functions
+
+**Caching**
+
+Cache expensive operations:
+
+.. code-block:: python
+
+   from functools import lru_cache
+   
+   @lru_cache(maxsize=128)
+   def get_language_config(language_code: str) -> Dict:
+       """Get language configuration (cached).
+       
+       Configurations are cached to avoid repeated file I/O
+       and parsing operations.
+       """
+       config_path = Path(f"config/languages/{language_code}.json")
+       return json.loads(config_path.read_text())
+
+Security Considerations
+-----------------------
+
+**API Keys**
+
+Never hardcode API keys:
+
+.. code-block:: python
+
+   # Bad
+   API_KEY = "AIzaSyB1234567890abcdef"
+   
+   # Good
+   import os
+   from dotenv import load_dotenv
+   
+   load_dotenv()
+   API_KEY = os.getenv("GEMINI_API_KEY")
+   
+   if not API_KEY:
+       raise ValueError("GEMINI_API_KEY not set in environment")
+
+**User Input Validation**
+
+Always validate and sanitize user input:
+
+.. code-block:: python
+
+   def play_music(query: str):
+       """Play music from query.
+       
+       Args:
+           query: User's music request
+       """
+       # Sanitize input
+       query = query.strip()[:200]  # Limit length
+       
+       # Validate
+       if not query:
+           raise ValueError("Empty music query")
+       
+       # Remove potentially dangerous characters for shell
+       safe_query = re.sub(r'[;&|`$]', '', query)
+       
+       # Process with sanitized input
+       play_from_youtube(safe_query)
+
+**File Operations**
+
+Use Path objects and validate paths:
+
+.. code-block:: python
+
+   from pathlib import Path
+   
+   def save_audio_file(filename: str, data: bytes):
+       """Save audio file safely.
+       
+       Args:
+           filename: Name of file to save
+           data: Audio data bytes
+       """
+       # Validate filename
+       safe_name = Path(filename).name  # Remove directory traversal
+       
+       # Restrict to specific directory
+       base_dir = Path("audio_cache")
+       file_path = base_dir / safe_name
+       
+       # Ensure path is within base directory
+       if not file_path.resolve().is_relative_to(base_dir.resolve()):
+           raise ValueError("Invalid filename")
+       
+       # Safe to write
+       file_path.write_bytes(data)
+
+Git Commit Guidelines
+---------------------
+
+**Commit Message Format**
+
+.. code-block:: text
+
+   <type>(<scope>): <subject>
+   
+   <body>
+   
+   <footer>
+
+**Types**
+
+- ``feat``: New feature
+- ``fix``: Bug fix
+- ``docs``: Documentation changes
+- ``style``: Code style changes (formatting, etc.)
+- ``refactor``: Code refactoring
+- ``test``: Adding or updating tests
+- ``chore``: Maintenance tasks
+
+**Examples**
+
+.. code-block:: text
+
+   feat(speech): Add Vosk offline recognition support
+   
+   Implement Vosk as fallback engine when Google API is unavailable.
+   Includes automatic model downloading and caching.
+   
+   Fixes #42
+   
+   ---
+   
+   fix(audio): Resolve memory leak in audio buffer
+   
+   Audio buffers were not being properly cleared after processing,
+   causing memory usage to grow over time.
+   
+   ---
+   
+   docs(installation): Add Raspberry Pi setup instructions
+   
+   Add detailed steps for installing on Raspberry Pi 4, including
+   model selection and performance optimization tips.
+
+Code Review Checklist
+---------------------
+
+Before submitting a pull request, verify:
+
+**Functionality**
+
+- [ ] Code works as intended
+- [ ] Edge cases handled
+- [ ] Error conditions tested
+
+**Code Quality**
+
+- [ ] Follows style guide
+- [ ] Well-documented with docstrings
+- [ ] Type hints added
+- [ ] No unused imports or variables
+- [ ] No debugging print statements
+
+**Testing**
+
+- [ ] Unit tests written
+- [ ] Tests pass locally
+- [ ] Coverage maintained or improved
+
+**Security**
+
+- [ ] No hardcoded secrets
+- [ ] Input validation present
+- [ ] No SQL injection vulnerabilities (if applicable)
+
+**Performance**
+
+- [ ] No obvious performance issues
+- [ ] Memory leaks checked
+- [ ] Large operations optimized
+
+**Documentation**
+
+- [ ] README updated if needed
+- [ ] Docstrings complete
+- [ ] Comments explain non-obvious code
+
+Tools and Automation
+--------------------
+
+**Code Formatting**
+
+Use Black for automatic formatting:
+
+.. code-block:: bash
+
+   # Install
+   pip install black
+   
+   # Format all files
+   black vaani_assistant/
+   
+   # Check without modifying
+   black --check vaani_assistant/
+
+**Linting**
+
+Use Flake8 for style checking:
+
+.. code-block:: bash
+
+   # Install
+   pip install flake8
+   
+   # Run linter
+   flake8 vaani_assistant/
+   
+   # With configuration
+   flake8 --max-line-length=100 --ignore=E203,W503 vaani_assistant/
+
+**Type Checking**
+
+Use mypy for static type checking:
+
+.. code-block:: bash
+
+   # Install
+   pip install mypy
+   
+   # Check types
+   mypy vaani_assistant/
+   
+   # With strict mode
+   mypy --strict vaani_assistant/
+
+**Pre-commit Hooks**
+
+Set up pre-commit hooks to automate checks:
+
+.. code-block:: bash
+
+   # Install pre-commit
+   pip install pre-commit
+   
+   # Install hooks
+   pre-commit install
+   
+   # Run manually
+   pre-commit run --all-files
+
+Create ``.pre-commit-config.yaml``:
+
+.. code-block:: yaml
+
+   repos:
+     - repo: https://github.com/psf/black
+       rev: 23.0.0
+       hooks:
+         - id: black
+           language_version: python3.11
+     
+     - repo: https://github.com/pycqa/flake8
+       rev: 6.0.0
+       hooks:
+         - id: flake8
+           args: ['--max-line-length=100']
+     
+     - repo: https://github.com/pre-commit/mirrors-mypy
+       rev: v1.0.0
+       hooks:
+         - id: mypy
+           additional_dependencies: [types-all]
