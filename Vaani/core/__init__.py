@@ -20,4 +20,17 @@ This file is part of the Vaani Voice Assistant core and is proprietary.
 """
 
 
-f__all__ = []
+from ..voice.speech_synthesis import get_voice_synth, speak
+from ..voice.speech_recognition import get_system
+from ..voice.audio_engine import get_audio_engine
+from ..intelligence.conversation import get_conversation_manager
+from .assistant import get_assistant
+
+__all__ = [
+    'get_voice_synth',
+    'speak',
+    'get_system',
+    'get_audio_engine',
+    'get_conversation_manager',
+    'get_assistant'
+]
