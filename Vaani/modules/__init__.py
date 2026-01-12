@@ -15,7 +15,7 @@ All Rights Reserved.
 
 This file is part of the Vaani Voice Assistant core and is proprietary.
 """
-
+__all__ = []
 from ..core.processor import get_processor
 
 __all__ = ['get_processor']
