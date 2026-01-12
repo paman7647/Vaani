@@ -27,6 +27,4 @@ Main package for the Vaani voice assistant system.
 __version__ = "2.0.0"
 __author__ = "Vaani Development Team"
 
-from .core.assistant import get_assistant
-
-__all__ = ['get_assistant']
+__all__ = []
